@@ -52,10 +52,17 @@ It should be under
 C:\Program Files\PostgreSQL\17\bin
 ```
 
-**Either in the pgAdmin GUI or the CLI, create a database "soundcheck"**
+**Either in the pgAdmin GUI or the CLI, create a database "soundcheck" using default login:**
 
 ```
-CREATE DATABASE soundcheck
+psql -U postgres
+# enter password: admin
+CREATE DATABASE soundcheck;
+```
+
+Confirm this worked with 
+```
+-l
 ```
 
 **Add a .env file in root directory that contains your database info in this format:**
@@ -67,9 +74,26 @@ DATABASE_URL=postgresql://postgres:<your-password>@localhost/soundcheck
 For example, with the default user and port 5432 (use this):
 
 ```
-DATABASE_URL=postgresql://postgres:postgres@localhost:5432/soundcheck
+DATABASE_URL=postgresql://postgres:admin@localhost:5432/soundcheck
 ```
 
+**Run provided file create_tables.py to create and populate new database:**
+
+```
+python create_tables.py
+```
+
+**To log into new database directly from CLI:**
+```
+psql -U postgres -d soundcheck
+```
+
+**Utilize SQL Queries to see Table Entries**
+```
+SELECT * FROM albums;
+```
+
+This information is also available from pgAdmin GUI
 
 ## Running App Locally
  To launch as built:
