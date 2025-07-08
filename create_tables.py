@@ -25,8 +25,8 @@ try:
     if not existing:
         db.add_all(sample_albums)
         db.commit()
-        print("✅ Sample albums seeded.")
+        print("Sample albums seeded.")
     else:
-        print("ℹ️  Albums already exist — skipping seeding.")
+        print("Albums already exist — skipping seeding.")
 finally:
     db.close()
