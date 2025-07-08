@@ -7,7 +7,7 @@ from app.models.rating import Rating
 
 # Step 1: Create tables
 Base.metadata.create_all(bind=engine)
-print("✅ Tables created.")
+print("Tables created.")
 
 # Step 2: Seed sample albums
 sample_albums = [
