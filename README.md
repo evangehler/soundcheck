@@ -31,7 +31,7 @@ pip install -r requirements.txt
 ```
 **Download PostgreSQL**
 
-The application expects a PostgreSQL called "soundcheck" to create this you must first download the software locally
+The application expects a PostgreSQL database called "soundcheck" to create this you must first download the software locally
 
 Use: https://www.postgresql.org/download/ if on windows (using v17.5 via EDB installer)
 
