@@ -1,5 +1,4 @@
 from pydantic import BaseModel
-from datetime import datetime
 
 class AlbumResponse(BaseModel):
     id: int
@@ -7,7 +6,7 @@ class AlbumResponse(BaseModel):
     artist: str
     year: int | None = None
     cover_url: str | None = None
-    created_at: datetime
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
