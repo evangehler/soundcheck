@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.env
+venv/
+*.sqlite3
+
+# FastAPI / Uvicorn
+*.log
+
+# Node / React
+frontend/node_modules/
+frontend/dist/        # or /build/ for CRA
+frontend/.vite/
+frontend/.env
+
+# OS-specific
+.DS_Store
+Thumbs.db
