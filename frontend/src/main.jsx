@@ -1,22 +1,36 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom/client';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+function App() {
+  const [albums, setAlbums] = useState([]);
 
-fetch('http://localhost:8000/api/albums')
-  .then(res => res.json())
-  .then(data => {
-    const list = document.getElementById('album-list');
-    data.forEach(album => {
-      const li = document.createElement('li');
-      li.textContent = `${album.title} by ${album.artist} (${album.year})`;
-      list.appendChild(li);
-    });
-  })
-  .catch(err => console.error(err));
+  useEffect(() => {
+    fetch('http://localhost:8000/api/albums')
+      .then((res) => res.json())
+      .then((data) => setAlbums(data))
+      .catch((err) => console.error('Failed to fetch albums:', err));
+  }, []);
+
+  return (
+    <main className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Albums</h1>
+      <ul className="space-y-4">
+        {albums.map((album) => (
+          <li key={album.id} className="border rounded p-4 shadow">
+            <h2 className="text-xl font-semibold">{album.title}</h2>
+            <p className="text-gray-600">{album.artist} ({album.year})</p>
+            {album.cover_url && (
+              <img
+                src={album.cover_url}
+                alt={album.title}
+                className="mt-2 w-40 rounded"
+              />
+            )}
+          </li>
+        ))}
+      </ul>
+    </main>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
