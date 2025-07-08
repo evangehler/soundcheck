@@ -19,3 +19,10 @@ venv/scripts/activate.ps1
 pip install -r requirements.txt
 ```
 5. Download PostgreSQL @ https://www.postgresql.org/download/ if on windows (using v17.5 via EDB installer)
+
+6. run the API server
+```
+python run.py
+```
+
+7. Open at http://127.0.0.1:8000/ 
