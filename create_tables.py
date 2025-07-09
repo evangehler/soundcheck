@@ -7,7 +7,7 @@ from app.models.rating import Rating
 
 # Step 1: Create tables
 Base.metadata.create_all(bind=engine)
-print("✅ Tables created.")
+print("Tables created.")
 
 # Step 2: Seed sample albums
 sample_albums = [
@@ -25,8 +25,8 @@ try:
     if not existing:
         db.add_all(sample_albums)
         db.commit()
-        print("✅ Sample albums seeded.")
+        print("Sample albums seeded.")
     else:
-        print("ℹ️  Albums already exist — skipping seeding.")
+        print("Albums already exist — skipping seeding.")
 finally:
     db.close()

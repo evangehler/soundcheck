@@ -21,7 +21,7 @@ export default function Login({ onSubmit }) {
     <form onSubmit={handleSubmit} className="max-w-sm mx-auto p-6 flex flex-col gap-4 border rounded">
 <h1 className={"header-container"}></h1>
       <h2 className="text-2xl font-semibold">Login</h2>
-      {error && <p className="text-red-600">{error}</p>}
+      {error && <p>{error}</p>}
       <input
           className = "login-box"
         type="text"

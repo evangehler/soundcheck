@@ -2,8 +2,7 @@
 
 from app.db.database import Base, engine, SessionLocal
 from app.models.user import User
-from app.models.rating import Rating  # ← MUST import this before Album
-from app.models.album import Album    # ← Comes after because it depends on Rating
+from app.models.rating import Rating
 
 # Create tables (if you haven't already)
 Base.metadata.create_all(bind=engine)

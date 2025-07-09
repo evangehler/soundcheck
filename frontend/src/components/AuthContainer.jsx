@@ -3,7 +3,7 @@ import Login from "./Login";
 import Register from "./Register";
 
 export default function AuthContainer() {
-  const [mode, setMode] = useState("login"); // or 'register'
+  const [mode, setMode] = useState("login");
 
   function handleLogin(data) {
     console.log("Login data:", data);
@@ -12,7 +12,6 @@ export default function AuthContainer() {
   function handleRegister(data) {
     console.log("Register data:", data);
   }
-
   return (
     <div>
       {mode === "login" ? (
@@ -20,7 +19,7 @@ export default function AuthContainer() {
           <Login onSubmit={handleLogin} />
           <p className="text-center mt-4">
             Don't have an account?{" "}
-            <button onClick={() => setMode("register")} className="text-blue-600 underline">Register here</button>
+            <button onClick={() => setMode("register")}>Register here</button>
           </p>
         </>
       ) : (
@@ -28,7 +27,7 @@ export default function AuthContainer() {
           <Register onSubmit={handleRegister} />
           <p className="text-center mt-4">
             Already have an account?{" "}
-            <button onClick={() => setMode("login")} className="text-blue-600 underline">Login here</button>
+            <button onClick={() => setMode("login")}>Login here</button>
           </p>
         </>
       )}
