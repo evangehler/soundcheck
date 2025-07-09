@@ -6,7 +6,6 @@ export default function AuthContainer() {
   const [mode, setMode] = useState("login");
 
   function handleLogin(data) {
-    console.log("Login data:", data);
     const {username, password} = data;
     const demo = {
       username: "demo",
@@ -16,13 +15,14 @@ export default function AuthContainer() {
     localStorage.setItem("Authenticated", "true");
     window.location.reload();
   } else {
-    alert("Invalid credentials. It's demo and demo dumbass");
+    alert("Invalid credentials. It's demo and demo silly");
   }
   }
 
 
   function handleRegister(data) {
     console.log("Register data:", data);
+    //ill figure this out later
   }
 
   return (
@@ -32,7 +32,7 @@ export default function AuthContainer() {
           <Login onSubmit={handleLogin} />
           <p className="text-center mt-4">
             Don't have an account?{" "}
-            <button onClick={() => setMode("register")}>Register here</button>
+            <button onClick={() => setMode("register")}>Register here!</button>
           </p>
         </>
       ) : (

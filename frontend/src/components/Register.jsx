@@ -6,8 +6,8 @@ export default function Register({ onSubmit }) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit(event) {
+    event.preventDefault();
     if (!username || !password || !confirmPassword) {
       setError("Please fill in all fields");
       return;
@@ -24,27 +24,27 @@ export default function Register({ onSubmit }) {
       <div className="login-wrapper">
     <form onSubmit={handleSubmit} >
       <h2 className="text-2xl font-semibold">Register</h2>
-      {error && <p className="text-red-600">{error}</p>}
+      {error && <p>{error}</p>}
       <input
           className="login-box"
         type="text"
         placeholder="Username"
         value={username}
-        onChange={e => setUsername(e.target.value)}
+        onChange={event => setUsername(event.target.value)}
       />
       <input
           className="login-box"
         type="password"
         placeholder="Password"
         value={password}
-        onChange={e => setPassword(e.target.value)}
+        onChange={event => setPassword(event.target.value)}
       />
       <input
           className='login-box'
         type="password"
         placeholder="Confirm Password"
         value={confirmPassword}
-        onChange={e => setConfirmPassword(e.target.value)}
+        onChange={event => setConfirmPassword(event.target.value)}
       />
       <button type="submit" className='login-button'>Register</button>
     </form>
