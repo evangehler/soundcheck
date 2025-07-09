@@ -87,6 +87,16 @@ body {
   border-radius: 10px;
   padding: 5px;
 }
+.logout-button {
+  background-color: #4a90e2;
+  color: white;
+  border: 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 5px;
+  display: flex;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

@@ -7,11 +7,24 @@ export default function AuthContainer() {
 
   function handleLogin(data) {
     console.log("Login data:", data);
+    const {username, password} = data;
+    const demo = {
+      username: "demo",
+      password: "demo",
+    };
+    if (username === demo.username && password === demo.password) {
+    localStorage.setItem("Authenticated", "true");
+    window.location.reload();
+  } else {
+    alert("Invalid credentials. It's demo and demo dumbass");
   }
+  }
+
 
   function handleRegister(data) {
     console.log("Register data:", data);
   }
+
   return (
     <div>
       {mode === "login" ? (

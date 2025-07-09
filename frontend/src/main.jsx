@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom/client';
 import AuthContainer from "./components/AuthContainer";
 import "./index.css";
 
-function App() {
+export function App() {
   const [albums, setAlbums] = useState([]);
-  const [Authenticated] = useState(false);
+  const [Authenticated, setAuthenticated] = useState(false);
 
+  useEffect(() =>{
+    const auth = localStorage.getItem("Authenticated");
+    if (auth==="true"){
+      setAuthenticated(true);
+    }
+  },[]);
   useEffect(() => {
       if(Authenticated){
     fetch('http://localhost:8000/api/albums')
@@ -16,12 +22,19 @@ function App() {
       }
   }, [Authenticated]);
 
+
+  function handlelogout(){
+    localStorage.removeItem("Authenticated");
+    setAuthenticated(false);
+  }
+
   return (
     <main className="p-6">
       {!Authenticated ? (
-        <AuthContainer/>
+        <AuthContainer onLogin={() => setAuthenticated(true)}/>
       ) : (
         <>
+          <button className = "logout-button" onClick={(handlelogout)}>Logout</button>
           <h1 className="text-2xl font-bold mb-4">Albums</h1>
           <ul className="space-y-4">
             {albums.map((album) => (
