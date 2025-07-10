@@ -21,7 +21,7 @@ app.add_middleware(
 )
 
 # Serve static assets for production
-app.mount("/assets", StaticFiles(directory="frontend/dist/assets"), name="assets")
+app.mount("/assets", StaticFiles(directory="frontend/src/assets"), name="assets")
 
 # Get Database
 def get_db():
