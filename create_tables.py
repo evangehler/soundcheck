@@ -41,14 +41,12 @@ try:
     db.add_all(sample_ratings)
     db.commit()
     print("Sample albums seeded with IDs.")
-finally:
-    db.close()
 
-try:
     for album in db.query(Album).all():
         avg = db.query(func.avg(Rating.score)).filter(Rating.album_id == album.id).scalar()
         album.average_score = round(avg, 2) if avg is not None else None
     db.commit()
     print("Backfilled average scores.")
+
 finally:
     db.close()

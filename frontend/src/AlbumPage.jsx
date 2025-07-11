@@ -28,7 +28,7 @@ export default function AlbumPage() {
       <Link to="/" style={{ color: '#60a5fa', textDecoration: 'underline' }}>← Back to Albums</Link>
       <Group align="flex-start" spacing="xl" mt="lg">
         <Text weight={600} color="white" size="lg" mb="sm">
-        Average Score: {album.avg_score ? album.avg_score.toFixed(1) : 'N/A'}
+        Average Score: {album.average_score ? album.average_score.toFixed(1) : 'N/A'}
         </Text>
         <AlbumCard album={album} />
         <Stack spacing="md" style={{ flex: 1, alignItems: 'center' }}>
