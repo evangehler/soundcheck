@@ -17,3 +17,4 @@ frontend/.env
 # OS-specific
 .DS_Store
 Thumbs.db
+node_modules
