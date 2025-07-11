@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime, func
+from sqlalchemy import Column, Integer, String, DateTime, Float, func
 from sqlalchemy.orm import relationship
 from app.db.database import Base
 
@@ -9,6 +9,7 @@ class Album(Base):
     title = Column(String, nullable=False)
     artist = Column(String, nullable=False)
     year = Column(Integer)
+    average_score = Column(Float, nullable=True)
     cover_url = Column(String)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 

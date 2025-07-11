@@ -1,71 +1,14 @@
+@import '@mantine/core/styles.css';
+
+:root {
+  font-family: Arial, sans-serif;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #323b5f;
 }
 
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+body {
+  color: #eff2ff;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-.login-wrapper {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f2f5;
-}
-
-.login-box {
-  display: block;
-  background: white;
-  padding: 5px;
-  border-radius: 10px;
-  width: 300px;
-  margin-bottom: 20px;
-;
-}
-
-.login-button {
-  background-color: #4a90e2;
-  color: white;
-  border: 2px;
-  cursor: pointer;
-  border-radius: 10px;
-  padding: 5px;
-}
-.logout-button {
-  background-color: #4a90e2;
-  color: white;
-  border: 2px;
-  cursor: pointer;
-  border-radius: 10px;
-  padding: 5px;
-  margin-top: 5px;
-  display: flex;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
