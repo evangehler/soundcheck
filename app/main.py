@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends,HTTPException,APIRouter
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -11,9 +11,12 @@ from app.models.user import User
 from pydantic import BaseModel
 from typing import List
 from app.models.album_response import AlbumResponse  # see note below
+from app.db.get_db import get_db
+from typing import Optional
 import os
 
 app = FastAPI()
+router = APIRouter()
 
 # Allow Vite frontend to talk to FastAPI backend in dev mode
 app.add_middleware(
@@ -28,13 +31,15 @@ app.add_middleware(
 app.mount("/assets", StaticFiles(directory="frontend/src/assets"), name="assets")
 
 # Get Database
-def get_db():
-    db = database.SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+# def get_db():
+#     db = database.SessionLocal()
+#     try:
+#         yield db
+#     finally:
+#         db.close()
 
+
+app.include_router(router)
 @app.get("/")
 def serve_react_app():
     return FileResponse("frontend/dist/index.html")
@@ -58,7 +63,7 @@ class ReviewResponse(BaseModel):
 
     class Config:
         orm_mode = True
-    
+
 
 @app.get("/api/albums/{album_id}/reviews", response_model=List[ReviewResponse])
 def get_album_reviews(album_id: int, db: Session = Depends(get_db)):
@@ -84,3 +89,30 @@ def get_album_reviews(album_id: int, db: Session = Depends(get_db)):
     )
     for r in results
     ]
+
+class RegUser(BaseModel):
+    username: str
+    password: str
+    email: Optional[str] = None
+
+@router.post("/signup", response_model=RegUser)
+def resgistration(data: RegUser,db: Session=Depends(get_db)):
+    if db.query(User).filter(User.username == data.username).first():
+        raise HTTPException(status_code=400, detail="Username already registered")
+    new_user = User(username=data.username,hashed_password=data.password,email=data.email)
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+    return {"username":data.username ,"password":data.password}
+
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+
+@router.post("/login")
+def login(data: LoginRequest, db: Session = Depends(get_db)):
+    user = db.query(User).filter(User.username == data.username).first()
+    if not user or user.hashed_password != data.password:
+        raise HTTPException(status_code=401, detail="Invalid username or password")
+    return {"message": "Login successful"}
+app.include_router(router)

@@ -5,14 +5,15 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
 import './index.css';
 //import '@mantine/core/styles.css';
+import AuthContainer from "./components/AuthContainer";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+  ReactDOM.createRoot(document.getElementById('root')).render(
   <MantineProvider withGlobalStyles withNormalizeCSS>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </MantineProvider>
 );
-
 
 
