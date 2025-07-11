@@ -5,24 +5,50 @@ import Register from "./Register";
 export default function AuthContainer() {
   const [mode, setMode] = useState("login");
 
-  function handleLogin(data) {
-    const {username, password} = data;
-    const demo = {
-      username: "demo",
-      password: "demo",
-    };
-    if (username === demo.username && password === demo.password) {
-    localStorage.setItem("Authenticated", "true");
-    window.location.reload();
-  } else {
-    alert("Invalid credentials. It's demo and demo silly");
-  }
+  async function handleLogin(data) {
+    try {
+      const response = await fetch("http://localhost:8000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      if (response.ok) {
+        localStorage.setItem("Authenticated", "true");
+        window.location.reload();
+      } else {
+        alert(result.detail || "Invalid login");
+      }
+    }catch(error) {
+      alert("server error");
+      console.error(error);
+    }
   }
 
 
-  function handleRegister(data) {
+  async function handleRegister(data) {
     console.log("Register data:", data);
-    //ill figure this out later
+    try {
+      const response = await fetch("http://localhost:8000/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      if (response.ok) {
+        alert("success");
+        window.location.reload();
+      } else {
+alert(result.detail ?? result.message ?? JSON.stringify(result) ?? "fail");
+      }
+    }catch(error) {
+      alert("server error");
+      console.error(error);
+    }
   }
 
   return (
