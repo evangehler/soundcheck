@@ -114,5 +114,5 @@ def login(data: LoginRequest, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.username == data.username).first()
     if not user or user.hashed_password != data.password:
         raise HTTPException(status_code=401, detail="Invalid username or password")
-    return {"message": "Login successful"}
+    return {"message": "Login successful", "username": user.username, "user_id": user.id}
 app.include_router(router)
