@@ -12,15 +12,14 @@ export default function FrontPage() {
   }, []);
 
   return (
-    <Container py="lg">
+    <Container size="xl" py="lg">
       <div style={{ marginTop: '5rem' }}>
-        <Title order={2} ta="center" mb="lg" c="white">Featured Albums</Title>
-        <SimpleGrid cols={5} spacing="lg" breakpoints={[
-          { maxWidth: 'lg', cols: 4 },
-          { maxWidth: 'md', cols: 3 },
-          { maxWidth: 'sm', cols: 2 },
-          { maxWidth: 'xs', cols: 1 },
-        ]}>
+        <Title order={2} ta="center" mb="xl" c="white">Featured Albums</Title>
+        <SimpleGrid 
+          cols={{ base: 1, xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }}
+          spacing={{ base: 'md', sm: 'lg', md: 'xl' }}
+          verticalSpacing={{ base: 'md', sm: 'lg', md: 'xl' }}
+        >
           {albums.map(album => (
             <AlbumCard key={album.id} album={album} />
           ))}
