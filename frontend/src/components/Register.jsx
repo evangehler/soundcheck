@@ -23,7 +23,7 @@ export default function Register({ onSubmit }) {
   return (
       <div className="login-wrapper">
     <form onSubmit={handleSubmit} >
-      <h2 className="text-2xl font-semibold">Register</h2>
+      <h2 className="login-header">Register</h2>
       {error && <p>{error}</p>}
       <input
           className="login-box"
