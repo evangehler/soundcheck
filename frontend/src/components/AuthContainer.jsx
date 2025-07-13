@@ -3,10 +3,14 @@ import Login from "./Login";
 import Register from "./Register";
 import {useLocation, useNavigate} from "react-router-dom";
 
-export default function AuthContainer() {
+
+// Receives setUsername prop from App.jsx
+export default function AuthContainer({ setUsername }) {
   const location = useLocation();
   const [mode, setMode] = useState("login");
   const navigate = useNavigate();
+  
+  // Switch form view based on route
   useEffect(()=>{
     if (location.pathname === "/signup"){
       setMode("register");
@@ -16,7 +20,7 @@ export default function AuthContainer() {
     }
   }, [location,setMode]);
 
-
+  // Send login request and update app-level username
   async function handleLogin(data) {
     try {
       const response = await fetch("http://localhost:8000/login", {
@@ -29,17 +33,19 @@ export default function AuthContainer() {
       const result = await response.json();
       if (response.ok) {
         localStorage.setItem("Authenticated", "true");
+        localStorage.setItem("username", result.username);
+        setUsername(result.username);  // 🔥 Immediately update state
         navigate('/');
-        // window.location.reload();
       } else {
         alert(result.detail || "Invalid login");
       }
-    }catch(error) {
+    } catch (error) {
       alert("server error");
       console.error(error);
     }
   }
 
+  // Send signup request and redirect to login
   async function handleRegister(data) {
     console.log("Register data:", data);
     try {
