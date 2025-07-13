@@ -29,7 +29,7 @@ export default function AuthContainer() {
       const result = await response.json();
       if (response.ok) {
         localStorage.setItem("Authenticated", "true");
-        navigate('/albums/:id');
+        navigate('/');
         // window.location.reload();
       } else {
         alert(result.detail || "Invalid login");
