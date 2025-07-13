@@ -12,3 +12,38 @@ body {
   color: #eff2ff;
 }
 
+.login-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  border-radius: 10px;
+}
+
+.login-header{
+  text-align: center;
+  margin-top: 20%
+}
+.login-box{
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  border-radius: 10px;
+  justify-self: center;
+}
+
+.alt-login{
+  display: inline;
+  justify-self: center;
+}
+
+.alt-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  border-radius: 10px;
+  margin-top: 10px;
+
+}

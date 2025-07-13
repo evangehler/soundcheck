@@ -20,7 +20,7 @@ export default function Login({ onSubmit }) {
       <div className="login-wrapper">
     <form onSubmit={handleSubmit} >
         <h1 className={"header-container"}></h1>
-      <h2 className="text-2xl font-semibold">Login</h2>
+      <h2 className="login-header">Login</h2>
       {error && <p>{error}</p>}
       <input
           className = "login-box"

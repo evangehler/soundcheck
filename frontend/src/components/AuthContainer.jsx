@@ -29,7 +29,7 @@ export default function AuthContainer() {
       const result = await response.json();
       if (response.ok) {
         localStorage.setItem("Authenticated", "true");
-        navigate('/');
+        navigate('/albums/:id');
         // window.location.reload();
       } else {
         alert(result.detail || "Invalid login");
@@ -68,24 +68,12 @@ alert(result.detail ?? result.message ?? JSON.stringify(result) ?? "fail");
       {mode === "login" ? (
         <>
           <Login onSubmit={handleLogin} />
-          <p className="text-center mt-4">
-            Don't have an account?{" "}
-            <button onClick={() => navigate("/signup")}>Register here!</button>
-          </p>
+            <button className="alt-button" onClick={() => navigate("/signup")}>Register here!</button>
         </>
       ) : (
         <>
           <Register onSubmit={handleRegister} />
-          <p className="text-center mt-4">
-            Already have an account?{" "}
-            <button
-              onClick={() => {
-                navigate("/login");
-              }}
-            >
-              Login Here!
-            </button>
-          </p>
+            <button className='alt-button' onClick={() => {navigate("/login");}}>Login Here!</button>
         </>
       )}
     </div>
