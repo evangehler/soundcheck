@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function Register({ onSubmit }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
@@ -17,7 +18,7 @@ export default function Register({ onSubmit }) {
       return;
     }
     setError("");
-    onSubmit({ username, password });
+    onSubmit({ username, password, email});
   }
 
   return (
@@ -32,6 +33,13 @@ export default function Register({ onSubmit }) {
         value={username}
         onChange={event => setUsername(event.target.value)}
       />
+      <input
+        className="login-box"
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={event =>setEmail(event.target.value)}
+        />
       <input
           className="login-box"
         type="password"
