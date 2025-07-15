@@ -93,7 +93,7 @@ def get_album_reviews(album_id: int, db: Session = Depends(get_db)):
 class RegUser(BaseModel):
     username: str
     password: str
-    email: Optional[str] = None
+    email: str
 
 @router.post("/signup", response_model=RegUser)
 def resgistration(data: RegUser,db: Session=Depends(get_db)):
@@ -103,7 +103,7 @@ def resgistration(data: RegUser,db: Session=Depends(get_db)):
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
-    return {"username":data.username ,"password":data.password}
+    return {"username":data.username ,"password":data.password, "email":data.email}
 
 class LoginRequest(BaseModel):
     username: str
