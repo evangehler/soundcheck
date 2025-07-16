@@ -22,9 +22,8 @@ sample_albums = [
 sample_users = [
     User(id=1, username="shanthony_mantano99", email="wifeleft70@hotmail.gov", hashed_password="fantano420"),
     User(id=2, username="particlegardener", email="daplantman@proton.me", hashed_password="jalapeno12"),
-    User(id=3, username="paul_mcshartney", email="notaclone@british.tea", hashed_password="herethereand"),
+    User(id=3, username="paul_mcartney", email="notaclone@british.tea", hashed_password="herethereand"),
     User(id=4, username="jessemoras", email="goofy@goober.me", hashed_password="schwartzschwartzschwartz"),
-
 ]
 
 sample_ratings = [
@@ -32,6 +31,9 @@ sample_ratings = [
     Rating(id=2, user_id=2, album_id=1, score=5, review = "I clicked 5 on accident. This sucks"),
     Rating(id=3, user_id=3, album_id=1, score=2, review = "I only gave it a 2 in honor of Radiohead 2, the band that that someone should start so that I can forget about this insult to music"),
     Rating(id=4, user_id=4, album_id=1, score=4, review = "This was pretty good. Love the John Cage influence. Had it on mute though"),
+
+    Rating(id=5, user_id=3, album_id=3, score=1, review = "This guy doesn't make any sense."),
+    Rating(id=6, user_id=4, album_id=3, score=5, review = "This guy doesn't make any sense."),
 ]
 
 db = SessionLocal()
