@@ -19,8 +19,8 @@ export default function TopBar({ username, setUsername }) {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem' }}>
-      
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', background: '#262e4a' }}>
+
       {/* Clicking logo navigates home */}
       <Link to="/" style={{ textDecoration: 'none' }}>
         <span style={{ display: 'inline-block', width: 100 }}>
@@ -34,6 +34,7 @@ export default function TopBar({ username, setUsername }) {
           <>
             <span style={{ color: 'white' }}>Logged in as <strong>{username}</strong></span>
             <Button variant="outline" onClick={handleLogout}>Logout</Button>
+
           </>
         ) : (
         // Otherwise show login/signup buttons

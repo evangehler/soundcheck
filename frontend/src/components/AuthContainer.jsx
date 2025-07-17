@@ -79,7 +79,7 @@ alert(result.detail ?? result.message ?? JSON.stringify(result) ?? "fail");
       ) : (
         <>
           <Register onSubmit={handleRegister} />
-            <button className='alt-button' onClick={() => {navigate("/login");}}>Login Here!</button>
+            <button className='alt-alt-button' onClick={() => {navigate("/login");}}>Login Here!</button>
         </>
       )}
     </div>
