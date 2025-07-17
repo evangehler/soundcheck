@@ -1,71 +1,73 @@
 @import '@mantine/core/styles.css';
 
 :root {
-  font-family: Arial, sans-serif;
+  font-family: Roboto, sans-serif;
 }
 
 body {
   background-color: #323b5f;
+  color: #eff2ff;
+  font-family: Roboto, sans-serif;
 }
 
-body {
-  color: #eff2ff;
+.glass-card-header {
+  background: rgba(255, 255, 255, 0.15);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  color: #fff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  color: #fff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
 
 .login-button{
-  border: none;
+  background: #262e4a;
+  border-radius: 16px;
+  color: #fff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   outline: none;
-  border-radius: 20px;
-  padding: 5px 47px;
-  background-color: #6f72f7;
+  padding: 7px;
   justify-self: center;
   display: flex;
   margin-bottom: 15px;
   transition: 300ms ease-in-out;
+
+  width: 100%;
+  max-width: 300px; /* or whatever width you want */
+  box-sizing: border-box;
+  justify-content: center;
 }
 .login-button:hover {
-  transform: scale(1.05);
-}
-
-.alt-button{
-  border: none;
-  outline: none;
-  border-radius: 20px;
-  padding: 5px 20px;
-  background-color: #6f72f7;
-  justify-self: center;
-  display: flex;
-  margin-bottom: 15px;
-  transition: 300ms ease-in-out;
-}
-.alt-button:hover{
-  transform: scale(1.05);
-}
-.alt-alt-button{
-  border: none;
-  outline: none;
-  border-radius: 20px;
-  padding: 5px 35px;
-  background-color: #6f72f7;
-  justify-self: center;
-  display: flex;
-  margin-bottom: 15px;
-  transition: 300ms ease-in-out;
-}
-.alt-alt-button:hover{
   transform: scale(1.05);
 }
 
 .input {
   border: none;
   outline: none;
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 10px;
   background-color: #ffffff;
   justify-self: center;
   display: flex;
   margin-bottom: 15px;
   transition: 300ms ease-in-out;
+  width: 100%;
+  max-width: 300px; /* or whatever width you want */
+  box-sizing: border-box;
 }
 
 .input:focus {
@@ -89,5 +91,3 @@ body {
   display: inline;
   justify-self: center;
 }
-
-

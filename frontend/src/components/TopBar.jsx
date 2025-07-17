@@ -19,7 +19,7 @@ export default function TopBar({ username, setUsername }) {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', background: '#262e4a' }}>
+    <div className="glass-card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', background: '#262e4a' }}>
 
       {/* Clicking logo navigates home */}
       <Link to="/" style={{ textDecoration: 'none' }}>

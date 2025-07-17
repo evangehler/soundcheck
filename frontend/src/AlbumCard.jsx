@@ -15,15 +15,16 @@ export default function AlbumCard({ album }) {
         transition: 'transform 0.3s ease',
         cursor: 'pointer',
         transform: hovered ? 'scale(1.05)' : 'scale(1)',
+
       }}
       onMouseEnter={() => set_hovered(true)}
       onMouseLeave={() => set_hovered(false)}
       onClick={() => navigate(`/albums/${album.id}`)}
     >
-      <Card 
+      <Card className="glass-card"
         shadow="lg" 
         radius="md" 
-        bg="#4c5897" 
+        bg="#4c5897"
         padding="md" 
         style={{ 
           height: '100%',
@@ -54,7 +55,7 @@ export default function AlbumCard({ album }) {
           flex: 1, 
           display: 'flex', 
           flexDirection: 'column', 
-          justifyContent: 'space-between', 
+          justifyContent: 'space-between',
           marginTop: 12,
           minHeight: 80
         }}>

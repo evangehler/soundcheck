@@ -74,12 +74,12 @@ alert(result.detail ?? result.message ?? JSON.stringify(result) ?? "fail");
       {mode === "login" ? (
         <>
           <Login onSubmit={handleLogin} />
-            <button className="alt-button" onClick={() => navigate("/signup")}>Register here!</button>
+            <button className="login-button" onClick={() => navigate("/signup")}>Register here!</button>
         </>
       ) : (
         <>
           <Register onSubmit={handleRegister} />
-            <button className='alt-alt-button' onClick={() => {navigate("/login");}}>Login Here!</button>
+            <button className='login-button' onClick={() => {navigate("/login");}}>Login Here!</button>
         </>
       )}
     </div>
