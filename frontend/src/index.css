@@ -13,11 +13,63 @@ body {
 }
 
 .login-button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 5px 47px;
+  background-color: #6f72f7;
   justify-self: center;
-  border-radius: 10px;
+  display: flex;
+  margin-bottom: 15px;
+  transition: 300ms ease-in-out;
+}
+.login-button:hover {
+  transform: scale(1.05);
+}
+
+.alt-button{
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 5px 20px;
+  background-color: #6f72f7;
+  justify-self: center;
+  display: flex;
+  margin-bottom: 15px;
+  transition: 300ms ease-in-out;
+}
+.alt-button:hover{
+  transform: scale(1.05);
+}
+.alt-alt-button{
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 5px 35px;
+  background-color: #6f72f7;
+  justify-self: center;
+  display: flex;
+  margin-bottom: 15px;
+  transition: 300ms ease-in-out;
+}
+.alt-alt-button:hover{
+  transform: scale(1.05);
+}
+
+.input {
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  justify-self: center;
+  display: flex;
+  margin-bottom: 15px;
+  transition: 300ms ease-in-out;
+}
+
+.input:focus {
+  transform: scale(1.05);
 }
 
 .login-header{
@@ -38,12 +90,4 @@ body {
   justify-self: center;
 }
 
-.alt-button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-self: center;
-  border-radius: 10px;
-  margin-top: 10px;
 
-}

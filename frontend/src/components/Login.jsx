@@ -23,7 +23,7 @@ export default function Login({ onSubmit }) {
       <h2 className="login-header">Login</h2>
       {error && <p>{error}</p>}
       <input
-          className = "login-box"
+          className = "input"
         type="text"
         placeholder="Username"
         value={username}
@@ -34,7 +34,7 @@ export default function Login({ onSubmit }) {
         placeholder="Password"
         value={password}
         onChange={event => setPassword(event.target.value)}
-        className="login-box"
+        className="input"
       />
       <button type="submit" className="login-button">Log In</button>
     </form>

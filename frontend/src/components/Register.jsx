@@ -27,28 +27,28 @@ export default function Register({ onSubmit }) {
       <h2 className="login-header">Register</h2>
       {error && <p>{error}</p>}
       <input
-          className="login-box"
+          className="input"
         type="text"
         placeholder="Username"
         value={username}
         onChange={event => setUsername(event.target.value)}
       />
       <input
-        className="login-box"
+        className="input"
         type="email"
         placeholder="Email"
         value={email}
         onChange={event =>setEmail(event.target.value)}
         />
       <input
-          className="login-box"
+          className="input"
         type="password"
         placeholder="Password"
         value={password}
         onChange={event => setPassword(event.target.value)}
       />
       <input
-          className='login-box'
+          className='input'
         type="password"
         placeholder="Confirm Password"
         value={confirmPassword}
