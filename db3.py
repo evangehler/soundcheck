@@ -6,6 +6,8 @@ from app.models.rating import Rating
 from app.models.user import User
 from sqlalchemy import func
 
+from utils.security import hash_password
+
 # Drop all tables (wipes existing data)
 Base.metadata.drop_all(bind=engine)
 
@@ -27,7 +29,7 @@ def generate_test_users(n=1000):
             id=i + 1,
             username=f"test_user_{i + 1}",
             email=f"user{i + 1}@example.com",
-            hashed_password="password123"
+            hashed_password=hash_password("password123")
         )
         for i in range(n)
     ]

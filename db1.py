@@ -3,6 +3,7 @@ from app.models.album import Album
 from app.models.rating import Rating
 from app.models.user import User
 from sqlalchemy import func
+from app.utils.hash import hash_password
 
 # Drop all tables (wipes existing data)
 Base.metadata.drop_all(bind=engine)
@@ -20,10 +21,10 @@ sample_albums = [
 ]
 
 sample_users = [
-    User(id=1, username="shanthony_mantano99", email="wifeleft70@hotmail.gov", hashed_password="fantano420"),
-    User(id=2, username="particlegardener", email="daplantman@proton.me", hashed_password="jalapeno12"),
-    User(id=3, username="paul_mcartney", email="notaclone@british.tea", hashed_password="herethereand"),
-    User(id=4, username="jessemoras", email="goofy@goober.me", hashed_password="schwartzschwartzschwartz"),
+    User(username="shanthony_mantano99", email="wifeleft70@hotmail.gov", hashed_password=hash_password("fantano420")),
+    User(username="particlegardener", email="daplantman@proton.me", hashed_password=hash_password("jalapeno12")),
+    User(username="paul_mcartney", email="notaclone@british.tea", hashed_password=hash_password("herethereand")),
+    User(username="jessemoras", email="goofy@goober.me", hashed_password=hash_password("schwartzschwartzschwartz")),
 ]
 
 sample_ratings = [

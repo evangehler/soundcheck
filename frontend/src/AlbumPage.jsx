@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Container, Group, Stack, Text } from '@mantine/core';
-import AlbumCard from './AlbumCard';
-import ReviewCard from './ReviewCard';
+import AlbumCard from './AlbumCard.jsx';
+import ReviewCard from './ReviewCard.jsx';
 
 export default function AlbumPage() {
   const { id } = useParams();

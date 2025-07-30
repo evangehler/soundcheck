@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import TopBar from "./components/TopBar";
+import TopBar from "./components/TopBar.jsx";
 import AlbumList from './FrontPage.jsx';
 import AlbumPage from './AlbumPage.jsx';
 import AuthContainer from "./components/AuthContainer.jsx";
+import UserList from "./components/UserList.jsx";
 
 
 export default function App() {
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/albums/:id" element={<AlbumPage />} />
         <Route path="/login" element={<AuthContainer setUsername={setUsername} />} />
         <Route path="/signup" element={<AuthContainer setUsername={setUsername} />} />
+          <Route path="/users" element={<UserList />} />
       </Routes>
     </>
   );

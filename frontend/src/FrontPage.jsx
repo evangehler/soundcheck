@@ -1,6 +1,6 @@
 import { SimpleGrid, Title, Container } from '@mantine/core';
 import { useEffect, useState } from 'react';
-import AlbumCard from './AlbumCard';
+import AlbumCard from './AlbumCard.jsx';
 
 export default function FrontPage() {
   const [albums, set_albums] = useState([]);
