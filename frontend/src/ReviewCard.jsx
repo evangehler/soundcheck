@@ -2,7 +2,7 @@ import { Card, Text, Blockquote } from '@mantine/core';
 
 export default function ReviewCard({ review }) {
   return (
-    <Card shadow="sm" radius="md" bg="#4c5897" padding="md" style={{ maxWidth: 500, margin: 'auto' }}>
+    <Card shadow="sm" radius="md" bg="#4c5897" padding="md" style={{ maxWidth: 500, margin: 'auto',alignSelf:"right" }}>
       <Blockquote color="white" cite={`– ${review.user_name}`}>
         <Text c="white">{review.review}</Text>
       </Blockquote>

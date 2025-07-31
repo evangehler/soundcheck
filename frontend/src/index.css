@@ -29,6 +29,25 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
+.modal-glass-card {
+  background: #262e4a;
+  border-radius: 16px;
+  color: #fff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.glass-modal-header {
+  background: #4c5897;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  color: #fff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
 .glass-card-users {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 16px;
@@ -75,6 +94,27 @@ body {
 }
 .login-button:hover {
   transform: scale(1.05);
+}
+
+.modal-button{
+  background: #262e4a;
+  border-radius: 16px;
+  color: #fff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  outline: none;
+  padding: 7px;
+  justify-self: center;
+  display: flex;
+  margin-bottom: 15px;
+  transition: 300ms ease-in-out;
+
+  width: 100%;
+  max-width: 100px;
+  box-sizing: border-box;
+  justify-content: center;
 }
 
 .input {

@@ -6,7 +6,7 @@ from app.models.rating import Rating
 from app.models.user import User
 from sqlalchemy import func
 
-from utils.security import hash_password
+from utils.hash import hash_password
 
 # Drop all tables (wipes existing data)
 Base.metadata.drop_all(bind=engine)
@@ -14,6 +14,8 @@ Base.metadata.drop_all(bind=engine)
 # Recreate tables with updated schema (including id field)
 Base.metadata.create_all(bind=engine)
 print("Tables dropped and recreated.")
+
+hashed_password = hash_password("password")
 
 sample_albums = [
     Album(id=1, title="OK Computer", artist="Radiohead", year=1997, cover_url="https://upload.wikimedia.org/wikipedia/en/b/ba/Radioheadokcomputer.png"),
@@ -26,10 +28,9 @@ sample_albums = [
 def generate_test_users(n=1000):
     return [
         User(
-            id=i + 1,
             username=f"test_user_{i + 1}",
             email=f"user{i + 1}@example.com",
-            hashed_password=hash_password("password123")
+            hashed_password=hashed_password,
         )
         for i in range(n)
     ]

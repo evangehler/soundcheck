@@ -11,7 +11,7 @@ export default function AlbumCard({ album }) {
       style={{
         width: '100%',
         maxWidth: 280,
-        margin: 'auto',
+        margin: '0px',
         transition: 'transform 0.3s ease',
         cursor: 'pointer',
         transform: hovered ? 'scale(1.05)' : 'scale(1)',
@@ -25,11 +25,12 @@ export default function AlbumCard({ album }) {
         shadow="lg" 
         radius="md" 
         bg="#4c5897"
-        padding="md" 
-        style={{ 
+        padding="md"
+        style={{
+            margin: 'auto',
           height: '100%',
           minHeight: 320,
-          display: 'flex',
+          display: 'inline-block',
           flexDirection: 'column'
         }}
       >
@@ -54,7 +55,7 @@ export default function AlbumCard({ album }) {
         <div style={{ 
           flex: 1, 
           display: 'flex', 
-          flexDirection: 'column', 
+          flexDirection: 'column',
           justifyContent: 'space-between',
           marginTop: 12,
           minHeight: 80

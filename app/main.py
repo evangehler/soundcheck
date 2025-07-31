@@ -16,8 +16,10 @@ from pydantic import BaseModel
 from typing import List
 from app.models.album_response import AlbumResponse  # see note below
 from app.db.get_db import get_db
+from app.utils.albumSchema import AlbumAdd
 from typing import Optional
 import os
+from models import Album
 
 app = FastAPI()
 router = APIRouter()
@@ -104,8 +106,6 @@ def get_album_reviews(album_id: int, db: Session = Depends(get_db)):
         )
         .all()
     )
-    for rev in results:
-        print (rev.user.username)
     return [
     ReviewResponse(
         id=r.id,
@@ -188,6 +188,27 @@ def get_all_users(
 
     users = db.query(User).all()
     return users
+@app.delete("/api/users/{user_id}")
+def delete_user(
+    user_id: int,
+    current_user: User = Depends(get_admin_user),
+    db: Session = Depends(get_db)
+):
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    if user.is_admin:
+        raise HTTPException(status_code=403, detail="Admin can't delete Admin")
 
+    db.delete(user)
+    db.commit()
+    return {"message": f"User {user_id} deleted successfully"}
 
+@app.post("/api/albums")
+def create_album(album: AlbumAdd,current_user: User = Depends(get_admin_user),db: Session = Depends(get_db)):
+    album = Album(**album.dict())
+    db.add(album)
+    db.commit()
+    db.refresh(album)
+    return album
 app.include_router(router)

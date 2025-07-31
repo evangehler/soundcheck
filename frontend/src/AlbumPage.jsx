@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Container, Group, Stack, Text } from '@mantine/core';
+import { Container, Group, Stack, Text,Card } from '@mantine/core';
 import AlbumCard from './AlbumCard.jsx';
 import ReviewCard from './ReviewCard.jsx';
 
@@ -25,13 +25,20 @@ export default function AlbumPage() {
 
   return (
     <Container py="lg">
-      <Link to="/" style={{ color: '#60a5fa', textDecoration: 'underline' }}>← Back to Albums</Link>
-      <Group align="flex-start" spacing="xl" mt="lg">
-        <Text weight={600} color="white" size="lg" mb="sm">
-        Average Score: {album.average_score ? album.average_score.toFixed(1) : 'N/A'}
-        </Text>
-        <AlbumCard album={album} />
-        <Stack spacing="md" style={{ flex: 1, alignItems: 'center' }}>
+      <Link to="/" className={"login-button"} style={{ color: '#60a5fa', textDecoration: 'underline' }}>← Back to Albums</Link>
+      <Group align="flex-start" mt="lg" justify="center">
+
+        <Stack spacing="md" style={{ marginRight: '100px' }}>
+          <AlbumCard album={album}/>
+
+          <Card className="glass-card" bg={"#4c5897"} style={{display:"flex", justifyContent:"center", alignItems:"center",textAlign:"center"}}>
+            <Text weight={600} color="white" size="lg" ta="center">
+              Average Score: {album.average_score ? album.average_score.toFixed(1) : 'N/A'}
+            </Text>
+          </Card>
+        </Stack>
+
+        <Stack spacing="md" >
         {reviews.length > 0 ? (
             reviews.map((review) => (
             <div key={review.id} style={{ width: 400 }}>
@@ -42,6 +49,7 @@ export default function AlbumPage() {
             <Text c="gray">No reviews yet.</Text>
         )}
         </Stack>
+
       </Group>
     </Container>
   );

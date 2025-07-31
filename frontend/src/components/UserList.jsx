@@ -2,10 +2,37 @@ import { useEffect, useState } from 'react';
 import {Container, Text, Group, Card, Title, SimpleGrid} from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { useHover } from '@mantine/hooks';
+import {Modal,Button,Stack} from '@mantine/core';
 
 export default function UserList() {
     const [users, setUsers] = useState([]);
     const [hovered, set_hovered] = useState(false);
+    const [selectedUser, setSelectedUser] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const handleDelete = async () => {
+        if(!selectedUser || !selectedUser.id){
+            console.error("no user selected");
+            return;
+        }
+        const token = localStorage.getItem('token');
+        try{
+            const response = await fetch(`http://localhost:8000/api/users/${selectedUser.id}`, {
+                method: 'DELETE',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                }
+            });
+            if(!response.ok){
+                throw new Error("failed");
+            }
+            setUsers((prev) => prev.filter((user) => user.id !== selectedUser.id));
+            setModalOpen(false);
+            setSelectedUser(null);
+        }catch (error){
+            console.error("error whille deleting user", error);
+        }
+    };
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -63,7 +90,7 @@ export default function UserList() {
                 >
                     {users.map(user => (
 
-                    <Card className="glass-card-users hover-card" style={{background: '#262e4a' ,width:'100%',maxWidth:'400px'}} key={user.id}>
+                    <Card className="glass-card-users hover-card" style={{background: '#262e4a' ,width:'100%',maxWidth:'400px'}} key={user.id} onClick={() => {setSelectedUser(user); setModalOpen(true);}}>
                         <Text color="white"><strong>Username:</strong> {user.username}</Text>
                         <Text color="gray"><strong>Email:</strong> {user.email}</Text>
                     </Card>
@@ -76,6 +103,24 @@ export default function UserList() {
           </Text>
         )}
           </div>
+              <Modal opened={modalOpen} onClose={() => setModalOpen(false)} title="Confirm Delete" centered
+                     classNames={{content: 'modal-glass-card', header:'glass-modal-header'}}
+              >
+                <Stack>
+                    <Text>
+                        Are you sure you want to delete user{' '}
+                        <strong>{selectedUser?.username}</strong>?
+                    </Text>
+                    <Group justify="flex-end">
+                        <Button className={'modal-button'} onClick={() => setModalOpen(false)}>
+                            Cancel
+                        </Button>
+                        <Button className={'modal-button'} color="red" onClick={handleDelete}>
+                        Delete
+                        </Button>
+                    </Group>
+            </Stack>
+      </Modal>
 </Container>
   );
 }
