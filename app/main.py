@@ -16,10 +16,8 @@ from pydantic import BaseModel
 from typing import List
 from app.models.album_response import AlbumResponse  # see note below
 from app.db.get_db import get_db
-from app.utils.albumSchema import AlbumAdd
 from typing import Optional
 import os
-from models import Album
 from utils.email import sendEmail
 
 app = FastAPI()
@@ -206,11 +204,5 @@ def delete_user(
     db.commit()
     return {"message": f"User {user_id} deleted successfully"}
 
-@app.post("/api/albums")
-def create_album(album: AlbumAdd,current_user: User = Depends(get_admin_user),db: Session = Depends(get_db)):
-    album = Album(**album.dict())
-    db.add(album)
-    db.commit()
-    db.refresh(album)
-    return album
+
 app.include_router(router)
