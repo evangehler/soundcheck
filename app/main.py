@@ -253,8 +253,9 @@ def delete_user(
 # ---------- USER PROFILE PAGE ----------
 
 class UserProfileReview(BaseModel):
+    album_id: int  
     album_title: str
-    score: int
+    score: float
     review: str
 
     class Config:
@@ -277,6 +278,7 @@ def get_user_profile(user_id: int, db: Session = Depends(get_db)):
 
     reviews = [
         UserProfileReview(
+            album_id=rating.album.id,           # ✅ include album_id
             album_title=rating.album.title,
             score=rating.score,
             review=rating.review or ""

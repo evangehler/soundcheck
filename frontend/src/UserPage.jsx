@@ -1,7 +1,7 @@
 // UserPage.jsx
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Container, Title, Text, Card, Stack } from '@mantine/core';
+import { Container, Title, Text, Card, Stack, Rating } from '@mantine/core';
 
 export default function UserPage() {
   const { id } = useParams();
@@ -26,8 +26,10 @@ export default function UserPage() {
       <Stack spacing="sm">
         {user.reviews.length > 0 ? user.reviews.map((rev, i) => (
           <Card key={i} className="glass-card" bg="#4c5897">
-            <Text c="white"><strong>{rev.album_title}</strong></Text>
-            <Text c="white">Score: {rev.score}/10</Text>
+            <Link to={`/albums/${rev.album_id}`} style={{ color: 'white', fontWeight: 600, textDecoration: 'none' }}>
+              {rev.album_title}
+            </Link>
+            <Rating value={rev.score} readOnly fractions={2} size="md" color="yellow" />
             <Text c="gray">{rev.review}</Text>
           </Card>
         )) : (
