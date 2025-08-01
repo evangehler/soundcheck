@@ -10,7 +10,7 @@ export default function ReviewCard({ review }) {
       radius="md"
       bg="#4c5897"
       padding="md"
-      style={{ maxWidth: 500, margin: 'auto', alignSelf: "right" }}
+      style={{ maxWidth: 500, margin: 'none', alignSelf: "right" }}
     >
       <Blockquote color="white">
         <Text c="white">{review.review}</Text>
