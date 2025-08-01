@@ -1,6 +1,6 @@
 import { useState,useEffect} from "react";
-import Login from "./Login";
-import Register from "./Register";
+import Login from "./Login.jsx";
+import Register from "./Register.jsx";
 import {useLocation, useNavigate} from "react-router-dom";
 
 
@@ -22,6 +22,7 @@ export default function AuthContainer({ setUsername }) {
 
   // Send login request and update app-level username
   async function handleLogin(data) {
+
     try {
       const response = await fetch("http://localhost:8000/login", {
         method: "POST",
@@ -34,7 +35,9 @@ export default function AuthContainer({ setUsername }) {
       if (response.ok) {
         localStorage.setItem("Authenticated", "true");
         localStorage.setItem("username", result.username);
-        setUsername(result.username);  // 🔥 Immediately update state
+        localStorage.setItem("token", result.access_token);
+        console.log("Login result:", result);
+        setUsername(result.username);
         navigate('/');
       } else {
         alert(result.detail || "Invalid login");
@@ -74,12 +77,12 @@ alert(result.detail ?? result.message ?? JSON.stringify(result) ?? "fail");
       {mode === "login" ? (
         <>
           <Login onSubmit={handleLogin} />
-            <button className="alt-button" onClick={() => navigate("/signup")}>Register here!</button>
+            <button className="login-button" onClick={() => navigate("/signup")}>Register here!</button>
         </>
       ) : (
         <>
           <Register onSubmit={handleRegister} />
-            <button className='alt-alt-button' onClick={() => {navigate("/login");}}>Login Here!</button>
+            <button className='login-button' onClick={() => {navigate("/login");}}>Login Here!</button>
         </>
       )}
     </div>
