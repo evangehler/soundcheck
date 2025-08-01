@@ -19,6 +19,7 @@ from app.utils.hash import hash_password, verify_password
 from app.utils.security import create_token, SECRET_KEY, ALGORITHM
 from app.utils.albumSchema import AlbumAdd
 
+from datetime import datetime
 from typing import Optional
 import os
 from app.utils.email import sendEmail
@@ -86,8 +87,9 @@ class ReviewResponse(BaseModel):
     id: int
     user_id: int
     user_name: str
-    score: int
+    score: float
     review: str
+    created_at: datetime
 
     class Config:
         orm_mode = True
@@ -111,7 +113,8 @@ def get_album_reviews(album_id: int, db: Session = Depends(get_db)):
             user_id=r.user_id,
             user_name=r.user.username,
             score=r.score,
-            review=r.review
+            review=r.review,
+            created_at=r.created_at
         )
         for r in results
     ]

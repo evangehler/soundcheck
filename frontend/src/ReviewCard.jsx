@@ -2,26 +2,34 @@ import { Card, Text, Blockquote, Rating, Group } from '@mantine/core';
 import { Link } from 'react-router-dom';
 
 export default function ReviewCard({ review }) {
+  const formattedDate = new Date(review.created_at).toLocaleString();
+
   return (
-    <Card shadow="sm" radius="md" bg="#4c5897" padding="md" style={{ maxWidth: 500, margin: 'auto', alignSelf: "right" }}>
-      <Blockquote
-        color="white"
-        cite={
-          <Link to={`/users/${review.user_id}`} style={{ color: 'lightblue' }}>
-            – {review.user_name}
-          </Link>
-        }
-      >
+    <Card
+      shadow="sm"
+      radius="md"
+      bg="#4c5897"
+      padding="md"
+      style={{ maxWidth: 500, margin: 'auto', alignSelf: "right" }}
+    >
+      <Blockquote color="white">
         <Text c="white">{review.review}</Text>
       </Blockquote>
 
-      <Group justify="flex-end" mt="sm">
+      <Group justify="space-between" mt="xs">
+        <div>
+          <Link to={`/users/${review.user_id}`} style={{ color: 'lightblue', fontWeight: 500, textDecoration: 'none' }}>
+            {review.user_name}
+          </Link>
+          <Text size="xs" color="gray">{formattedDate}</Text>
+        </div>
+
         <Rating
           value={review.score}
-          fractions={2}       // allows 0.5 steps
+          fractions={2}
           readOnly
           size="lg"
-          color="pink"
+          color="yellow"
         />
       </Group>
     </Card>
