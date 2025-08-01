@@ -274,3 +274,44 @@ def create_album(
 
 # Include router for login/signup
 app.include_router(router)
+
+# ---------- SUBMIT REVIEW (with rating) ----------
+
+from pydantic import BaseModel
+
+class RatingInput(BaseModel):
+    score: float
+    review: Optional[str]
+
+@app.post("/api/albums/{album_id}/rate")
+def submit_rating(
+    album_id: int,
+    input: RatingInput,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    # Check for existing rating by this user
+    existing = db.query(Rating).filter_by(user_id=current_user.id, album_id=album_id).first()
+    if existing:
+        existing.score = input.score
+        existing.review = input.review
+    else:
+        new_rating = Rating(
+            user_id=current_user.id,
+            album_id=album_id,
+            score=input.score,
+            review=input.review
+        )
+        db.add(new_rating)
+
+    db.commit()
+
+    # Update average score on album
+    ratings = db.query(Rating).filter(Rating.album_id == album_id).all()
+    if ratings:
+        avg = sum(r.score for r in ratings) / len(ratings)
+        album_obj = db.query(album.Album).filter_by(id=album_id).first()
+        album_obj.average_score = round(avg, 2)
+        db.commit()
+
+    return {"message": "Rating submitted"}

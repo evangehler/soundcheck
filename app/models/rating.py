@@ -5,7 +5,7 @@ from app.db.database import Base
 class Rating(Base):
     __tablename__ = "ratings"
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey("users.id"))
     album_id = Column(Integer, ForeignKey("albums.id"))
     score = Column(Integer, nullable=False)

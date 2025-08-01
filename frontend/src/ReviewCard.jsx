@@ -20,8 +20,8 @@ export default function ReviewCard({ review }) {
           value={review.score}
           fractions={2}       // allows 0.5 steps
           readOnly
-          size="md"
-          color="yellow"
+          size="lg"
+          color="pink"
         />
       </Group>
     </Card>
