@@ -19,6 +19,7 @@ from app.db.get_db import get_db
 from app.utils.albumSchema import AlbumAdd
 from typing import Optional
 import os
+from app.utils.email import sendEmail
 
 app = FastAPI()
 router = APIRouter()
@@ -150,6 +151,7 @@ def registration(data: RegUser,db: Session=Depends(get_db)):
         raise HTTPException(status_code=400, detail="Username already registered")
     hashed_password = hash_password(data.password)
     new_user = User(username=data.username,hashed_password=hashed_password,email=data.email,is_admin=False)
+    sendEmail(new_user.email,new_user.username)
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
