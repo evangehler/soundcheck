@@ -46,7 +46,7 @@ export default function AlbumPage() {
       <Link to="/" className="" style={{ color: '#60a5fa', textDecoration: 'underline' }}>
         ← Back to Albums
       </Link>
-      <Group align="flex-start" mt="lg" justify="center" style={{ gap: '2rem' }}>
+      <Group align="flex-start" mt="lg" justify="center" style={{ gap: '2rem' }} className="modal-glass-card">
         <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
           {/* Left: Album Info */}
           <div style={{ width: 400 }}>

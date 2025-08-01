@@ -16,7 +16,7 @@ export default function FrontPage() {
       <div style={{ marginTop: '5rem' }} >
         <Title style={{fontStyle:'italic',}}size="h1" order={2} ta="left" mb="xl" c="white">Featured Albums</Title>
 
-        <SimpleGrid className="glass-card-reviews"
+        <SimpleGrid className="modal-glass-card"
           cols={{ base: 1, xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }}
           spacing={{ base: 'md', sm: 'lg', md: 'xl' }}
           verticalSpacing={{ base: 'md', sm: 'lg', md: 'xl' }}

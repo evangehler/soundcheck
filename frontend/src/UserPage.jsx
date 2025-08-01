@@ -23,7 +23,7 @@ export default function UserPage() {
       <Text c="gray" mb="md">Email: {user.email}</Text>
 
       <Title order={4} mt="lg" c="white">Reviews:</Title>
-      <Stack spacing="sm">
+      <Stack spacing="sm" className={"modal-glass-card"}>
         {user.reviews.length > 0 ? user.reviews.map((rev, i) => (
           <Card key={i} className="glass-card" bg="#4c5897">
             <Link to={`/albums/${rev.album_id}`} style={{ color: 'white', fontWeight: 600, textDecoration: 'none' }}>
