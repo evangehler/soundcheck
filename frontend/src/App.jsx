@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import TopBar from "./components/TopBar.jsx";
 import AlbumList from './FrontPage.jsx';
 import AlbumPage from './AlbumPage.jsx';
+import UserPage from './UserPage.jsx';
 import AuthContainer from "./components/AuthContainer.jsx";
 import UserList from "./components/UserList.jsx";
 
@@ -26,6 +27,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<AlbumList />} />
         <Route path="/albums/:id" element={<AlbumPage />} />
+        <Route path="/users/:id" element={<UserPage />} />
         <Route path="/login" element={<AuthContainer setUsername={setUsername} />} />
         <Route path="/signup" element={<AuthContainer setUsername={setUsername} />} />
           <Route path="/users" element={<UserList />} />

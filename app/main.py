@@ -1,30 +1,36 @@
-from fastapi import FastAPI, Depends,HTTPException,APIRouter,Header,status
+from fastapi import FastAPI, Depends, HTTPException, APIRouter, Header, status
 from fastapi.security import OAuth2PasswordBearer
-from jose import jwt, JWTError
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import joinedload
+from sqlalchemy.orm import Session, joinedload
+from jose import jwt, JWTError
+from pydantic import BaseModel
+from typing import List, Optional
+import os
+
 from app.db import database
-from app.models import album 
+from app.db.get_db import get_db
+from app.models import album
+from app.models.album_response import AlbumResponse
 from app.models.rating import Rating
+from app.models.user import User
 from app.utils.hash import hash_password, verify_password
 from app.utils.security import create_token, SECRET_KEY, ALGORITHM
-from app.models.user import User
-from pydantic import BaseModel
-from typing import List
-from app.models.album_response import AlbumResponse  # see note below
-from app.db.get_db import get_db
 from app.utils.albumSchema import AlbumAdd
+
 from typing import Optional
 import os
 from app.utils.email import sendEmail
 
+# FastAPI setup
 app = FastAPI()
 router = APIRouter()
 
-# Allow Vite frontend to talk to FastAPI backend in dev mode
+# OAuth2 setup
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/token")
+
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
@@ -33,20 +39,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Serve static assets for production
+# Serve assets for production
 app.mount("/assets", StaticFiles(directory="frontend/src/assets"), name="assets")
 
-# Get Database
-# def get_db():
-#     db = database.SessionLocal()
-#     try:
-#         yield db
-#     finally:
-#         db.close()
-
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/token")
-
-
+# Create admin user on startup
 @app.on_event("startup")
 def create_admin():
     db: Session = next(get_db())
@@ -68,6 +64,9 @@ def create_admin():
         print("Admin created")
     else:
         print("Admin already exists")
+
+# ---------- ROUTES ----------
+
 @app.get("/")
 def serve_react_app():
     return FileResponse("frontend/dist/index.html")
@@ -85,13 +84,13 @@ def get_album(album_id: int, db: Session = Depends(get_db)):
 
 class ReviewResponse(BaseModel):
     id: int
+    user_id: int
     user_name: str
     score: int
     review: str
 
     class Config:
         orm_mode = True
-
 
 @app.get("/api/albums/{album_id}/reviews", response_model=List[ReviewResponse])
 def get_album_reviews(album_id: int, db: Session = Depends(get_db)):
@@ -102,24 +101,64 @@ def get_album_reviews(album_id: int, db: Session = Depends(get_db)):
             Rating.album_id == album_id,
             Rating.review != None,
             Rating.review != "",
-            User.id == Rating.user_id  # ensure join worked
+            User.id == Rating.user_id
         )
         .all()
     )
     return [
-    ReviewResponse(
-        id=r.id,
-        user_name=r.user.username,  # fix here
-        score=r.score,
-        review=r.review
-    )
-    for r in results
+        ReviewResponse(
+            id=r.id,
+            user_id=r.user_id,
+            user_name=r.user.username,
+            score=r.score,
+            review=r.review
+        )
+        for r in results
     ]
+
+# ---------- AUTH ----------
 
 class RegUser(BaseModel):
     username: str
     password: str
     email: str
+
+@router.post("/signup", response_model=RegUser)
+def registration(data: RegUser, db: Session = Depends(get_db)):
+    if db.query(User).filter(User.username == data.username).first():
+        raise HTTPException(status_code=400, detail="Username already registered")
+    hashed_password = hash_password(data.password)
+    new_user = User(
+        username=data.username,
+        hashed_password=hashed_password,
+        email=data.email,
+        is_admin=False
+    )
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+    return {
+        "username": data.username,
+        "password": hashed_password,
+        "email": data.email
+    }
+
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+
+@router.post("/login")
+def login(data: LoginRequest, db: Session = Depends(get_db)):
+    user = db.query(User).filter(User.username == data.username).first()
+    if not user or not verify_password(data.password, user.hashed_password):
+        raise HTTPException(status_code=401, detail="Invalid username or password")
+    token = create_token({"sub": str(user.id)})
+    return {
+        "access_token": token,
+        "message": "Login successful",
+        "username": user.username,
+        "user_id": user.id
+    }
 
 def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> User:
     credentials_exception = HTTPException(
@@ -144,6 +183,9 @@ def get_admin_user(current_user: User = Depends(get_current_user)) -> User:
     if not current_user.is_admin:
         raise HTTPException(status_code=403, detail="Admin access required")
     return current_user
+
+
+# ---------- USERS ----------
 
 @router.post("/signup", response_model=RegUser)
 def registration(data: RegUser,db: Session=Depends(get_db)):
@@ -176,6 +218,7 @@ class UserStuff(BaseModel):
     email: str
     class Config:
         orm_mode = True
+
 @app.get("/api/users", response_model=List[UserStuff])
 def get_all_users(
     current_user: User = Depends(get_current_user),
@@ -186,9 +229,8 @@ def get_all_users(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Admin access required"
         )
+    return db.query(User).all()
 
-    users = db.query(User).all()
-    return users
 @app.delete("/api/users/{user_id}")
 def delete_user(
     user_id: int,
@@ -205,11 +247,101 @@ def delete_user(
     db.commit()
     return {"message": f"User {user_id} deleted successfully"}
 
+# ---------- USER PROFILE PAGE ----------
+
+class UserProfileReview(BaseModel):
+    album_title: str
+    score: int
+    review: str
+
+    class Config:
+        orm_mode = True
+
+class UserProfile(BaseModel):
+    id: int
+    username: str
+    email: str
+    reviews: List[UserProfileReview]
+
+    class Config:
+        orm_mode = True
+
+@app.get("/api/users/{user_id}", response_model=UserProfile)
+def get_user_profile(user_id: int, db: Session = Depends(get_db)):
+    user = db.query(User).options(joinedload(User.ratings).joinedload(Rating.album)).filter(User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    reviews = [
+        UserProfileReview(
+            album_title=rating.album.title,
+            score=rating.score,
+            review=rating.review or ""
+        )
+        for rating in user.ratings if rating.review
+    ]
+
+    return UserProfile(
+        id=user.id,
+        username=user.username,
+        email=user.email,
+        reviews=reviews
+    )
+
+# ---------- ADMIN ALBUM CREATION ----------
+
 @app.post("/api/albums")
-def create_album(album: AlbumAdd,current_user: User = Depends(get_admin_user),db: Session = Depends(get_db)):
-    album = Album(**album.dict())
+def create_album(
+    album: AlbumAdd,
+    current_user: User = Depends(get_admin_user),
+    db: Session = Depends(get_db)
+):
+    album = album.Album(**album.dict())
     db.add(album)
     db.commit()
     db.refresh(album)
     return album
+
+# Include router for login/signup
 app.include_router(router)
+
+# ---------- SUBMIT REVIEW (with rating) ----------
+
+from pydantic import BaseModel
+
+class RatingInput(BaseModel):
+    score: float
+    review: Optional[str]
+
+@app.post("/api/albums/{album_id}/rate")
+def submit_rating(
+    album_id: int,
+    input: RatingInput,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    # Check for existing rating by this user
+    existing = db.query(Rating).filter_by(user_id=current_user.id, album_id=album_id).first()
+    if existing:
+        existing.score = input.score
+        existing.review = input.review
+    else:
+        new_rating = Rating(
+            user_id=current_user.id,
+            album_id=album_id,
+            score=input.score,
+            review=input.review
+        )
+        db.add(new_rating)
+
+    db.commit()
+
+    # Update average score on album
+    ratings = db.query(Rating).filter(Rating.album_id == album_id).all()
+    if ratings:
+        avg = sum(r.score for r in ratings) / len(ratings)
+        album_obj = db.query(album.Album).filter_by(id=album_id).first()
+        album_obj.average_score = round(avg, 2)
+        db.commit()
+
+    return {"message": "Rating submitted"}
