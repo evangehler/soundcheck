@@ -20,6 +20,7 @@ from app.utils.albumSchema import AlbumAdd
 from typing import Optional
 import os
 from models import Album
+from utils.email import sendEmail
 
 app = FastAPI()
 router = APIRouter()
@@ -154,6 +155,7 @@ def registration(data: RegUser,db: Session=Depends(get_db)):
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
+    sendEmail(new_user.email,new_user.username)
     return {"username":data.username ,"password":hashed_password, "email":data.email}
 
 class LoginRequest(BaseModel):
