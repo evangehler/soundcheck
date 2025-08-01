@@ -8,7 +8,8 @@ import traceback
 load_dotenv()
 email_address = os.getenv("EMAIL_ADDRESS")
 email_password = os.getenv("EMAIL_PASSWORD")
-email_enabled = os.getenv("EMAIL_ENABLED",'False') == 'True'
+email_enabled = os.getenv("EMAIL_ENABLED",'False') == 'True' #change second boolean to False to enable emails
+
 
 print(f"EMAIL_ADDRESS: {email_address}")
 print(f"EMAIL_PASSWORD: {email_password}")
