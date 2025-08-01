@@ -39,7 +39,7 @@ sample_ratings = [
     Rating(user_id=1, album_id=1, score=1, review = "This is garbage"),
     Rating(user_id=2, album_id=1, score=5, review = "I clicked 5 on accident. This sucks"),
     Rating(user_id=3, album_id=1, score=2, review = "I only gave it a 2 in honor of Radiohead 2, the band that that someone should start so that I can forget about this insult to music"),
-    Rating(user_id=4, album_id=1, score=4, review = "This was pretty good. Love the John Cage influence. Had it on mute though"),
+    Rating(user_id=4, album_id=1, score=4, review = "This was pretty good. Love the John Cage influence. Had it on mute  was pretty good. Love the John Cage influence. Had it on mute  was pretty good. Love the John Cage influence. Had it on mute  was pretty good. Love the John Cage influence. Had it on mute  was pretty good. Love the John Cage influence. Had it on mute  was pretty good. Love the John Cage influence. Had it on mute  was pretty good. Love the John Cage influence. Had it on mute  was pretty good. Love the John Cage influence. Had it on mute  was pretty good. Love the John Cage influence. Had it on mute though"),
 
     Rating(user_id=3, album_id=3, score=1, review = "This guy doesn't make any sense."),
     Rating(user_id=4, album_id=3, score=5, review = "This guy doesn't make any sense."),
