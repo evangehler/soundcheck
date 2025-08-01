@@ -14,6 +14,7 @@ export default function TopBar({ username, setUsername }) {
   const handleLogout = () => {
     localStorage.removeItem("Authenticated");
     localStorage.removeItem("username");
+    localStorage.removeItem("token");
     setUsername(null);
     window.location.href = "/login";
   };
@@ -27,10 +28,11 @@ export default function TopBar({ username, setUsername }) {
       </Link>
 
       <Group>
+
         {username ? (
         // Show logout and username if logged in
           <>
-            <span style={{ color: 'white' }}>Logged in as <strong>{username}</strong></span>
+            <span style={{ color: 'white',fontWeight:'bold'}}>Logged in as <strong>{username}</strong></span>
             <Button variant="outline" onClick={handleLogout}>Logout</Button>
               {username == "admin" && (
               <Button variant={"filled"} onClick={()=> navigate('/users')}>Users</Button>)}

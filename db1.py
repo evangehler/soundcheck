@@ -17,7 +17,15 @@ sample_albums = [
     Album(id=2, title="To Pimp a Butterfly", artist="Kendrick Lamar", year=2015, cover_url="https://upload.wikimedia.org/wikipedia/en/f/f6/Kendrick_Lamar_-_To_Pimp_a_Butterfly.png"),
     Album(id=3, title="Aeroplane Over the Sea", artist="Neutral Milk Hotel", year=1998, cover_url="https://upload.wikimedia.org/wikipedia/en/8/83/In_the_aeroplane_over_the_sea_album_cover_copy.jpg"),
     Album(id=4, title="Rumours", artist="Fleetwood Mac", year=1977, cover_url="https://upload.wikimedia.org/wikipedia/en/f/fb/FMacRumours.PNG"),
-    Album(id=5, title="Blonde", artist="Frank Ocean", year=2016, cover_url="https://upload.wikimedia.org/wikipedia/en/a/a0/Blonde_-_Frank_Ocean.jpeg")
+    Album(id=5, title="Blonde", artist="Frank Ocean", year=2016, cover_url="https://upload.wikimedia.org/wikipedia/en/a/a0/Blonde_-_Frank_Ocean.jpeg"),
+    Album(id=6, title="Purple Rain", artist="Prince & The Revolution", year=1984, cover_url="https://upload.wikimedia.org/wikipedia/en/9/9c/Princepurplerain.jpg"),
+    Album(id=7, title="Hysteria", artist="Def Leppard", year=1987, cover_url="https://upload.wikimedia.org/wikipedia/en/4/40/Def_Leppard_-_Hysteria_%28vinyl_version%29.jpg"),
+    Album(id=8, title="Imaginal Disk", artist="Magdelena Bay", year=2024, cover_url="https://upload.wikimedia.org/wikipedia/en/4/4b/Magdalena_Bay_-_Imaginal_Disk.png"),
+    Album(id=9, title="Tragic Kingdom", artist="No Doubt", year=1995,cover_url="https://upload.wikimedia.org/wikipedia/en/9/9d/No_Doubt_-_Tragic_Kingdom.png"),
+    Album(id=10, title="The Dark Side of the Moon", artist="Pink Floyd", year=1973,cover_url="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png"),
+    Album(id=11, title="Swimming", artist="Mac Miller", year=2018,cover_url="https://upload.wikimedia.org/wikipedia/en/5/5e/Mac_Miller_-_Swimming.png"),
+    Album(id=12, title="Thriller", artist="Michael Jackson", year=1982,cover_url="https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png"),
+
 ]
 
 sample_users = [

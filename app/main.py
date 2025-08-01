@@ -19,6 +19,10 @@ from app.utils.hash import hash_password, verify_password
 from app.utils.security import create_token, SECRET_KEY, ALGORITHM
 from app.utils.albumSchema import AlbumAdd
 
+from typing import Optional
+import os
+from app.utils.email import sendEmail
+
 # FastAPI setup
 app = FastAPI()
 router = APIRouter()
@@ -180,7 +184,33 @@ def get_admin_user(current_user: User = Depends(get_current_user)) -> User:
         raise HTTPException(status_code=403, detail="Admin access required")
     return current_user
 
+
 # ---------- USERS ----------
+
+@router.post("/signup", response_model=RegUser)
+def registration(data: RegUser,db: Session=Depends(get_db)):
+    if db.query(User).filter(User.username == data.username).first():
+        raise HTTPException(status_code=400, detail="Username already registered")
+    hashed_password = hash_password(data.password)
+    new_user = User(username=data.username,hashed_password=hashed_password,email=data.email,is_admin=False)
+    sendEmail(new_user.email,new_user.username)
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+    return {"username":data.username ,"password":hashed_password, "email":data.email}
+
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+
+@router.post("/login")
+def login(data: LoginRequest, db: Session = Depends(get_db)):
+    user = db.query(User).filter(User.username == data.username).first()
+    if not user or not verify_password(data.password, user.hashed_password):
+        raise HTTPException(status_code=401, detail="Invalid username or password")
+    token = create_token({"sub":str(user.id)})
+    return {"access_token":token, "message": "Login successful", "username": user.username, "user_id": user.id}
+
 
 class UserStuff(BaseModel):
     id: int
