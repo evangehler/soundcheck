@@ -19,7 +19,6 @@ from app.db.get_db import get_db
 from app.utils.albumSchema import AlbumAdd
 from typing import Optional
 import os
-from models import Album
 
 app = FastAPI()
 router = APIRouter()
