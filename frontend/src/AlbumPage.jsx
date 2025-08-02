@@ -67,7 +67,15 @@ return (
       <Link to="/" style={{ color: '#60a5fa', textDecoration: 'underline' }}>
         ← Back to Albums
       </Link>
-      <div style={{ display: 'flex', gap: '2rem', flexWrap: 'nowrap', width: '100%', justifyContent: 'space-between' }}>
+      <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    alignItems: 'flex-start',
+                    gap: '2rem',
+                    width: '100%',
+                    marginTop: '2rem',
+                  }}>
         <Group
           align="flex-start"
           mt="lg"
@@ -125,8 +133,8 @@ return (
         </Group>
 
         {/* Reviews */}
-        <div style={{ marginTop: '3rem', display: 'flex', justifyContent: 'center' }}>
-          <div style={{ width: 500, marginRight: '10rem' }}>
+        <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center' }}>
+          <div style={{ width: 500 }}>
             <Text style={{ textAlign: 'center' }} c="white" size="xl" fw={600}>
               Reviews
             </Text>
@@ -178,26 +186,9 @@ return (
                     ))}
                   </>
                 ) : (
-                  <>
-                    {user_id && (
-                      <RatingSubmission
-                        album_id={id}
-                        onSubmit={() => {
-                          refreshReviews();
-                          fetch(`http://localhost:8000/api/albums/${id}`)
-                            .then((res) => res.json())
-                            .then(set_album);
-                        }}
-                        onCancel={() => {}}
-                        initialScore={0}
-                        initialReview=""
-                        isEditing={false}
-                      />
-                    )}
-                    <Text c="gray" mt="xl">
-                      No reviews yet. Be the first to review!
-                    </Text>
-                  </>
+                  <Text c="gray" mt="xl">
+                    No reviews yet. Be the first to review!
+                  </Text>
                 )}
               </Stack>
             </ScrollArea>
