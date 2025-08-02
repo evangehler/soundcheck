@@ -4,6 +4,7 @@ import TopBar from "./components/TopBar.jsx";
 import AlbumList from './FrontPage.jsx';
 import AlbumPage from './AlbumPage.jsx';
 import UserPage from './UserPage.jsx';
+import SearchPage from './SearchPage.jsx';
 import AuthContainer from "./components/AuthContainer.jsx";
 import UserList from "./components/UserList.jsx";
 
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/" element={<AlbumList />} />
         <Route path="/albums/:id" element={<AlbumPage />} />
         <Route path="/users/:id" element={<UserPage />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="/login" element={<AuthContainer setUsername={setUsername} />} />
         <Route path="/signup" element={<AuthContainer setUsername={setUsername} />} />
           <Route path="/users" element={<UserList />} />
