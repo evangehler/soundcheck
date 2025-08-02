@@ -139,9 +139,9 @@ export default function AlbumPage() {
         <ReviewCard review={review} />
           {review.user_id === user_id && !editing && (
             <Button 
-              variant="outline" 
-              size="xs" 
-              style={{ position: 'absolute', top: 8, right: 8 }}
+              variant="subtle"
+              size="sm" 
+              style={{ position: 'absolute', top: 16, right: 16 }}
               onClick={() => set_editing(true)}
             >
               Edit
