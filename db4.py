@@ -4,11 +4,20 @@ from app.models.album import Album
 from app.models.rating import Rating
 from app.models.user import User
 from sqlalchemy import func
+from app.utils.hash import hash_password
 
 # Drop and recreate tables
 Base.metadata.drop_all(bind=engine)
 Base.metadata.create_all(bind=engine)
 print("Tables dropped and recreated.")
+
+
+sample_users = [
+    User(username="shanthony_mantano99", email="wifeleft70@hotmail.gov", hashed_password=hash_password("fantano420")),
+    User(username="particlegardener", email="daplantman@proton.me", hashed_password=hash_password("jalapeno12")),
+    User(username="paul_mcartney", email="notaclone@british.tea", hashed_password=hash_password("herethereand")),
+    User(username="jessemoras", email="goofy@goober.me", hashed_password=hash_password("schwartzschwartzschwartz")),
+]
 
 # Load scraped albums
 with open("scraped_albums.json", "r", encoding="utf-8") as f:
@@ -20,7 +29,7 @@ albums_to_add = [
         title=item["title"],
         artist=item["artist"],
         year=item["year"],
-        genre=item.get("genre"),  # if you've added genre to the model
+        genre=item.get("genre"),
         cover_url=item["cover_url"]
     )
     for item in scraped_data
@@ -28,6 +37,7 @@ albums_to_add = [
 
 # Commit to database
 db = SessionLocal()
+db.add_all(sample_users)
 try:
     db.add_all(albums_to_add)
     db.commit()
