@@ -160,7 +160,8 @@ def login(data: LoginRequest, db: Session = Depends(get_db)):
         "access_token": token,
         "message": "Login successful",
         "username": user.username,
-        "user_id": user.id
+        "user_id": user.id,
+        "is_admin": user.is_admin
     }
 
 def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> User:

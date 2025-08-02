@@ -37,6 +37,7 @@ export default function AuthContainer({ setUsername }) {
         localStorage.setItem("username", result.username);
         localStorage.setItem("token", result.access_token);
         localStorage.setItem("user_id", result.user_id);
+        localStorage.setItem("is_admin",result.is_admin)
         console.log("Login result:", result);
         setUsername(result.username);
         navigate('/');

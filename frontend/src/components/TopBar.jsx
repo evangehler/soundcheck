@@ -6,14 +6,18 @@ import { Button, Group, Image, Menu, Text, Avatar } from '@mantine/core';
 import logo from '../assets/soundcheck logo.png';           // Logo
 import { TextInput } from '@mantine/core';
 
+
 // TopBar receives username and setUsername as props from App
 export default function TopBar({ username, setUsername }) {
   const [userId, setUserId] = useState(null);
   const [search_query, set_search_query] = useState('');
+  const[is_admin, setIsAdmin] = useState(true);
   const navigate = useNavigate();
   useEffect(() => {
     const storedId = localStorage.getItem('user_id');
     if (storedId) setUserId(storedId);
+    const adminFlag = localStorage.getItem("is_admin");
+    setIsAdmin(adminFlag === 'true' || adminFlag === true);
   }, []);
 
    // Called when user clicks logout
@@ -53,6 +57,7 @@ export default function TopBar({ username, setUsername }) {
       </Link>
 
       {/* Search */}
+      { username && (
       <form onSubmit={handle_search_submit} style={{ flexGrow: 0.2, margin: '0 1rem' }}>
         <TextInput
           value={search_query}
@@ -61,7 +66,7 @@ export default function TopBar({ username, setUsername }) {
           radius="md"
           size="sm"
         />
-      </form>
+      </form>)}
 
       <Group>
         {username ? (
@@ -74,7 +79,7 @@ export default function TopBar({ username, setUsername }) {
             <Menu.Dropdown>
               <Menu.Label>Welcome, {username}</Menu.Label>
               <Menu.Item onClick={() => navigate(`/users/${userId}`)}>Your Page</Menu.Item>
-              {username === "admin" && (
+              {is_admin && (
                 <Menu.Item onClick={() => navigate("/users")}>Admin Panel</Menu.Item>
               )}
               <Menu.Divider />
