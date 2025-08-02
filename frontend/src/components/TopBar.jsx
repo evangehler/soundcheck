@@ -26,7 +26,17 @@ export default function TopBar({ username, setUsername }) {
   };
 
   return (
-    <div className="glass-card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', background: '#262e4a' }}>
+    <div className="glass-card-header" style={{ display: 'flex', 
+    borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
+    borderLeft: 'none',
+    borderRight: 'none',
+    borderTop: 'none',
+    borderRadius: '0px',
+    justifyContent: 'space-between', 
+    alignItems: 'center', 
+    borderRadius: '5px', 
+    padding: '0.1rem 1rem', 
+    background: '#262e4a' }}>
       <Link to="/" style={{ textDecoration: 'none' }}>
         <span style={{ display: 'inline-block', width: 100 }}>
           <Image src={logo} alt="Logo" fit="contain" />
