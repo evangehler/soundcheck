@@ -24,7 +24,7 @@ sample_albums = [
     Album(id=9, title="Tragic Kingdom", artist="No Doubt", year=1995,cover_url="https://upload.wikimedia.org/wikipedia/en/9/9d/No_Doubt_-_Tragic_Kingdom.png"),
     Album(id=10, title="The Dark Side of the Moon", artist="Pink Floyd", year=1973,cover_url="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png"),
     Album(id=11, title="Swimming", artist="Mac Miller", year=2018,cover_url="https://upload.wikimedia.org/wikipedia/en/5/5e/Mac_Miller_-_Swimming.png"),
-    Album(id=12, title="Thriller", artist="Michael Jackson", year=1982,cover_url="https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png"),
+    Album(id=12, title="Thriller", artist="Michael Jackson", year=1982,cover_url="/covers/soundcheck_logo.png"),
 
 ]
 
