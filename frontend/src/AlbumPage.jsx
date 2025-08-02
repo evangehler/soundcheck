@@ -178,9 +178,26 @@ return (
                     ))}
                   </>
                 ) : (
-                  <Text c="gray" mt="xl">
-                    No reviews yet. Be the first to review!
-                  </Text>
+                  <>
+                    {user_id && (
+                      <RatingSubmission
+                        album_id={id}
+                        onSubmit={() => {
+                          refreshReviews();
+                          fetch(`http://localhost:8000/api/albums/${id}`)
+                            .then((res) => res.json())
+                            .then(set_album);
+                        }}
+                        onCancel={() => {}}
+                        initialScore={0}
+                        initialReview=""
+                        isEditing={false}
+                      />
+                    )}
+                    <Text c="gray" mt="xl">
+                      No reviews yet. Be the first to review!
+                    </Text>
+                  </>
                 )}
               </Stack>
             </ScrollArea>
