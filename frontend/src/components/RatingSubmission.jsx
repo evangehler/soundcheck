@@ -62,7 +62,7 @@ export default function RatingSubmission({
   };
 
   return (
-    <Stack spacing="sm" p="sm" className="glass-card" bg="#4c5897">
+    <Stack spacing="sm" p="sm" className="glass-card" bg='rgba(38, 46, 74, 0.8)'>
       <Text c="white" fw={600}>
         {isEditing ? 'Edit Your Review' : 'Leave a Review'}
       </Text>

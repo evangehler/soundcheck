@@ -133,14 +133,43 @@ export default function AlbumPage() {
             <Stack spacing="md" style={{ paddingRight: 12 }}>
 
               {sorted_reviews.length > 0 ? (
-              <>
-                {sorted_reviews.map((review) => (
-                  <ReviewCard key={review.id} review={review} />
+  <>
+    {sorted_reviews.map((review) => (
+      <div key={review.id} style={{ position: 'relative' }}>
+        <ReviewCard review={review} />
+          {review.user_id === user_id && !editing && (
+            <Button 
+              variant="outline" 
+              size="xs" 
+              style={{ position: 'absolute', top: 8, right: 8 }}
+              onClick={() => set_editing(true)}
+            >
+              Edit
+            </Button>
+          )}
+          {review.user_id === user_id && editing && (
+            <RatingSubmission
+              album_id={id}
+              onSubmit={() => {
+                refreshReviews();
+                fetch(`http://localhost:8000/api/albums/${id}`)
+                  .then(res => res.json())
+                  .then(set_album);
+                set_editing(false);
+              }}
+              onCancel={() => set_editing(false)}
+              initialScore={review.score}
+              initialReview={review.review}
+              isEditing={true}
+            />
+                    )}
+                  </div>
                 ))}
               </>
-            ) : sorted_reviews.length === 0 ? (
+            ) : (
               <Text c="gray" mt="xl">No reviews yet. Be the first to review!</Text>
-            ) : null}
+            )}
+
             </Stack>
           </ScrollArea>
         </div>
