@@ -1,0 +1,3019 @@
+[
+  {
+    "title": "AZD",
+    "artist": "Actress",
+    "year": 2017,
+    "genre": "Electronic",
+    "cover_url": "/covers/Actress_AZD.jpg"
+  },
+  {
+    "title": "Selected Ambient Works 85\u201392",
+    "artist": "Aphex Twin",
+    "year": 1993,
+    "genre": "Ambient",
+    "cover_url": "/covers/Aphex_Twin_Selected_Ambient_Works_85_92.jpg"
+  },
+  {
+    "title": "Selected Ambient Works, Volume II",
+    "artist": "Aphex Twin",
+    "year": 1994,
+    "genre": "Ambient",
+    "cover_url": "/covers/Aphex_Twin_Selected_Ambient_Works__Volume_II.jpg"
+  },
+  {
+    "title": "\u2026I Care Because You Do",
+    "artist": "Aphex Twin",
+    "year": 1995,
+    "genre": "Idm",
+    "cover_url": "/covers/Aphex_Twin__I_Care_Because_You_Do.jpg"
+  },
+  {
+    "title": "Richard D. James Album",
+    "artist": "Aphex Twin",
+    "year": 1996,
+    "genre": "Electronic",
+    "cover_url": "/covers/Aphex_Twin_Richard_D._James_Album.jpg"
+  },
+  {
+    "title": "Windowlicker",
+    "artist": "Aphex Twin",
+    "year": 1999,
+    "genre": "Electronic",
+    "cover_url": "/covers/Aphex_Twin_Windowlicker.jpg"
+  },
+  {
+    "title": "Drukqs",
+    "artist": "Aphex Twin",
+    "year": 2001,
+    "genre": "Idm",
+    "cover_url": "/covers/Aphex_Twin_Drukqs.jpg"
+  },
+  {
+    "title": "Syro",
+    "artist": "Aphex Twin",
+    "year": 2014,
+    "genre": "Idm",
+    "cover_url": "/covers/Aphex_Twin_Syro.jpg"
+  },
+  {
+    "title": "Utility",
+    "artist": "Barker",
+    "year": 2019,
+    "genre": null,
+    "cover_url": "/covers/Barker_Utility.jpg"
+  },
+  {
+    "title": "HIT ME HARD AND SOFT",
+    "artist": "Billie Eilish",
+    "year": 2024,
+    "genre": "Alternative",
+    "cover_url": "/covers/Billie_Eilish_HIT_ME_HARD_AND_SOFT.jpg"
+  },
+  {
+    "title": "Cold Visions",
+    "artist": "Bladee",
+    "year": 2024,
+    "genre": null,
+    "cover_url": "/covers/Bladee_Cold_Visions.jpg"
+  },
+  {
+    "title": "For Emma, Forever Ago",
+    "artist": "Bon Iver",
+    "year": 2008,
+    "genre": "Contemporary Folk",
+    "cover_url": "/covers/Bon_Iver_For_Emma__Forever_Ago.jpg"
+  },
+  {
+    "title": "Bon Iver, Bon Iver",
+    "artist": "Bon Iver",
+    "year": 2011,
+    "genre": "Indie Rock",
+    "cover_url": "/covers/Bon_Iver_Bon_Iver__Bon_Iver.jpg"
+  },
+  {
+    "title": "22, a Million",
+    "artist": "Bon Iver",
+    "year": 2016,
+    "genre": "Folktronica",
+    "cover_url": "/covers/Bon_Iver_22__a_Million.jpg"
+  },
+  {
+    "title": "Ceres & Calypso in the Deep Time",
+    "artist": "Candy Claws",
+    "year": 2013,
+    "genre": "Alternative",
+    "cover_url": "/covers/Candy_Claws_Ceres___Calypso_in_the_Deep_Time.jpg"
+  },
+  {
+    "title": "Desire, I Want to Turn Into You",
+    "artist": "Caroline Polachek",
+    "year": 2023,
+    "genre": null,
+    "cover_url": "/covers/Caroline_Polachek_Desire__I_Want_to_Turn_Into_You.jpg"
+  },
+  {
+    "title": "Wild West",
+    "artist": "Central Cee",
+    "year": 2021,
+    "genre": "Uk Drill",
+    "cover_url": "/covers/Central_Cee_Wild_West.jpg"
+  },
+  {
+    "title": "Because the Internet",
+    "artist": "Childish Gambino",
+    "year": 2013,
+    "genre": "Hip-Hop",
+    "cover_url": "/covers/Childish_Gambino_Because_the_Internet.jpg"
+  },
+  {
+    "title": "\u201cAwaken, My Love!\u201d",
+    "artist": "Childish Gambino",
+    "year": 2016,
+    "genre": "Rap",
+    "cover_url": "/covers/Childish_Gambino__Awaken__My_Love__.jpg"
+  },
+  {
+    "title": "Troupeau bleu",
+    "artist": "Cortex",
+    "year": 2008,
+    "genre": "Jazz-Funk",
+    "cover_url": "/covers/Cortex_Troupeau_bleu.jpg"
+  },
+  {
+    "title": "Crystal Castles",
+    "artist": "Crystal Castles",
+    "year": 2008,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Crystal_Castles_Crystal_Castles.jpg"
+  },
+  {
+    "title": "(III)",
+    "artist": "Crystal Castles",
+    "year": 2012,
+    "genre": "Alternatif et Ind\u00e9",
+    "cover_url": "/covers/Crystal_Castles_(III).jpg"
+  },
+  {
+    "title": "Amnesty (I)",
+    "artist": "Crystal Castles",
+    "year": 2016,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Crystal_Castles_Amnesty_(I).jpg"
+  },
+  {
+    "title": "(II)",
+    "artist": "Crystal Castles",
+    "year": 2023,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Crystal_Castles_(II).jpg"
+  },
+  {
+    "title": "Curtis",
+    "artist": "Curtis Mayfield",
+    "year": 1970,
+    "genre": "Soul",
+    "cover_url": "/covers/Curtis_Mayfield_Curtis.jpg"
+  },
+  {
+    "title": "Portrait With Firewood",
+    "artist": "Djrum",
+    "year": 2018,
+    "genre": "UK Bass",
+    "cover_url": "/covers/Djrum_Portrait_With_Firewood.jpg"
+  },
+  {
+    "title": "Meaning\u2019s Edge",
+    "artist": "Djrum",
+    "year": 2024,
+    "genre": null,
+    "cover_url": "/covers/Djrum_Meaning_s_Edge.jpg"
+  },
+  {
+    "title": "Promises",
+    "artist": "Floating Points, Pharoah Sanders & The London Symphony Orchestra",
+    "year": 2021,
+    "genre": "Electro",
+    "cover_url": "/covers/Floating_Points__Pharoah_Sanders___The_London_Symphony_Orchestra_Promises.jpg"
+  },
+  {
+    "title": "1983",
+    "artist": "Flying Lotus",
+    "year": 2006,
+    "genre": "Electronic",
+    "cover_url": "/covers/Flying_Lotus_1983.jpg"
+  },
+  {
+    "title": "Reset",
+    "artist": "Flying Lotus",
+    "year": 2007,
+    "genre": "Electronic",
+    "cover_url": "/covers/Flying_Lotus_Reset.jpg"
+  },
+  {
+    "title": "L.A. EP 1 X 3",
+    "artist": "Flying Lotus",
+    "year": 2008,
+    "genre": "Electronic",
+    "cover_url": "/covers/Flying_Lotus_L.A._EP_1_X_3.jpg"
+  },
+  {
+    "title": "L.A. EP 2 X 3",
+    "artist": "Flying Lotus",
+    "year": 2008,
+    "genre": "Electronic",
+    "cover_url": "/covers/Flying_Lotus_L.A._EP_2_X_3.jpg"
+  },
+  {
+    "title": "Los Angeles",
+    "artist": "Flying Lotus",
+    "year": 2008,
+    "genre": "Electronic",
+    "cover_url": "/covers/Flying_Lotus_Los_Angeles.jpg"
+  },
+  {
+    "title": "L.A. EP 3 X 3",
+    "artist": "Flying Lotus",
+    "year": 2009,
+    "genre": "Electronic",
+    "cover_url": "/covers/Flying_Lotus_L.A._EP_3_X_3.jpg"
+  },
+  {
+    "title": "Cosmogramma",
+    "artist": "Flying Lotus",
+    "year": 2010,
+    "genre": "Electronic",
+    "cover_url": "/covers/Flying_Lotus_Cosmogramma.jpg"
+  },
+  {
+    "title": "Pattern+Grid World",
+    "artist": "Flying Lotus",
+    "year": 2010,
+    "genre": "Electronic",
+    "cover_url": "/covers/Flying_Lotus_Pattern_Grid_World.jpg"
+  },
+  {
+    "title": "Until the Quiet Comes",
+    "artist": "Flying Lotus",
+    "year": 2012,
+    "genre": "Electronic",
+    "cover_url": "/covers/Flying_Lotus_Until_the_Quiet_Comes.jpg"
+  },
+  {
+    "title": "You\u2019re Dead!",
+    "artist": "Flying Lotus",
+    "year": 2014,
+    "genre": "Electronic",
+    "cover_url": "/covers/Flying_Lotus_You_re_Dead_.jpg"
+  },
+  {
+    "title": "Flamagra",
+    "artist": "Flying Lotus",
+    "year": 2019,
+    "genre": "Electronic",
+    "cover_url": "/covers/Flying_Lotus_Flamagra.jpg"
+  },
+  {
+    "title": "channel ORANGE",
+    "artist": "Frank Ocean",
+    "year": 2012,
+    "genre": "Electronic",
+    "cover_url": "/covers/Frank_Ocean_channel_ORANGE.jpg"
+  },
+  {
+    "title": "Blonde",
+    "artist": "Frank Ocean",
+    "year": 2016,
+    "genre": "Electronic",
+    "cover_url": "/covers/Frank_Ocean_Blonde.jpg"
+  },
+  {
+    "title": "Hyperion",
+    "artist": "Gesaffelstein",
+    "year": 2019,
+    "genre": "Electronic",
+    "cover_url": "/covers/Gesaffelstein_Hyperion.jpg"
+  },
+  {
+    "title": "The Colour in Anything",
+    "artist": "James Blake",
+    "year": 2016,
+    "genre": "Electro",
+    "cover_url": "/covers/James_Blake_The_Colour_in_Anything.jpg"
+  },
+  {
+    "title": "In Waves",
+    "artist": "Jamie xx",
+    "year": 2024,
+    "genre": "Electronic",
+    "cover_url": "/covers/Jamie_xx_In_Waves.jpg"
+  },
+  {
+    "title": "K.G.",
+    "artist": "King Gizzard & the Lizard Wizard",
+    "year": 2020,
+    "genre": "Blues",
+    "cover_url": "/covers/King_Gizzard___the_Lizard_Wizard_K.G..jpg"
+  },
+  {
+    "title": "L.W.",
+    "artist": "King Gizzard & the Lizard Wizard",
+    "year": 2021,
+    "genre": "Electronic",
+    "cover_url": "/covers/King_Gizzard___the_Lizard_Wizard_L.W..jpg"
+  },
+  {
+    "title": "Pure Heroine (extended)",
+    "artist": "Lorde",
+    "year": 2013,
+    "genre": "Indie Pop",
+    "cover_url": "/covers/Lorde_Pure_Heroine_(extended).jpg"
+  },
+  {
+    "title": "Melodrama",
+    "artist": "Lorde",
+    "year": 2017,
+    "genre": "Indie Pop",
+    "cover_url": "/covers/Lorde_Melodrama.jpg"
+  },
+  {
+    "title": "Solar Power",
+    "artist": "Lorde",
+    "year": 2021,
+    "genre": "Indie Pop",
+    "cover_url": "/covers/Lorde_Solar_Power.jpg"
+  },
+  {
+    "title": "Sd\u20102",
+    "artist": "Loukeman",
+    "year": 2024,
+    "genre": "Electro",
+    "cover_url": "/covers/Loukeman_Sd_2.jpg"
+  },
+  {
+    "title": "2",
+    "artist": "Mac DeMarco",
+    "year": 2012,
+    "genre": "Indie Pop",
+    "cover_url": "/covers/Mac_DeMarco_2.jpg"
+  },
+  {
+    "title": "Salad Days",
+    "artist": "Mac DeMarco",
+    "year": 2014,
+    "genre": "Jangle Pop",
+    "cover_url": "/covers/Mac_DeMarco_Salad_Days.jpg"
+  },
+  {
+    "title": "This Old Dog",
+    "artist": "Mac DeMarco",
+    "year": 2017,
+    "genre": "Lo-Fi",
+    "cover_url": "/covers/Mac_DeMarco_This_Old_Dog.jpg"
+  },
+  {
+    "title": "Madvillainy",
+    "artist": "Madvillain",
+    "year": 2004,
+    "genre": "Hip-Hop",
+    "cover_url": "/covers/Madvillain_Madvillainy.jpg"
+  },
+  {
+    "title": "Imaginal Disk",
+    "artist": "Magdalena Bay",
+    "year": 2024,
+    "genre": null,
+    "cover_url": "/covers/Magdalena_Bay_Imaginal_Disk.jpg"
+  },
+  {
+    "title": "Melody\u2019s Echo Chamber",
+    "artist": "Melody\u2019s Echo Chamber",
+    "year": 2012,
+    "genre": "Neo-Psychedelia",
+    "cover_url": "/covers/Melody_s_Echo_Chamber_Melody_s_Echo_Chamber.jpg"
+  },
+  {
+    "title": "Time to Pretend",
+    "artist": "MGMT",
+    "year": 2005,
+    "genre": "Electronic",
+    "cover_url": "/covers/MGMT_Time_to_Pretend.jpg"
+  },
+  {
+    "title": "MGMT",
+    "artist": "MGMT",
+    "year": 2013,
+    "genre": "Alternative",
+    "cover_url": "/covers/MGMT_MGMT.jpg"
+  },
+  {
+    "title": "Betrayed in the Octagon",
+    "artist": "Oneohtrix Point Never",
+    "year": 2007,
+    "genre": null,
+    "cover_url": "/covers/Oneohtrix_Point_Never_Betrayed_in_the_Octagon.jpg"
+  },
+  {
+    "title": "Drawn and Quartered",
+    "artist": "Oneohtrix Point Never",
+    "year": 2013,
+    "genre": "Electronic",
+    "cover_url": "/covers/Oneohtrix_Point_Never_Drawn_and_Quartered.jpg"
+  },
+  {
+    "title": "Brand New Eyes",
+    "artist": "Paramore",
+    "year": 2009,
+    "genre": "Pop Punk",
+    "cover_url": "/covers/Paramore_Brand_New_Eyes.jpg"
+  },
+  {
+    "title": "Eyelid Movies",
+    "artist": "Phantogram",
+    "year": 2010,
+    "genre": "Electro",
+    "cover_url": "/covers/Phantogram_Eyelid_Movies.jpg"
+  },
+  {
+    "title": "Voices",
+    "artist": "Phantogram",
+    "year": 2014,
+    "genre": "Alternative Rock",
+    "cover_url": "/covers/Phantogram_Voices.jpg"
+  },
+  {
+    "title": "Three",
+    "artist": "Phantogram",
+    "year": 2016,
+    "genre": "Electronic",
+    "cover_url": "/covers/Phantogram_Three.jpg"
+  },
+  {
+    "title": "Hail to the Thief",
+    "artist": "Radiohead",
+    "year": 2003,
+    "genre": "Alternative Rock",
+    "cover_url": "/covers/Radiohead_Hail_to_the_Thief.jpg"
+  },
+  {
+    "title": "Tread",
+    "artist": "Ross From Friends",
+    "year": 2021,
+    "genre": null,
+    "cover_url": "/covers/Ross_From_Friends_Tread.jpg"
+  },
+  {
+    "title": "Ctrl",
+    "artist": "SZA",
+    "year": 2017,
+    "genre": null,
+    "cover_url": "/covers/SZA_Ctrl.jpg"
+  },
+  {
+    "title": "Trilogy",
+    "artist": "The Weeknd",
+    "year": 2012,
+    "genre": "Contemporary R&B",
+    "cover_url": "/covers/The_Weeknd_Trilogy.jpg"
+  },
+  {
+    "title": "My Dear Melancholy,",
+    "artist": "The Weeknd",
+    "year": 2019,
+    "genre": "Contemporary R&B",
+    "cover_url": "/covers/The_Weeknd_My_Dear_Melancholy_.jpg"
+  },
+  {
+    "title": "The Critical Path",
+    "artist": "Tipper",
+    "year": 2000,
+    "genre": "Nu Skool Breaks",
+    "cover_url": "/covers/Tipper_The_Critical_Path.jpg"
+  },
+  {
+    "title": "Surrounded",
+    "artist": "Tipper",
+    "year": 2003,
+    "genre": null,
+    "cover_url": "/covers/Tipper_Surrounded.jpg"
+  },
+  {
+    "title": "Relish the Trough",
+    "artist": "Tipper",
+    "year": 2006,
+    "genre": "Nu Skool Breaks",
+    "cover_url": "/covers/Tipper_Relish_the_Trough.jpg"
+  },
+  {
+    "title": "Forward Escape",
+    "artist": "Tipper",
+    "year": 2014,
+    "genre": "Nu Skool Breaks",
+    "cover_url": "/covers/Tipper_Forward_Escape.jpg"
+  },
+  {
+    "title": "The Seamless Unspeakable Something",
+    "artist": "Tipper",
+    "year": 2014,
+    "genre": "Electronic",
+    "cover_url": "/covers/Tipper_The_Seamless_Unspeakable_Something.jpg"
+  },
+  {
+    "title": "Its Like",
+    "artist": "Tipper",
+    "year": 2015,
+    "genre": "Nu Skool Breaks",
+    "cover_url": "/covers/Tipper_Its_Like.jpg"
+  },
+  {
+    "title": "Flunked",
+    "artist": "Tipper",
+    "year": 2017,
+    "genre": "Glitch-hop",
+    "cover_url": "/covers/Tipper_Flunked.jpg"
+  },
+  {
+    "title": "Lattice",
+    "artist": "Tipper",
+    "year": 2017,
+    "genre": "IDM",
+    "cover_url": "/covers/Tipper_Lattice.jpg"
+  },
+  {
+    "title": "Jettison Mind Hatch",
+    "artist": "Tipper",
+    "year": 2019,
+    "genre": null,
+    "cover_url": "/covers/Tipper_Jettison_Mind_Hatch.jpg"
+  },
+  {
+    "title": "Marble Hunting",
+    "artist": "Tipper",
+    "year": 2022,
+    "genre": "Electronic",
+    "cover_url": "/covers/Tipper_Marble_Hunting.jpg"
+  },
+  {
+    "title": "Beacon",
+    "artist": "Two Door Cinema Club",
+    "year": 2012,
+    "genre": "Indie Rock",
+    "cover_url": "/covers/Two_Door_Cinema_Club_Beacon.jpg"
+  },
+  {
+    "title": "MEDi SELECTiON: VOL 1",
+    "artist": "Mala",
+    "year": 2022,
+    "genre": "Dubstep",
+    "cover_url": "/covers/Mala_MEDi_SELECTiON__VOL_1.jpg"
+  },
+  {
+    "title": "Young the Giant",
+    "artist": "Young the Giant",
+    "year": 2010,
+    "genre": "Pop",
+    "cover_url": "/covers/Young_the_Giant_Young_the_Giant.jpg"
+  },
+  {
+    "title": "Frost God",
+    "artist": "Yung Lean",
+    "year": 2016,
+    "genre": "Alternative",
+    "cover_url": "/covers/Yung_Lean_Frost_God.jpg"
+  },
+  {
+    "title": "Safe in the Hands of Love",
+    "artist": "Yves Tumor",
+    "year": 2018,
+    "genre": "Alternative",
+    "cover_url": "/covers/Yves_Tumor_Safe_in_the_Hands_of_Love.jpg"
+  },
+  {
+    "title": "Kind of Blue",
+    "artist": "Miles Davis",
+    "year": 1959,
+    "genre": "Jazz",
+    "cover_url": "/covers/Miles_Davis_Kind_of_Blue.jpg"
+  },
+  {
+    "title": "Mild Snake",
+    "artist": "Ivy Lab",
+    "year": 2024,
+    "genre": null,
+    "cover_url": "/covers/Ivy_Lab_Mild_Snake.jpg"
+  },
+  {
+    "title": "Hopeless",
+    "artist": "Ternion Sound",
+    "year": 2018,
+    "genre": null,
+    "cover_url": "/covers/Ternion_Sound_Hopeless.jpg"
+  },
+  {
+    "title": "King Bromeliad / Montparnasse",
+    "artist": "Floating Points",
+    "year": 2014,
+    "genre": "Dubstep",
+    "cover_url": "/covers/Floating_Points_King_Bromeliad___Montparnasse.jpg"
+  },
+  {
+    "title": "Fine Day Anthem",
+    "artist": "Skrillex",
+    "year": 2023,
+    "genre": "Electro",
+    "cover_url": "/covers/Skrillex_Fine_Day_Anthem.jpg"
+  },
+  {
+    "title": "Immunity",
+    "artist": "Clairo",
+    "year": 2019,
+    "genre": "Bedroom Pop",
+    "cover_url": "/covers/Clairo_Immunity.jpg"
+  },
+  {
+    "title": "Yugen",
+    "artist": "Koreless",
+    "year": 2013,
+    "genre": null,
+    "cover_url": "/covers/Koreless_Yugen.jpg"
+  },
+  {
+    "title": "Deceltica",
+    "artist": "Koreless",
+    "year": 2024,
+    "genre": null,
+    "cover_url": "/covers/Koreless_Deceltica.jpg"
+  },
+  {
+    "title": "WLFGRL",
+    "artist": "Machine Girl",
+    "year": 2014,
+    "genre": null,
+    "cover_url": "/covers/Machine_Girl_WLFGRL.jpg"
+  },
+  {
+    "title": "Dandelion Gum",
+    "artist": "Black Moth Super Rainbow",
+    "year": 2007,
+    "genre": "Dj",
+    "cover_url": "/covers/Black_Moth_Super_Rainbow_Dandelion_Gum.jpg"
+  },
+  {
+    "title": "Live from Death Valley",
+    "artist": "Death Grips",
+    "year": 2022,
+    "genre": "Hip-Hop",
+    "cover_url": "/covers/Death_Grips_Live_from_Death_Valley.jpg"
+  },
+  {
+    "title": "Levitate",
+    "artist": "Lone",
+    "year": 2016,
+    "genre": "Electronic",
+    "cover_url": "/covers/Lone_Levitate.jpg"
+  },
+  {
+    "title": "The Reach EP",
+    "artist": "CharlesTheFirst",
+    "year": 2017,
+    "genre": "Electro",
+    "cover_url": "/covers/CharlesTheFirst_The_Reach_EP.jpg"
+  },
+  {
+    "title": "Cloud Runner",
+    "artist": "Otik",
+    "year": 2024,
+    "genre": "Dance",
+    "cover_url": "/covers/Otik_Cloud_Runner.jpg"
+  },
+  {
+    "title": "NOWHERE FM: STRAIGHT TO THE HEART",
+    "artist": "Villager",
+    "year": 2025,
+    "genre": null,
+    "cover_url": "/covers/Villager_NOWHERE_FM__STRAIGHT_TO_THE_HEART.jpg"
+  },
+  {
+    "title": "NOWHERE FM: the first donuts of the year",
+    "artist": "Villager",
+    "year": 2022,
+    "genre": null,
+    "cover_url": "/covers/Villager_NOWHERE_FM__the_first_donuts_of_the_year.jpg"
+  },
+  {
+    "title": "NOWHERE FM: THE BROOM OF THE SYSTEM",
+    "artist": "Villager",
+    "year": 2023,
+    "genre": null,
+    "cover_url": "/covers/Villager_NOWHERE_FM__THE_BROOM_OF_THE_SYSTEM.jpg"
+  },
+  {
+    "title": "Blood Bank",
+    "artist": "Bon Iver",
+    "year": 2009,
+    "genre": "Contemporary Folk",
+    "cover_url": "/covers/Bon_Iver_Blood_Bank.jpg"
+  },
+  {
+    "title": "Sinister Grift",
+    "artist": "Panda Bear",
+    "year": 2025,
+    "genre": "Alternative",
+    "cover_url": "/covers/Panda_Bear_Sinister_Grift.jpg"
+  },
+  {
+    "title": "Black Out Days",
+    "artist": "Phantogram",
+    "year": 2023,
+    "genre": "Pop",
+    "cover_url": "/covers/Phantogram_Black_Out_Days.jpg"
+  },
+  {
+    "title": "TW20 50",
+    "artist": "KayCyy",
+    "year": 2022,
+    "genre": "Alternative\u00a0r&b",
+    "cover_url": "/covers/KayCyy_TW20_50.jpg"
+  },
+  {
+    "title": "Poison Ivy",
+    "artist": "Yung Lean",
+    "year": 2018,
+    "genre": "Hip Hop",
+    "cover_url": "/covers/Yung_Lean_Poison_Ivy.jpg"
+  },
+  {
+    "title": "EUSEXUA",
+    "artist": "FKA twigs",
+    "year": 2025,
+    "genre": "EDM",
+    "cover_url": "/covers/FKA_twigs_EUSEXUA.jpg"
+  },
+  {
+    "title": "F*CK U SKRILLEX YOU THINK UR ANDY WARHOL BUT UR NOT!! <3",
+    "artist": "Skrillex, DJ Smokey",
+    "year": 2025,
+    "genre": "Brostep",
+    "cover_url": "/covers/Skrillex__DJ_Smokey_F_CK_U_SKRILLEX_YOU_THINK_UR_ANDY_WARHOL_BUT_UR_NOT____3.jpg"
+  },
+  {
+    "title": "Charm",
+    "artist": "Clairo",
+    "year": 2024,
+    "genre": null,
+    "cover_url": "/covers/Clairo_Charm.jpg"
+  },
+  {
+    "title": "From Lead to Gold",
+    "artist": "Visages",
+    "year": 2022,
+    "genre": null,
+    "cover_url": "/covers/Visages_From_Lead_to_Gold.jpg"
+  },
+  {
+    "title": "Liminal",
+    "artist": "Detox Unit",
+    "year": 2023,
+    "genre": "Electro",
+    "cover_url": "/covers/Detox_Unit_Liminal.jpg"
+  },
+  {
+    "title": "Loot Drop Vol. 1",
+    "artist": "Jade Cicada",
+    "year": 2024,
+    "genre": null,
+    "cover_url": "/covers/Jade_Cicada_Loot_Drop_Vol._1.jpg"
+  },
+  {
+    "title": "Lunar Fade EP",
+    "artist": "Jade Cicada",
+    "year": 2025,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Jade_Cicada_Lunar_Fade_EP.jpg"
+  },
+  {
+    "title": "The Abyss",
+    "artist": "Detox Unit",
+    "year": 2016,
+    "genre": null,
+    "cover_url": "/covers/Detox_Unit_The_Abyss.jpg"
+  },
+  {
+    "title": "Bleach",
+    "artist": "Nirvana",
+    "year": 1989,
+    "genre": "Grunge",
+    "cover_url": "/covers/Nirvana_Bleach.jpg"
+  },
+  {
+    "title": "In Utero",
+    "artist": "Nirvana",
+    "year": 1993,
+    "genre": "Grunge",
+    "cover_url": "/covers/Nirvana_In_Utero.jpg"
+  },
+  {
+    "title": "MTV Unplugged in New York",
+    "artist": "Nirvana",
+    "year": 1994,
+    "genre": "Grunge",
+    "cover_url": "/covers/Nirvana_MTV_Unplugged_in_New_York.jpg"
+  },
+  {
+    "title": "Nevermind",
+    "artist": "Nirvana",
+    "year": 1991,
+    "genre": "Grunge",
+    "cover_url": "/covers/Nirvana_Nevermind.jpg"
+  },
+  {
+    "title": "Hyph Mngo / Wet Look",
+    "artist": "Joy Orbison",
+    "year": 2009,
+    "genre": "Electronic",
+    "cover_url": "/covers/Joy_Orbison_Hyph_Mngo___Wet_Look.jpg"
+  },
+  {
+    "title": "One Hundred and Fifty Steps VEP",
+    "artist": "Carre",
+    "year": 2024,
+    "genre": "Electro; Dubstep",
+    "cover_url": "/covers/Carre_One_Hundred_and_Fifty_Steps_VEP.jpg"
+  },
+  {
+    "title": "Rain EP",
+    "artist": "Bicep",
+    "year": 2018,
+    "genre": "Electro",
+    "cover_url": "/covers/Bicep_Rain_EP.jpg"
+  },
+  {
+    "title": "Phoneglow / Eyes Go Blank",
+    "artist": "Burial",
+    "year": 2024,
+    "genre": "Electronic",
+    "cover_url": "/covers/Burial_Phoneglow___Eyes_Go_Blank.jpg"
+  },
+  {
+    "title": "CINEMA",
+    "artist": "The Mar\u00edas",
+    "year": 2021,
+    "genre": "Pop",
+    "cover_url": "/covers/The_Mar_as_CINEMA.jpg"
+  },
+  {
+    "title": "Scenery",
+    "artist": "Ryo Fukui",
+    "year": 1976,
+    "genre": "Jazz",
+    "cover_url": "/covers/Ryo_Fukui_Scenery.jpg"
+  },
+  {
+    "title": "Siamese Dream",
+    "artist": "The Smashing Pumpkins",
+    "year": 1993,
+    "genre": "Rock",
+    "cover_url": "/covers/The_Smashing_Pumpkins_Siamese_Dream.jpg"
+  },
+  {
+    "title": "Voodoo",
+    "artist": "D\u2019Angelo",
+    "year": 2000,
+    "genre": "Soul",
+    "cover_url": "/covers/D_Angelo_Voodoo.jpg"
+  },
+  {
+    "title": "Beautiful Rewind",
+    "artist": "Four Tet",
+    "year": 2013,
+    "genre": "Electronic",
+    "cover_url": "/covers/Four_Tet_Beautiful_Rewind.jpg"
+  },
+  {
+    "title": "Warlord",
+    "artist": "Yung Lean",
+    "year": 2016,
+    "genre": "Emo Rap",
+    "cover_url": "/covers/Yung_Lean_Warlord.jpg"
+  },
+  {
+    "title": "Stranger",
+    "artist": "Yung Lean",
+    "year": 2017,
+    "genre": "Emo Rap",
+    "cover_url": "/covers/Yung_Lean_Stranger.jpg"
+  },
+  {
+    "title": "Tunes 2011\u20132019",
+    "artist": "Burial",
+    "year": 2019,
+    "genre": "Dubstep",
+    "cover_url": "/covers/Burial_Tunes_2011_2019.jpg"
+  },
+  {
+    "title": "Cherry",
+    "artist": "Daphni",
+    "year": 2022,
+    "genre": "House",
+    "cover_url": "/covers/Daphni_Cherry.jpg"
+  },
+  {
+    "title": "Quest for Fire",
+    "artist": "Skrillex & Bobby Raps",
+    "year": 2023,
+    "genre": "Dubstep",
+    "cover_url": "/covers/Skrillex___Bobby_Raps_Quest_for_Fire.jpg"
+  },
+  {
+    "title": "Endlessness",
+    "artist": "Nala Sinephro",
+    "year": 2024,
+    "genre": "Jazz",
+    "cover_url": "/covers/Nala_Sinephro_Endlessness.jpg"
+  },
+  {
+    "title": "flex fm (freddit)",
+    "artist": "Joy Orbison feat. Lil Yachty, Future & Playboi Carti",
+    "year": 2024,
+    "genre": "Dubstep",
+    "cover_url": "/covers/Joy_Orbison_feat._Lil_Yachty__Future___Playboi_Carti_flex_fm_(freddit).jpg"
+  },
+  {
+    "title": "Person Pitch",
+    "artist": "Panda Bear",
+    "year": 2007,
+    "genre": null,
+    "cover_url": "/covers/Panda_Bear_Person_Pitch.jpg"
+  },
+  {
+    "title": "Britpop",
+    "artist": "A. G. Cook",
+    "year": 2024,
+    "genre": "Electronic",
+    "cover_url": "/covers/A._G._Cook_Britpop.jpg"
+  },
+  {
+    "title": "Speak For Yourself",
+    "artist": "Imogen Heap",
+    "year": 2005,
+    "genre": null,
+    "cover_url": "/covers/Imogen_Heap_Speak_For_Yourself.jpg"
+  },
+  {
+    "title": "Lunatic Harness",
+    "artist": "\u00b5-Ziq",
+    "year": 1997,
+    "genre": "IDM",
+    "cover_url": "/covers/_-Ziq_Lunatic_Harness.jpg"
+  },
+  {
+    "title": "Music Has the Right to Children",
+    "artist": "Boards Of Canada",
+    "year": 1998,
+    "genre": "Ambient/IDM",
+    "cover_url": "/covers/Boards_Of_Canada_Music_Has_the_Right_to_Children.jpg"
+  },
+  {
+    "title": "Tomorrow's Harvest",
+    "artist": "Boards Of Canada",
+    "year": 2013,
+    "genre": null,
+    "cover_url": "/covers/Boards_Of_Canada_Tomorrow_s_Harvest.jpg"
+  },
+  {
+    "title": "Syntheism",
+    "artist": "EPROM",
+    "year": 2023,
+    "genre": "Breakbeat",
+    "cover_url": "/covers/EPROM_Syntheism.jpg"
+  },
+  {
+    "title": "2001",
+    "artist": "Dr. Dre",
+    "year": 1999,
+    "genre": "G-Funk",
+    "cover_url": "/covers/Dr._Dre_2001.jpg"
+  },
+  {
+    "title": "40 oz. to Freedom",
+    "artist": "Sublime",
+    "year": 1992,
+    "genre": "Alternative Rock",
+    "cover_url": "/covers/Sublime_40_oz._to_Freedom.jpg"
+  },
+  {
+    "title": "AM",
+    "artist": "Arctic Monkeys",
+    "year": 2013,
+    "genre": "Alternative Rock",
+    "cover_url": "/covers/Arctic_Monkeys_AM.jpg"
+  },
+  {
+    "title": "Coexist",
+    "artist": "The xx",
+    "year": 2022,
+    "genre": "Electronic",
+    "cover_url": "/covers/The_xx_Coexist.jpg"
+  },
+  {
+    "title": "Dawn FM",
+    "artist": "The Weeknd",
+    "year": 2022,
+    "genre": "Contemporary R&B",
+    "cover_url": "/covers/The_Weeknd_Dawn_FM.jpg"
+  },
+  {
+    "title": "Drink the Sea",
+    "artist": "The Glitch Mob",
+    "year": 2010,
+    "genre": "Electronic",
+    "cover_url": "/covers/The_Glitch_Mob_Drink_the_Sea.jpg"
+  },
+  {
+    "title": "Favourite Worst Nightmare",
+    "artist": "Arctic Monkeys",
+    "year": 2007,
+    "genre": "Alternative Punk",
+    "cover_url": "/covers/Arctic_Monkeys_Favourite_Worst_Nightmare.jpg"
+  },
+  {
+    "title": "Get Rich or Die Tryin\u2019",
+    "artist": "50 Cent",
+    "year": 2015,
+    "genre": "Blues",
+    "cover_url": "/covers/50_Cent_Get_Rich_or_Die_Tryin_.jpg"
+  },
+  {
+    "title": "Good News for People Who Love Bad News",
+    "artist": "Modest Mouse",
+    "year": 2004,
+    "genre": "Alternative Rock",
+    "cover_url": "/covers/Modest_Mouse_Good_News_for_People_Who_Love_Bad_News.jpg"
+  },
+  {
+    "title": "Gossamer",
+    "artist": "Passion Pit",
+    "year": 2012,
+    "genre": "Electronic",
+    "cover_url": "/covers/Passion_Pit_Gossamer.jpg"
+  },
+  {
+    "title": "Here, My Dear",
+    "artist": "Marvin Gaye",
+    "year": 1994,
+    "genre": "Smooth Soul",
+    "cover_url": "/covers/Marvin_Gaye_Here__My_Dear.jpg"
+  },
+  {
+    "title": "Indicud",
+    "artist": "Kid Cudi",
+    "year": 2013,
+    "genre": "Alternative Hip Hop",
+    "cover_url": "/covers/Kid_Cudi_Indicud.jpg"
+  },
+  {
+    "title": "Man on the Moon: The End of Day",
+    "artist": "Kid Cudi",
+    "year": 2009,
+    "genre": "Alternative Hip Hop",
+    "cover_url": "/covers/Kid_Cudi_Man_on_the_Moon__The_End_of_Day.jpg"
+  },
+  {
+    "title": "Man on the Moon II: The Legend of Mr. Rager",
+    "artist": "Kid Cudi",
+    "year": 2010,
+    "genre": "Alternative Hip Hop",
+    "cover_url": "/covers/Kid_Cudi_Man_on_the_Moon_II__The_Legend_of_Mr._Rager.jpg"
+  },
+  {
+    "title": "Manners",
+    "artist": "Passion Pit",
+    "year": 2009,
+    "genre": "Alternative Dance",
+    "cover_url": "/covers/Passion_Pit_Manners.jpg"
+  },
+  {
+    "title": "Morning / Evening",
+    "artist": "Four Tet",
+    "year": 2015,
+    "genre": "Ambient",
+    "cover_url": "/covers/Four_Tet_Morning___Evening.jpg"
+  },
+  {
+    "title": "My Cherie Amour",
+    "artist": "Stevie Wonder",
+    "year": 1992,
+    "genre": "Funk",
+    "cover_url": "/covers/Stevie_Wonder_My_Cherie_Amour.jpg"
+  },
+  {
+    "title": "New Energy",
+    "artist": "Four Tet",
+    "year": 2017,
+    "genre": "Ambient",
+    "cover_url": "/covers/Four_Tet_New_Energy.jpg"
+  },
+  {
+    "title": "Parallel",
+    "artist": "Four Tet",
+    "year": 2020,
+    "genre": "Ambient",
+    "cover_url": "/covers/Four_Tet_Parallel.jpg"
+  },
+  {
+    "title": "Pink",
+    "artist": "Four Tet",
+    "year": 2012,
+    "genre": "Electronic",
+    "cover_url": "/covers/Four_Tet_Pink.jpg"
+  },
+  {
+    "title": "Positions",
+    "artist": "Ariana Grande",
+    "year": 2021,
+    "genre": "Pop",
+    "cover_url": "/covers/Ariana_Grande_Positions.jpg"
+  },
+  {
+    "title": "Rumours",
+    "artist": "Fleetwood Mac",
+    "year": 1987,
+    "genre": "Blues",
+    "cover_url": "/covers/Fleetwood_Mac_Rumours.jpg"
+  },
+  {
+    "title": "Sixteen Oceans",
+    "artist": "Four Tet",
+    "year": 2020,
+    "genre": "Ambient",
+    "cover_url": "/covers/Four_Tet_Sixteen_Oceans.jpg"
+  },
+  {
+    "title": "Sublime",
+    "artist": "Sublime",
+    "year": 1996,
+    "genre": "Alternative Punk",
+    "cover_url": "/covers/Sublime_Sublime.jpg"
+  },
+  {
+    "title": "thank u, next",
+    "artist": "Ariana Grande",
+    "year": 2019,
+    "genre": "Contemporary R&B",
+    "cover_url": "/covers/Ariana_Grande_thank_u__next.jpg"
+  },
+  {
+    "title": "The Earth Is Not a Cold Dead Place",
+    "artist": "Explosions in the Sky",
+    "year": 2003,
+    "genre": "Instrumental",
+    "cover_url": "/covers/Explosions_in_the_Sky_The_Earth_Is_Not_a_Cold_Dead_Place.jpg"
+  },
+  {
+    "title": "The Fat of the Land",
+    "artist": "The Prodigy",
+    "year": 2012,
+    "genre": "Alternative Rock",
+    "cover_url": "/covers/The_Prodigy_The_Fat_of_the_Land.jpg"
+  },
+  {
+    "title": "The Lumineers",
+    "artist": "The Lumineers",
+    "year": 2012,
+    "genre": "Alternative Rock",
+    "cover_url": "/covers/The_Lumineers_The_Lumineers.jpg"
+  },
+  {
+    "title": "The Moon & Antarctica",
+    "artist": "Modest Mouse",
+    "year": 2004,
+    "genre": "Alternative Punk",
+    "cover_url": "/covers/Modest_Mouse_The_Moon___Antarctica.jpg"
+  },
+  {
+    "title": "Three",
+    "artist": "Four Tet",
+    "year": 2024,
+    "genre": "Electronic",
+    "cover_url": "/covers/Four_Tet_Three.jpg"
+  },
+  {
+    "title": "What\u2019s Going On",
+    "artist": "Marvin Gaye",
+    "year": 1998,
+    "genre": "Funk",
+    "cover_url": "/covers/Marvin_Gaye_What_s_Going_On.jpg"
+  },
+  {
+    "title": "xx",
+    "artist": "The xx",
+    "year": 2009,
+    "genre": "Alternative Rock",
+    "cover_url": "/covers/The_xx_xx.jpg"
+  },
+  {
+    "title": "2017 - 2019",
+    "artist": "Against All Logic",
+    "year": 2020,
+    "genre": "Tech House",
+    "cover_url": "/covers/Against_All_Logic_2017_-_2019.jpg"
+  },
+  {
+    "title": "There Is Love in You (Expanded Edition)",
+    "artist": "Four Tet",
+    "year": 2017,
+    "genre": "Microhouse",
+    "cover_url": "/covers/Four_Tet_There_Is_Love_in_You_(Expanded_Edition).jpg"
+  },
+  {
+    "title": "Russian Mind",
+    "artist": "Oneohtrix Point Never",
+    "year": 2009,
+    "genre": "Ambient",
+    "cover_url": "/covers/Oneohtrix_Point_Never_Russian_Mind.jpg"
+  },
+  {
+    "title": "For Melancholy Brunettes (& sad women)",
+    "artist": "Japanese Breakfast",
+    "year": 2025,
+    "genre": "alternative",
+    "cover_url": "/covers/Japanese_Breakfast_For_Melancholy_Brunettes_(__sad_women).jpg"
+  },
+  {
+    "title": "Forever Dolphin Love",
+    "artist": "Connan Mockasin",
+    "year": 2011,
+    "genre": "Alternative",
+    "cover_url": "/covers/Connan_Mockasin_Forever_Dolphin_Love.jpg"
+  },
+  {
+    "title": "Midnight Snack",
+    "artist": "Homeshake",
+    "year": 2015,
+    "genre": "Electronic",
+    "cover_url": "/covers/Homeshake_Midnight_Snack.jpg"
+  },
+  {
+    "title": "Helium",
+    "artist": "Homeshake",
+    "year": 2019,
+    "genre": "Lo-Fi",
+    "cover_url": "/covers/Homeshake_Helium.jpg"
+  },
+  {
+    "title": "Dreading",
+    "artist": "Plastician",
+    "year": 2021,
+    "genre": null,
+    "cover_url": "/covers/Plastician_Dreading.jpg"
+  },
+  {
+    "title": "2012 - 2017",
+    "artist": "Against All Logic",
+    "year": 2018,
+    "genre": null,
+    "cover_url": "/covers/Against_All_Logic_2012_-_2017.jpg"
+  },
+  {
+    "title": "A Love Supreme",
+    "artist": "John Coltrane",
+    "year": 2003,
+    "genre": "Jazz",
+    "cover_url": "/covers/John_Coltrane_A_Love_Supreme.jpg"
+  },
+  {
+    "title": "Head Over Heels",
+    "artist": "Cocteau Twins",
+    "year": 1983,
+    "genre": null,
+    "cover_url": "/covers/Cocteau_Twins_Head_Over_Heels.jpg"
+  },
+  {
+    "title": "Donuts",
+    "artist": "J Dilla",
+    "year": 2006,
+    "genre": "Instrumental",
+    "cover_url": "/covers/J_Dilla_Donuts.jpg"
+  },
+  {
+    "title": "Friends That Break Your Heart",
+    "artist": "James Blake",
+    "year": 2021,
+    "genre": null,
+    "cover_url": "/covers/James_Blake_Friends_That_Break_Your_Heart.jpg"
+  },
+  {
+    "title": "Hard to Say / Tournesol",
+    "artist": "Djrum",
+    "year": 2019,
+    "genre": null,
+    "cover_url": "/covers/Djrum_Hard_to_Say___Tournesol.jpg"
+  },
+  {
+    "title": "In Colour",
+    "artist": "Jamie xx",
+    "year": 2015,
+    "genre": "Electronic",
+    "cover_url": "/covers/Jamie_xx_In_Colour.jpg"
+  },
+  {
+    "title": "Isolation",
+    "artist": "Kali Uchis",
+    "year": 2018,
+    "genre": "Contemporary R&B",
+    "cover_url": "/covers/Kali_Uchis_Isolation.jpg"
+  },
+  {
+    "title": "James Blake",
+    "artist": "James Blake",
+    "year": 2011,
+    "genre": null,
+    "cover_url": "/covers/James_Blake_James_Blake.jpg"
+  },
+  {
+    "title": "Leak 04-13 (Bait Ones)",
+    "artist": "Jai Paul",
+    "year": 2019,
+    "genre": null,
+    "cover_url": "/covers/Jai_Paul_Leak_04-13_(Bait_Ones).jpg"
+  },
+  {
+    "title": "Liquid Swords",
+    "artist": "Genius/GZA",
+    "year": 1995,
+    "genre": "Hip-Hop",
+    "cover_url": "/covers/Genius_GZA_Liquid_Swords.jpg"
+  },
+  {
+    "title": "Mountains",
+    "artist": "Djrum",
+    "year": 2011,
+    "genre": null,
+    "cover_url": "/covers/Djrum_Mountains.jpg"
+  },
+  {
+    "title": "Sin miedo (del amor y otros demonios) \u221e",
+    "artist": "Kali Uchis",
+    "year": 2020,
+    "genre": null,
+    "cover_url": "/covers/Kali_Uchis_Sin_miedo_(del_amor_y_otros_demonios)__.jpg"
+  },
+  {
+    "title": "Veteran",
+    "artist": "JPEGMAFIA",
+    "year": 2018,
+    "genre": "Underground Hip Hop",
+    "cover_url": "/covers/JPEGMAFIA_Veteran.jpg"
+  },
+  {
+    "title": "Visions",
+    "artist": "Grimes",
+    "year": 2012,
+    "genre": "Electronic",
+    "cover_url": "/covers/Grimes_Visions.jpg"
+  },
+  {
+    "title": "Unrequited",
+    "artist": "Sorrow",
+    "year": 2025,
+    "genre": "Electronic",
+    "cover_url": "/covers/Sorrow_Unrequited.jpg"
+  },
+  {
+    "title": "Power, Corruption & Lies",
+    "artist": "New Order",
+    "year": 1983,
+    "genre": "Alternative",
+    "cover_url": "/covers/New_Order_Power__Corruption___Lies.jpg"
+  },
+  {
+    "title": "Human After All",
+    "artist": "Daft Punk",
+    "year": 2005,
+    "genre": "Dance",
+    "cover_url": "/covers/Daft_Punk_Human_After_All.jpg"
+  },
+  {
+    "title": "Flume",
+    "artist": "Flume",
+    "year": 2012,
+    "genre": "Electro",
+    "cover_url": "/covers/Flume_Flume.jpg"
+  },
+  {
+    "title": "Random Access Memories",
+    "artist": "Daft Punk",
+    "year": 2013,
+    "genre": "Pop",
+    "cover_url": "/covers/Daft_Punk_Random_Access_Memories.jpg"
+  },
+  {
+    "title": "Skin",
+    "artist": "Flume",
+    "year": 2016,
+    "genre": "Electro",
+    "cover_url": "/covers/Flume_Skin.jpg"
+  },
+  {
+    "title": "Skin Companion EP I",
+    "artist": "Flume",
+    "year": 2016,
+    "genre": "Electro",
+    "cover_url": "/covers/Flume_Skin_Companion_EP_I.jpg"
+  },
+  {
+    "title": "Skin Companion EP II",
+    "artist": "Flume",
+    "year": 2017,
+    "genre": "Electro",
+    "cover_url": "/covers/Flume_Skin_Companion_EP_II.jpg"
+  },
+  {
+    "title": "Hi This Is Flume (Mixtape)",
+    "artist": "Flume",
+    "year": 2019,
+    "genre": "Electro",
+    "cover_url": "/covers/Flume_Hi_This_Is_Flume_(Mixtape).jpg"
+  },
+  {
+    "title": "Ether Excerpt",
+    "artist": "Mickman",
+    "year": 2017,
+    "genre": null,
+    "cover_url": "/covers/Mickman_Ether_Excerpt.jpg"
+  },
+  {
+    "title": "Reclaimed",
+    "artist": "Mickman",
+    "year": 2022,
+    "genre": null,
+    "cover_url": "/covers/Mickman_Reclaimed.jpg"
+  },
+  {
+    "title": "Oracular Spectacular",
+    "artist": "MGMT",
+    "year": 2007,
+    "genre": "Electronic",
+    "cover_url": "/covers/MGMT_Oracular_Spectacular.jpg"
+  },
+  {
+    "title": "Congratulations",
+    "artist": "MGMT",
+    "year": 2010,
+    "genre": null,
+    "cover_url": "/covers/MGMT_Congratulations.jpg"
+  },
+  {
+    "title": "Little Dark Age",
+    "artist": "MGMT",
+    "year": 2018,
+    "genre": "Alternative",
+    "cover_url": "/covers/MGMT_Little_Dark_Age.jpg"
+  },
+  {
+    "title": "Stochastic Drift",
+    "artist": "Barker",
+    "year": 2025,
+    "genre": null,
+    "cover_url": "/covers/Barker_Stochastic_Drift.jpg"
+  },
+  {
+    "title": "Beat",
+    "artist": "Bowery Electric",
+    "year": 1997,
+    "genre": "Trip Hop",
+    "cover_url": "/covers/Bowery_Electric_Beat.jpg"
+  },
+  {
+    "title": "The Universe Smiles Upon You",
+    "artist": "Khruangbin",
+    "year": 2015,
+    "genre": null,
+    "cover_url": "/covers/Khruangbin_The_Universe_Smiles_Upon_You.jpg"
+  },
+  {
+    "title": "Hasta El Cielo (Con Todo El Mundo in Dub)",
+    "artist": "Khruangbin",
+    "year": 2019,
+    "genre": "Funk",
+    "cover_url": "/covers/Khruangbin_Hasta_El_Cielo_(Con_Todo_El_Mundo_in_Dub).jpg"
+  },
+  {
+    "title": "Mordechai",
+    "artist": "Khruangbin",
+    "year": 2020,
+    "genre": "Rock",
+    "cover_url": "/covers/Khruangbin_Mordechai.jpg"
+  },
+  {
+    "title": "Equus Caballus",
+    "artist": "Men I Trust",
+    "year": 2025,
+    "genre": null,
+    "cover_url": "/covers/Men_I_Trust_Equus_Caballus.jpg"
+  },
+  {
+    "title": "Big Fish",
+    "artist": "Villager",
+    "year": 2024,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Villager_Big_Fish.jpg"
+  },
+  {
+    "title": "Exmilitary",
+    "artist": "Death Grips",
+    "year": 2011,
+    "genre": null,
+    "cover_url": "/covers/Death_Grips_Exmilitary.jpg"
+  },
+  {
+    "title": "Steroids (Crouching Tiger Hidden Gabber)",
+    "artist": "Death Grips",
+    "year": 2017,
+    "genre": "Hip-Hop",
+    "cover_url": "/covers/Death_Grips_Steroids_(Crouching_Tiger_Hidden_Gabber).jpg"
+  },
+  {
+    "title": "Need Right / Dogma",
+    "artist": "Villager",
+    "year": 2025,
+    "genre": null,
+    "cover_url": "/covers/Villager_Need_Right___Dogma.jpg"
+  },
+  {
+    "title": "Up The Place EP",
+    "artist": "Cesco",
+    "year": 2023,
+    "genre": null,
+    "cover_url": "/covers/Cesco_Up_The_Place_EP.jpg"
+  },
+  {
+    "title": "Rival Dealer",
+    "artist": "Burial",
+    "year": 2014,
+    "genre": "Ambient",
+    "cover_url": "/covers/Burial_Rival_Dealer.jpg"
+  },
+  {
+    "title": "Port Of Morrow",
+    "artist": "The Shins",
+    "year": 2012,
+    "genre": null,
+    "cover_url": "/covers/The_Shins_Port_Of_Morrow.jpg"
+  },
+  {
+    "title": "Wincing the Night Away",
+    "artist": "The Shins",
+    "year": 2007,
+    "genre": null,
+    "cover_url": "/covers/The_Shins_Wincing_the_Night_Away.jpg"
+  },
+  {
+    "title": "Torches",
+    "artist": "Foster The People",
+    "year": 2011,
+    "genre": "Alternative en Indie",
+    "cover_url": "/covers/Foster_The_People_Torches.jpg"
+  },
+  {
+    "title": "Biking",
+    "artist": "Frank Ocean",
+    "year": 2017,
+    "genre": "Pop",
+    "cover_url": "/covers/Frank_Ocean_Biking.jpg"
+  },
+  {
+    "title": "Provider",
+    "artist": "Frank Ocean",
+    "year": 2017,
+    "genre": "Contemporary R&B",
+    "cover_url": "/covers/Frank_Ocean_Provider.jpg"
+  },
+  {
+    "title": "Moon River",
+    "artist": "Frank Ocean",
+    "year": 2018,
+    "genre": "Pop",
+    "cover_url": "/covers/Frank_Ocean_Moon_River.jpg"
+  },
+  {
+    "title": "DHL",
+    "artist": "Frank Ocean",
+    "year": 2019,
+    "genre": "Pop",
+    "cover_url": "/covers/Frank_Ocean_DHL.jpg"
+  },
+  {
+    "title": "In My Room",
+    "artist": "Frank Ocean",
+    "year": 2019,
+    "genre": "Contemporary R&B",
+    "cover_url": "/covers/Frank_Ocean_In_My_Room.jpg"
+  },
+  {
+    "title": "Aleph",
+    "artist": "Gesaffelstein",
+    "year": 2013,
+    "genre": "Techno; Electronic",
+    "cover_url": "/covers/Gesaffelstein_Aleph.jpg"
+  },
+  {
+    "title": "Blank Banshee 0",
+    "artist": "Blank Banshee",
+    "year": 2012,
+    "genre": "Vaportrap",
+    "cover_url": "/covers/Blank_Banshee_Blank_Banshee_0.jpg"
+  },
+  {
+    "title": "Arca",
+    "artist": "Arca",
+    "year": 2017,
+    "genre": "Ambient",
+    "cover_url": "/covers/Arca_Arca.jpg"
+  },
+  {
+    "title": "Mutant",
+    "artist": "Arca",
+    "year": 2015,
+    "genre": "Electronic",
+    "cover_url": "/covers/Arca_Mutant.jpg"
+  },
+  {
+    "title": "Xen",
+    "artist": "Arca",
+    "year": 2015,
+    "genre": "Electronic",
+    "cover_url": "/covers/Arca_Xen.jpg"
+  },
+  {
+    "title": "Model Collapse / The Wash",
+    "artist": "Sully",
+    "year": 2025,
+    "genre": "Drum and bass; Dubstep; Jungle",
+    "cover_url": "/covers/Sully_Model_Collapse___The_Wash.jpg"
+  },
+  {
+    "title": "Blinded EP",
+    "artist": "Monty",
+    "year": 2020,
+    "genre": "Drum & Bass",
+    "cover_url": "/covers/Monty_Blinded_EP.jpg"
+  },
+  {
+    "title": "Magic Oneohtrix Point Never (Blu-ray Edition)",
+    "artist": "Oneohtrix Point Never",
+    "year": 2021,
+    "genre": "Alternative",
+    "cover_url": "/covers/Oneohtrix_Point_Never_Magic_Oneohtrix_Point_Never_(Blu-ray_Edition).jpg"
+  },
+  {
+    "title": "So Tonight That I Might See",
+    "artist": "Mazzy Star",
+    "year": 1993,
+    "genre": "Alternative",
+    "cover_url": "/covers/Mazzy_Star_So_Tonight_That_I_Might_See.jpg"
+  },
+  {
+    "title": "Endtroducing.....",
+    "artist": "DJ Shadow",
+    "year": 1996,
+    "genre": "Electronic",
+    "cover_url": "/covers/DJ_Shadow_Endtroducing......jpg"
+  },
+  {
+    "title": "Abbey Road",
+    "artist": "The Beatles",
+    "year": 1969,
+    "genre": null,
+    "cover_url": "/covers/The_Beatles_Abbey_Road.jpg"
+  },
+  {
+    "title": "color theory",
+    "artist": "Soccer Mommy",
+    "year": 2020,
+    "genre": "Alternative",
+    "cover_url": "/covers/Soccer_Mommy_color_theory.jpg"
+  },
+  {
+    "title": "Lush",
+    "artist": "Snail Mail",
+    "year": 2018,
+    "genre": "Alternative",
+    "cover_url": "/covers/Snail_Mail_Lush.jpg"
+  },
+  {
+    "title": "Ringo Deathstarr",
+    "artist": "Ringo Deathstarr",
+    "year": 2020,
+    "genre": null,
+    "cover_url": "/covers/Ringo_Deathstarr_Ringo_Deathstarr.jpg"
+  },
+  {
+    "title": "Sometimes, Forever",
+    "artist": "Soccer Mommy",
+    "year": 2022,
+    "genre": "Indie",
+    "cover_url": "/covers/Soccer_Mommy_Sometimes__Forever.jpg"
+  },
+  {
+    "title": "The Ooz",
+    "artist": "King Krule",
+    "year": 2017,
+    "genre": "Art Rock",
+    "cover_url": "/covers/King_Krule_The_Ooz.jpg"
+  },
+  {
+    "title": "Yoshimi Battles The Pink Robots",
+    "artist": "The Flaming Lips",
+    "year": 2002,
+    "genre": "Dream Pop",
+    "cover_url": "/covers/The_Flaming_Lips_Yoshimi_Battles_The_Pink_Robots.jpg"
+  },
+  {
+    "title": "Brat and it\u2019s completely different but also still brat",
+    "artist": "Charli XCX",
+    "year": 2024,
+    "genre": null,
+    "cover_url": "/covers/Charli_XCX_Brat_and_it_s_completely_different_but_also_still_brat.jpg"
+  },
+  {
+    "title": "Hot Pink",
+    "artist": "Doja Cat",
+    "year": 2019,
+    "genre": null,
+    "cover_url": "/covers/Doja_Cat_Hot_Pink.jpg"
+  },
+  {
+    "title": "Planet Her",
+    "artist": "Doja Cat",
+    "year": 2021,
+    "genre": "Pop",
+    "cover_url": "/covers/Doja_Cat_Planet_Her.jpg"
+  },
+  {
+    "title": "First Light EP",
+    "artist": "Sleepnet",
+    "year": 2021,
+    "genre": "Drum & Bass",
+    "cover_url": "/covers/Sleepnet_First_Light_EP.jpg"
+  },
+  {
+    "title": "Heaven knows",
+    "artist": "PinkPantheress",
+    "year": 2023,
+    "genre": "Pop",
+    "cover_url": "/covers/PinkPantheress_Heaven_knows.jpg"
+  },
+  {
+    "title": "to hell with it",
+    "artist": "PinkPantheress",
+    "year": 2021,
+    "genre": "Pop",
+    "cover_url": "/covers/PinkPantheress_to_hell_with_it.jpg"
+  },
+  {
+    "title": "Fashion Week",
+    "artist": "Death Grips",
+    "year": 2015,
+    "genre": "Noided",
+    "cover_url": "/covers/Death_Grips_Fashion_Week.jpg"
+  },
+  {
+    "title": "Texas Moon",
+    "artist": "Khruangbin & Leon Bridges",
+    "year": 2022,
+    "genre": "Rock; Soul; Rhythm And Blues",
+    "cover_url": "/covers/Khruangbin___Leon_Bridges_Texas_Moon.jpg"
+  },
+  {
+    "title": "Texas Sun",
+    "artist": "Khruangbin, Leon Bridges & Austin Jenkins",
+    "year": 2020,
+    "genre": "Soul; Rhythm And Blues; Indie Rock",
+    "cover_url": "/covers/Khruangbin__Leon_Bridges___Austin_Jenkins_Texas_Sun.jpg"
+  },
+  {
+    "title": "7",
+    "artist": "Beach House",
+    "year": 2018,
+    "genre": "Electronic",
+    "cover_url": "/covers/Beach_House_7.jpg"
+  },
+  {
+    "title": "Beach House",
+    "artist": "Beach House",
+    "year": 2006,
+    "genre": "Indie Pop",
+    "cover_url": "/covers/Beach_House_Beach_House.jpg"
+  },
+  {
+    "title": "Bloom",
+    "artist": "Beach House",
+    "year": 2013,
+    "genre": "Indie Pop",
+    "cover_url": "/covers/Beach_House_Bloom.jpg"
+  },
+  {
+    "title": "Depression Cherry",
+    "artist": "Beach House",
+    "year": 2015,
+    "genre": "Indie Pop",
+    "cover_url": "/covers/Beach_House_Depression_Cherry.jpg"
+  },
+  {
+    "title": "Devotion",
+    "artist": "Beach House",
+    "year": 2008,
+    "genre": "Alternative Rock",
+    "cover_url": "/covers/Beach_House_Devotion.jpg"
+  },
+  {
+    "title": "Once Twice Melody",
+    "artist": "Beach House",
+    "year": 2022,
+    "genre": "Indie Pop",
+    "cover_url": "/covers/Beach_House_Once_Twice_Melody.jpg"
+  },
+  {
+    "title": "Teen Dream",
+    "artist": "Beach House",
+    "year": 2010,
+    "genre": "Electronic",
+    "cover_url": "/covers/Beach_House_Teen_Dream.jpg"
+  },
+  {
+    "title": "Thank Your Lucky Stars",
+    "artist": "Beach House",
+    "year": 2015,
+    "genre": "Indie Rock",
+    "cover_url": "/covers/Beach_House_Thank_Your_Lucky_Stars.jpg"
+  },
+  {
+    "title": "Sincerely,",
+    "artist": "Kali Uchis",
+    "year": 2025,
+    "genre": null,
+    "cover_url": "/covers/Kali_Uchis_Sincerely_.jpg"
+  },
+  {
+    "title": "Did you know that there's a tunnel under Ocean Blvd",
+    "artist": "Lana Del Rey",
+    "year": 2023,
+    "genre": null,
+    "cover_url": "/covers/Lana_Del_Rey_Did_you_know_that_there_s_a_tunnel_under_Ocean_Blvd.jpg"
+  },
+  {
+    "title": "GUTS (spilled)",
+    "artist": "Olivia Rodrigo",
+    "year": 2023,
+    "genre": null,
+    "cover_url": "/covers/Olivia_Rodrigo_GUTS_(spilled).jpg"
+  },
+  {
+    "title": "Norman Fucking Rockwell!",
+    "artist": "Lana Del Rey",
+    "year": 2019,
+    "genre": null,
+    "cover_url": "/covers/Lana_Del_Rey_Norman_Fucking_Rockwell_.jpg"
+  },
+  {
+    "title": "ORQU\u00cdDEAS",
+    "artist": "Kali Uchis",
+    "year": 2024,
+    "genre": null,
+    "cover_url": "/covers/Kali_Uchis_ORQU_DEAS.jpg"
+  },
+  {
+    "title": "SOUR",
+    "artist": "Olivia Rodrigo",
+    "year": 2021,
+    "genre": null,
+    "cover_url": "/covers/Olivia_Rodrigo_SOUR.jpg"
+  },
+  {
+    "title": "Ultraviolence",
+    "artist": "Lana Del Rey",
+    "year": 2014,
+    "genre": null,
+    "cover_url": "/covers/Lana_Del_Rey_Ultraviolence.jpg"
+  },
+  {
+    "title": "Live at RBC Echo Beach",
+    "artist": "Men I Trust",
+    "year": 2023,
+    "genre": null,
+    "cover_url": "/covers/Men_I_Trust_Live_at_RBC_Echo_Beach.jpg"
+  },
+  {
+    "title": "The Essential Gladys Knight & the Pips: The Buddah & Columbia Years",
+    "artist": "Gladys Knight & the Pips",
+    "year": 2015,
+    "genre": "Soul",
+    "cover_url": "/covers/Gladys_Knight___the_Pips_The_Essential_Gladys_Knight___the_Pips__The_Buddah___Co_785514"
+  },
+  {
+    "title": "Swan Lake",
+    "artist": "Pyotr Ilyich Tchaikovsky",
+    "year": 1996,
+    "genre": "Classical",
+    "cover_url": "/covers/Pyotr_Ilyich_Tchaikovsky_Swan_Lake.jpg"
+  },
+  {
+    "title": "Tangential Zones",
+    "artist": "G Jones",
+    "year": 2019,
+    "genre": "Electro",
+    "cover_url": "/covers/G_Jones_Tangential_Zones.jpg"
+  },
+  {
+    "title": "kidsgonemad!",
+    "artist": "ISOxo",
+    "year": 2023,
+    "genre": "Electro",
+    "cover_url": "/covers/ISOxo_kidsgonemad_.jpg"
+  },
+  {
+    "title": "Aletheia",
+    "artist": "O'Flynn",
+    "year": 2019,
+    "genre": "New",
+    "cover_url": "/covers/O_Flynn_Aletheia.jpg"
+  },
+  {
+    "title": "Isles",
+    "artist": "Bicep",
+    "year": 2021,
+    "genre": "Electronic",
+    "cover_url": "/covers/Bicep_Isles.jpg"
+  },
+  {
+    "title": "Honey",
+    "artist": "Caribou",
+    "year": 2024,
+    "genre": "House",
+    "cover_url": "/covers/Caribou_Honey.jpg"
+  },
+  {
+    "title": "Mura Masa",
+    "artist": "Mura Masa",
+    "year": 2017,
+    "genre": "Eletr\u00f4nica",
+    "cover_url": "/covers/Mura_Masa_Mura_Masa.jpg"
+  },
+  {
+    "title": "Crying Over Pros for No Reason",
+    "artist": "edIT",
+    "year": 2004,
+    "genre": "IDM",
+    "cover_url": "/covers/edIT_Crying_Over_Pros_for_No_Reason.jpg"
+  },
+  {
+    "title": "Go Plastic",
+    "artist": "Squarepusher",
+    "year": 2001,
+    "genre": "Electronic",
+    "cover_url": "/covers/Squarepusher_Go_Plastic.jpg"
+  },
+  {
+    "title": "Rossz csillag alatt sz\u00fcletett",
+    "artist": "Venetian Snares",
+    "year": 2005,
+    "genre": "Electronic",
+    "cover_url": "/covers/Venetian_Snares_Rossz_csillag_alatt_sz_letett.jpg"
+  },
+  {
+    "title": "Blue Lines",
+    "artist": "Massive Attack",
+    "year": 1991,
+    "genre": null,
+    "cover_url": "/covers/Massive_Attack_Blue_Lines.jpg"
+  },
+  {
+    "title": "Protection",
+    "artist": "Massive Attack",
+    "year": 1994,
+    "genre": null,
+    "cover_url": "/covers/Massive_Attack_Protection.jpg"
+  },
+  {
+    "title": "Mezzanine",
+    "artist": "Massive Attack",
+    "year": 1998,
+    "genre": null,
+    "cover_url": "/covers/Massive_Attack_Mezzanine.jpg"
+  },
+  {
+    "title": "Endless",
+    "artist": "Frank Ocean",
+    "year": 2016,
+    "genre": "Electronic",
+    "cover_url": "/covers/Frank_Ocean_Endless.jpg"
+  },
+  {
+    "title": "Skream!",
+    "artist": "Skream",
+    "year": 2006,
+    "genre": "Dubstep",
+    "cover_url": "/covers/Skream_Skream_.jpg"
+  },
+  {
+    "title": "Skreamizm, Vol. 2",
+    "artist": "Skream",
+    "year": 2006,
+    "genre": "Dubstep",
+    "cover_url": "/covers/Skream_Skreamizm__Vol._2.jpg"
+  },
+  {
+    "title": "Fresh Air",
+    "artist": "Homeshake",
+    "year": 2017,
+    "genre": null,
+    "cover_url": "/covers/Homeshake_Fresh_Air.jpg"
+  },
+  {
+    "title": "The Rise and Fall of a Midwest Princess",
+    "artist": "Chappell Roan",
+    "year": 2023,
+    "genre": null,
+    "cover_url": "/covers/Chappell_Roan_The_Rise_and_Fall_of_a_Midwest_Princess.jpg"
+  },
+  {
+    "title": "Debiasing",
+    "artist": "Barker",
+    "year": 2018,
+    "genre": null,
+    "cover_url": "/covers/Barker_Debiasing.jpg"
+  },
+  {
+    "title": "Seven Lies",
+    "artist": "Djrum",
+    "year": 2013,
+    "genre": "Techno",
+    "cover_url": "/covers/Djrum_Seven_Lies.jpg"
+  },
+  {
+    "title": "Frontier",
+    "artist": "Villager",
+    "year": 2022,
+    "genre": "Electronic",
+    "cover_url": "/covers/Villager_Frontier.jpg"
+  },
+  {
+    "title": "Sirens",
+    "artist": "Nicolas Jaar",
+    "year": 2016,
+    "genre": null,
+    "cover_url": "/covers/Nicolas_Jaar_Sirens.jpg"
+  },
+  {
+    "title": "You'll Understand",
+    "artist": "Ross From Friends",
+    "year": 2016,
+    "genre": null,
+    "cover_url": "/covers/Ross_From_Friends_You_ll_Understand.jpg"
+  },
+  {
+    "title": "Under Tangled Silence",
+    "artist": "Djrum",
+    "year": 2025,
+    "genre": null,
+    "cover_url": "/covers/Djrum_Under_Tangled_Silence.jpg"
+  },
+  {
+    "title": "Agor",
+    "artist": "Koreless",
+    "year": 2021,
+    "genre": null,
+    "cover_url": "/covers/Koreless_Agor.jpg"
+  },
+  {
+    "title": "hexed!",
+    "artist": "aya",
+    "year": 2025,
+    "genre": "Deep House; Soul; House; Electronica",
+    "cover_url": "/covers/aya_hexed_.jpg"
+  },
+  {
+    "title": "Innerspeaker",
+    "artist": "Tame Impala",
+    "year": 2010,
+    "genre": "Psychedelic Rock",
+    "cover_url": "/covers/Tame_Impala_Innerspeaker.jpg"
+  },
+  {
+    "title": "Lonerism",
+    "artist": "Tame Impala",
+    "year": 2012,
+    "genre": "Psychedelic Rock",
+    "cover_url": "/covers/Tame_Impala_Lonerism.jpg"
+  },
+  {
+    "title": "Live Versions",
+    "artist": "Tame Impala",
+    "year": 2014,
+    "genre": "Neo-Psychedelia",
+    "cover_url": "/covers/Tame_Impala_Live_Versions.jpg"
+  },
+  {
+    "title": "Currents",
+    "artist": "Tame Impala",
+    "year": 2015,
+    "genre": "Psychedelic Pop",
+    "cover_url": "/covers/Tame_Impala_Currents.jpg"
+  },
+  {
+    "title": "Cobra Juicy",
+    "artist": "Black Moth Super Rainbow",
+    "year": 2012,
+    "genre": null,
+    "cover_url": "/covers/Black_Moth_Super_Rainbow_Cobra_Juicy.jpg"
+  },
+  {
+    "title": "This Old Dog Demos",
+    "artist": "Mac DeMarco",
+    "year": 2018,
+    "genre": "Indie Rock",
+    "cover_url": "/covers/Mac_DeMarco_This_Old_Dog_Demos.jpg"
+  },
+  {
+    "title": "ANTH01",
+    "artist": "Jacques Greene",
+    "year": 2021,
+    "genre": "Electronic",
+    "cover_url": "/covers/Jacques_Greene_ANTH01.jpg"
+  },
+  {
+    "title": "Moderat",
+    "artist": "Moderat",
+    "year": 2009,
+    "genre": "Techno",
+    "cover_url": "/covers/Moderat_Moderat.jpg"
+  },
+  {
+    "title": "Psychic",
+    "artist": "Darkside",
+    "year": 2013,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Darkside_Psychic.jpg"
+  },
+  {
+    "title": "SeeFu Lilac EP",
+    "artist": "Black Moth Super Rainbow",
+    "year": 2016,
+    "genre": null,
+    "cover_url": "/covers/Black_Moth_Super_Rainbow_SeeFu_Lilac_EP.jpg"
+  },
+  {
+    "title": "Start A People",
+    "artist": "Black Moth Super Rainbow",
+    "year": 2004,
+    "genre": null,
+    "cover_url": "/covers/Black_Moth_Super_Rainbow_Start_A_People.jpg"
+  },
+  {
+    "title": "BRAT",
+    "artist": "Charli XCX",
+    "year": 2024,
+    "genre": "Club",
+    "cover_url": "/covers/Charli_XCX_BRAT.jpg"
+  },
+  {
+    "title": "how i'm feeling now",
+    "artist": "Charli XCX",
+    "year": 2020,
+    "genre": null,
+    "cover_url": "/covers/Charli_XCX_how_i_m_feeling_now.jpg"
+  },
+  {
+    "title": "Pop 2",
+    "artist": "Charli XCX",
+    "year": 2017,
+    "genre": "Pop",
+    "cover_url": "/covers/Charli_XCX_Pop_2.jpg"
+  },
+  {
+    "title": "Blood Lust",
+    "artist": "Uncle Acid & The Deadbeats",
+    "year": 2011,
+    "genre": null,
+    "cover_url": "/covers/Uncle_Acid___The_Deadbeats_Blood_Lust.jpg"
+  },
+  {
+    "title": "Punisher",
+    "artist": "Phoebe Bridgers",
+    "year": 2020,
+    "genre": "Indie Folk",
+    "cover_url": "/covers/Phoebe_Bridgers_Punisher.jpg"
+  },
+  {
+    "title": "Stranger in the Alps",
+    "artist": "Phoebe Bridgers",
+    "year": 2018,
+    "genre": "Indie Folk",
+    "cover_url": "/covers/Phoebe_Bridgers_Stranger_in_the_Alps.jpg"
+  },
+  {
+    "title": "Portishead",
+    "artist": "Portishead",
+    "year": 1997,
+    "genre": "Trip Hop",
+    "cover_url": "/covers/Portishead_Portishead.jpg"
+  },
+  {
+    "title": "Third",
+    "artist": "Portishead",
+    "year": 2008,
+    "genre": "Trip Hop",
+    "cover_url": "/covers/Portishead_Third.jpg"
+  },
+  {
+    "title": "Loan Shark",
+    "artist": "Commodo",
+    "year": 2020,
+    "genre": "Electro",
+    "cover_url": "/covers/Commodo_Loan_Shark.jpg"
+  },
+  {
+    "title": "Stakeout",
+    "artist": "Commodo",
+    "year": 2020,
+    "genre": "Electronic",
+    "cover_url": "/covers/Commodo_Stakeout.jpg"
+  },
+  {
+    "title": "Talking Book",
+    "artist": "Stevie Wonder",
+    "year": 1972,
+    "genre": "Soul",
+    "cover_url": "/covers/Stevie_Wonder_Talking_Book.jpg"
+  },
+  {
+    "title": "Tourist History",
+    "artist": "Two Door Cinema Club",
+    "year": 2010,
+    "genre": "Alternative",
+    "cover_url": "/covers/Two_Door_Cinema_Club_Tourist_History.jpg"
+  },
+  {
+    "title": "Bicep",
+    "artist": "Bicep",
+    "year": 2017,
+    "genre": "Electronic",
+    "cover_url": "/covers/Bicep_Bicep.jpg"
+  },
+  {
+    "title": "XXYYXX",
+    "artist": "XXYYXX",
+    "year": 2012,
+    "genre": "Electronic",
+    "cover_url": "/covers/XXYYXX_XXYYXX.jpg"
+  },
+  {
+    "title": "CRFR001",
+    "artist": "Sully",
+    "year": 2021,
+    "genre": "Jungle",
+    "cover_url": "/covers/Sully_CRFR001.jpg"
+  },
+  {
+    "title": "Zones Without People",
+    "artist": "Oneohtrix Point Never",
+    "year": 2009,
+    "genre": "Electro",
+    "cover_url": "/covers/Oneohtrix_Point_Never_Zones_Without_People.jpg"
+  },
+  {
+    "title": "Fancy That",
+    "artist": "PinkPantheress",
+    "year": 2025,
+    "genre": "Pop",
+    "cover_url": "/covers/PinkPantheress_Fancy_That.jpg"
+  },
+  {
+    "title": "Mercurial World",
+    "artist": "Magdalena Bay",
+    "year": 2021,
+    "genre": "Electronic",
+    "cover_url": "/covers/Magdalena_Bay_Mercurial_World.jpg"
+  },
+  {
+    "title": "Music From The Merch Desk (2016 - 2023)",
+    "artist": "Aphex Twin",
+    "year": 2024,
+    "genre": null,
+    "cover_url": "/covers/Aphex_Twin_Music_From_The_Merch_Desk_(2016_-_2023).jpg"
+  },
+  {
+    "title": "Input Slope",
+    "artist": "Resonant Language",
+    "year": 2023,
+    "genre": "Electro",
+    "cover_url": "/covers/Resonant_Language_Input_Slope.jpg"
+  },
+  {
+    "title": "Art Angels",
+    "artist": "Grimes",
+    "year": 2015,
+    "genre": "Alternative Dance; Art Pop; Cinematic Classical; Electronic; Electropop; Synth-Pop",
+    "cover_url": "/covers/Grimes_Art_Angels.jpg"
+  },
+  {
+    "title": "Heaven or Hell",
+    "artist": "Don Toliver",
+    "year": 2020,
+    "genre": "Contemporary R&B; Hip Hop",
+    "cover_url": "/covers/Don_Toliver_Heaven_or_Hell.jpg"
+  },
+  {
+    "title": "Untourable Album",
+    "artist": "Men I Trust",
+    "year": 2021,
+    "genre": "Dream Pop",
+    "cover_url": "/covers/Men_I_Trust_Untourable_Album.jpg"
+  },
+  {
+    "title": "The Ascent",
+    "artist": "CharlesTheFirst",
+    "year": 2018,
+    "genre": null,
+    "cover_url": "/covers/CharlesTheFirst_The_Ascent.jpg"
+  },
+  {
+    "title": "No Dimmer",
+    "artist": "CharlesTheFirst",
+    "year": 2019,
+    "genre": null,
+    "cover_url": "/covers/CharlesTheFirst_No_Dimmer.jpg"
+  },
+  {
+    "title": "Entanglements",
+    "artist": "Alix Perez",
+    "year": 2024,
+    "genre": "Divers",
+    "cover_url": "/covers/Alix_Perez_Entanglements.jpg"
+  },
+  {
+    "title": "Last Rites: EP",
+    "artist": "Alix Perez",
+    "year": 2019,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Alix_Perez_Last_Rites__EP.jpg"
+  },
+  {
+    "title": "Acid Disk",
+    "artist": "G Jones",
+    "year": 2017,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/G_Jones_Acid_Disk.jpg"
+  },
+  {
+    "title": "Acid Disk 2",
+    "artist": "G Jones",
+    "year": 2022,
+    "genre": "Electronic",
+    "cover_url": "/covers/G_Jones_Acid_Disk_2.jpg"
+  },
+  {
+    "title": "Paths",
+    "artist": "G Jones",
+    "year": 2023,
+    "genre": "Electronic",
+    "cover_url": "/covers/G_Jones_Paths.jpg"
+  },
+  {
+    "title": "The Ineffable Truth",
+    "artist": "G Jones",
+    "year": 2018,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/G_Jones_The_Ineffable_Truth.jpg"
+  },
+  {
+    "title": "Death Don't Always Taste Good",
+    "artist": "Ivy Lab",
+    "year": 2018,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Ivy_Lab_Death_Don_t_Always_Taste_Good.jpg"
+  },
+  {
+    "title": "Pressure Gamut",
+    "artist": "Jade Cicada",
+    "year": 2023,
+    "genre": "Electronic",
+    "cover_url": "/covers/Jade_Cicada_Pressure_Gamut.jpg"
+  },
+  {
+    "title": "Justice",
+    "artist": "Justice",
+    "year": 2007,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Justice_Justice.jpg"
+  },
+  {
+    "title": "Polychrome",
+    "artist": "Koan Sound",
+    "year": 2018,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Koan_Sound_Polychrome.jpg"
+  },
+  {
+    "title": "Worlds",
+    "artist": "Porter Robinson",
+    "year": 2014,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Porter_Robinson_Worlds.jpg"
+  },
+  {
+    "title": "Caliente",
+    "artist": "rabidZen",
+    "year": 2018,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/rabidZen_Caliente.jpg"
+  },
+  {
+    "title": "Swandive",
+    "artist": "Sully",
+    "year": 2020,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Sully_Swandive.jpg"
+  },
+  {
+    "title": "ANGEL VOICES",
+    "artist": "Virtual Self",
+    "year": 2018,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Virtual_Self_ANGEL_VOICES.jpg"
+  },
+  {
+    "title": "Virtual Self",
+    "artist": "Virtual Self",
+    "year": 2017,
+    "genre": "\u00c9lectronique",
+    "cover_url": "/covers/Virtual_Self_Virtual_Self.jpg"
+  },
+  {
+    "title": "Divergence",
+    "artist": "cHMURa",
+    "year": 2021,
+    "genre": "Electro",
+    "cover_url": "/covers/cHMURa_Divergence.jpg"
+  },
+  {
+    "title": "DUPPLATES Vol. 2",
+    "artist": "Ternion Sound",
+    "year": 2019,
+    "genre": "Deep Dubstep",
+    "cover_url": "/covers/Ternion_Sound_DUPPLATES_Vol._2.jpg"
+  },
+  {
+    "title": "The Campfire Headphase",
+    "artist": "Boards Of Canada",
+    "year": 2005,
+    "genre": "Electronic",
+    "cover_url": "/covers/Boards_Of_Canada_The_Campfire_Headphase.jpg"
+  },
+  {
+    "title": "Split The Atom (Special Edition)",
+    "artist": "Noisia",
+    "year": 2012,
+    "genre": "Electro House",
+    "cover_url": "/covers/Noisia_Split_The_Atom_(Special_Edition).jpg"
+  },
+  {
+    "title": "Put Your Head Above The Parakeets",
+    "artist": "HAAi",
+    "year": 2020,
+    "genre": null,
+    "cover_url": "/covers/HAAi_Put_Your_Head_Above_The_Parakeets.jpg"
+  },
+  {
+    "title": "Special Sound Series Vol. 1 [2019 RE]",
+    "artist": "Sekito Shigeo (\u30bb\u30ad\u30c8\u30aa\u30fb\u30b7\u30b2\u30aa)",
+    "year": 1975,
+    "genre": "Easy Listening",
+    "cover_url": "/covers/Sekito_Shigeo_(________)_Special_Sound_Series_Vol._1__2019_RE_.jpg"
+  },
+  {
+    "title": "Special Sound Series Vol. 2 [2019 RE]",
+    "artist": "Sekito Shigeo (\u30bb\u30ad\u30c8\u30aa\u30fb\u30b7\u30b2\u30aa)",
+    "year": 1975,
+    "genre": "Easy Listening",
+    "cover_url": "/covers/Sekito_Shigeo_(________)_Special_Sound_Series_Vol._2__2019_RE_.jpg"
+  },
+  {
+    "title": "Special Sound Series Vol. 3 [2019 RE]",
+    "artist": "Sekito Shigeo (\u30bb\u30ad\u30c8\u30aa\u30fb\u30b7\u30b2\u30aa)",
+    "year": 1976,
+    "genre": "Easy Listening",
+    "cover_url": "/covers/Sekito_Shigeo_(________)_Special_Sound_Series_Vol._3__2019_RE_.jpg"
+  },
+  {
+    "title": "Special Sound Series Vol. 4 [2019 RE]",
+    "artist": "Sekito Shigeo (\u30bb\u30ad\u30c8\u30aa\u30fb\u30b7\u30b2\u30aa)",
+    "year": 1977,
+    "genre": "Easy Listening",
+    "cover_url": "/covers/Sekito_Shigeo_(________)_Special_Sound_Series_Vol._4__2019_RE_.jpg"
+  },
+  {
+    "title": "Water",
+    "artist": "Bicep",
+    "year": 2022,
+    "genre": "Breaks",
+    "cover_url": "/covers/Bicep_Water.jpg"
+  },
+  {
+    "title": "Dark Red",
+    "artist": "Shlohmo",
+    "year": 2015,
+    "genre": "IDM",
+    "cover_url": "/covers/Shlohmo_Dark_Red.jpg"
+  },
+  {
+    "title": "Forever Live Sessions",
+    "artist": "Men I Trust",
+    "year": 2020,
+    "genre": null,
+    "cover_url": "/covers/Men_I_Trust_Forever_Live_Sessions.jpg"
+  },
+  {
+    "title": "Forever Live Sessions, Vol. 2",
+    "artist": "Men I Trust",
+    "year": 2025,
+    "genre": null,
+    "cover_url": "/covers/Men_I_Trust_Forever_Live_Sessions__Vol._2.jpg"
+  },
+  {
+    "title": "Unfold",
+    "artist": "IMANU",
+    "year": 2022,
+    "genre": "Dance",
+    "cover_url": "/covers/IMANU_Unfold.jpg"
+  },
+  {
+    "title": "Demon Dust",
+    "artist": "Ivy Lab",
+    "year": 2023,
+    "genre": "Dance",
+    "cover_url": "/covers/Ivy_Lab_Demon_Dust.jpg"
+  },
+  {
+    "title": "Monsoon",
+    "artist": "Ivy Lab",
+    "year": 2024,
+    "genre": "Electro",
+    "cover_url": "/covers/Ivy_Lab_Monsoon.jpg"
+  },
+  {
+    "title": "Press Play",
+    "artist": "Ivy Lab",
+    "year": 2021,
+    "genre": "Electro",
+    "cover_url": "/covers/Ivy_Lab_Press_Play.jpg"
+  },
+  {
+    "title": "Stars E.P",
+    "artist": "Ivy Lab",
+    "year": 2019,
+    "genre": "Electro",
+    "cover_url": "/covers/Ivy_Lab_Stars_E.P.jpg"
+  },
+  {
+    "title": "Equus Asinus",
+    "artist": "Men I Trust",
+    "year": 2025,
+    "genre": null,
+    "cover_url": "/covers/Men_I_Trust_Equus_Asinus.jpg"
+  },
+  {
+    "title": "Amor Fati",
+    "artist": "Visages",
+    "year": 2025,
+    "genre": "Drum and bass; Dubstep",
+    "cover_url": "/covers/Visages_Amor_Fati.jpg"
+  },
+  {
+    "title": "Deft 1s",
+    "artist": "Commodo",
+    "year": 2022,
+    "genre": "Dubstep",
+    "cover_url": "/covers/Commodo_Deft_1s.jpg"
+  },
+  {
+    "title": "Far North Dubs EP",
+    "artist": "Ternion Sound",
+    "year": 2020,
+    "genre": "Dubstep",
+    "cover_url": "/covers/Ternion_Sound_Far_North_Dubs_EP.jpg"
+  },
+  {
+    "title": "Fathoms EP",
+    "artist": "Tipper",
+    "year": 2015,
+    "genre": "Bass",
+    "cover_url": "/covers/Tipper_Fathoms_EP.jpg"
+  },
+  {
+    "title": "The Power of Sound",
+    "artist": "Chef Boyarbeatz",
+    "year": 2022,
+    "genre": "Dubstep",
+    "cover_url": "/covers/Chef_Boyarbeatz_The_Power_of_Sound.jpg"
+  },
+  {
+    "title": "Ardour",
+    "artist": "Teebs",
+    "year": 2010,
+    "genre": "Downtempo",
+    "cover_url": "/covers/Teebs_Ardour.jpg"
+  },
+  {
+    "title": "Glowing in the Darkest Night",
+    "artist": "Pretty Lights",
+    "year": 2010,
+    "genre": "Breakbeat",
+    "cover_url": "/covers/Pretty_Lights_Glowing_in_the_Darkest_Night.jpg"
+  },
+  {
+    "title": "Making Up a Changing Mind",
+    "artist": "Pretty Lights",
+    "year": 2010,
+    "genre": "Electronic",
+    "cover_url": "/covers/Pretty_Lights_Making_Up_a_Changing_Mind.jpg"
+  },
+  {
+    "title": "Passing by Behind Your Eyes",
+    "artist": "Pretty Lights",
+    "year": 2009,
+    "genre": "Downtempo",
+    "cover_url": "/covers/Pretty_Lights_Passing_by_Behind_Your_Eyes.jpg"
+  },
+  {
+    "title": "Spilling Over Every Side",
+    "artist": "Pretty Lights",
+    "year": 2010,
+    "genre": "Electronic",
+    "cover_url": "/covers/Pretty_Lights_Spilling_Over_Every_Side.jpg"
+  },
+  {
+    "title": "Taking Up Your Precious Time",
+    "artist": "Pretty Lights",
+    "year": 2006,
+    "genre": "Electronic",
+    "cover_url": "/covers/Pretty_Lights_Taking_Up_Your_Precious_Time.jpg"
+  },
+  {
+    "title": "Acid Rap",
+    "artist": "Chance the Rapper feat. BJ the Chicago Kid, Lili K., Kiara Lanier, Peter Cottontale, Will for The O'mys & JP Floyd for Kids These Days",
+    "year": 2013,
+    "genre": "Alternative hip hop",
+    "cover_url": "/covers/Chance_the_Rapper_feat._BJ_the_Chicago_Kid__Lili_K.__Kiara_Lanier__Peter_Cottont_c970e2"
+  },
+  {
+    "title": "Dahlia Ep",
+    "artist": "Bicep & Hammer",
+    "year": 2015,
+    "genre": "Deep house",
+    "cover_url": "/covers/Bicep___Hammer_Dahlia_Ep.jpg"
+  },
+  {
+    "title": "Idontknow",
+    "artist": "Jamie xx",
+    "year": 2020,
+    "genre": "Electronic",
+    "cover_url": "/covers/Jamie_xx_Idontknow.jpg"
+  },
+  {
+    "title": "Life of Leisure",
+    "artist": "Washed Out",
+    "year": 2010,
+    "genre": "Chillwave",
+    "cover_url": "/covers/Washed_Out_Life_of_Leisure.jpg"
+  },
+  {
+    "title": "Looking at Your Pager",
+    "artist": "KH",
+    "year": 2022,
+    "genre": "Electronic",
+    "cover_url": "/covers/KH_Looking_at_Your_Pager.jpg"
+  },
+  {
+    "title": "Nightlife",
+    "artist": "Phantogram",
+    "year": 2011,
+    "genre": "Electronic",
+    "cover_url": "/covers/Phantogram_Nightlife.jpg"
+  },
+  {
+    "title": "OIL OF EVERY PEARL\u2019S UN\u2010INSIDES",
+    "artist": "SOPHIE",
+    "year": 2018,
+    "genre": "Art pop",
+    "cover_url": "/covers/SOPHIE_OIL_OF_EVERY_PEARL_S_UN_INSIDES.jpg"
+  },
+  {
+    "title": "Opal (Four Tet remix)",
+    "artist": "Bicep",
+    "year": 2018,
+    "genre": "Electronic",
+    "cover_url": "/covers/Bicep_Opal_(Four_Tet_remix).jpg"
+  },
+  {
+    "title": "pinky ring / red velve7",
+    "artist": "Joy Orbison",
+    "year": 2022,
+    "genre": "Electronic",
+    "cover_url": "/covers/Joy_Orbison_pinky_ring___red_velve7.jpg"
+  },
+  {
+    "title": "Red Moon in Venus",
+    "artist": "Kali Uchis",
+    "year": 2023,
+    "genre": "Contemporary r&b",
+    "cover_url": "/covers/Kali_Uchis_Red_Moon_in_Venus.jpg"
+  },
+  {
+    "title": "Within and Without",
+    "artist": "Washed Out",
+    "year": 2011,
+    "genre": "Chillwave",
+    "cover_url": "/covers/Washed_Out_Within_and_Without.jpg"
+  },
+  {
+    "title": "Welcome Reality",
+    "artist": "NERO",
+    "year": 2011,
+    "genre": "Dubstep",
+    "cover_url": "/covers/NERO_Welcome_Reality.jpg"
+  },
+  {
+    "title": "Happier Than Ever",
+    "artist": "Billie Eilish",
+    "year": 2021,
+    "genre": "Pop",
+    "cover_url": "/covers/Billie_Eilish_Happier_Than_Ever.jpg"
+  },
+  {
+    "title": "CRASH (Deluxe)",
+    "artist": "Charli XCX",
+    "year": 2022,
+    "genre": null,
+    "cover_url": "/covers/Charli_XCX_CRASH_(Deluxe).jpg"
+  },
+  {
+    "title": "Oncle Jazz",
+    "artist": "Men I Trust",
+    "year": 2019,
+    "genre": "Pop",
+    "cover_url": "/covers/Men_I_Trust_Oncle_Jazz.jpg"
+  },
+  {
+    "title": "Interview 2016",
+    "artist": "Death Grips",
+    "year": 2016,
+    "genre": null,
+    "cover_url": "/covers/Death_Grips_Interview_2016.jpg"
+  },
+  {
+    "title": "Fish Juice",
+    "artist": "Jade Cicada",
+    "year": 2018,
+    "genre": "Electronic",
+    "cover_url": "/covers/Jade_Cicada_Fish_Juice.jpg"
+  },
+  {
+    "title": "Little Creatures EP",
+    "artist": "Jade Cicada",
+    "year": 2019,
+    "genre": "Electronic",
+    "cover_url": "/covers/Jade_Cicada_Little_Creatures_EP.jpg"
+  },
+  {
+    "title": "Hurry Up Tomorrow",
+    "artist": "The Weeknd",
+    "year": 2025,
+    "genre": "Electronic",
+    "cover_url": "/covers/The_Weeknd_Hurry_Up_Tomorrow.jpg"
+  },
+  {
+    "title": "Short n\u2019 Sweet",
+    "artist": "Sabrina Carpenter",
+    "year": 2024,
+    "genre": "Alternative Pop",
+    "cover_url": "/covers/Sabrina_Carpenter_Short_n__Sweet.jpg"
+  },
+  {
+    "title": "Invisable Forest",
+    "artist": "Bucketheadland",
+    "year": 2015,
+    "genre": "Progressive Rock",
+    "cover_url": "/covers/Bucketheadland_Invisable_Forest.jpg"
+  },
+  {
+    "title": "Sling",
+    "artist": "Clairo",
+    "year": 2021,
+    "genre": "Alternative",
+    "cover_url": "/covers/Clairo_Sling.jpg"
+  },
+  {
+    "title": "Reims",
+    "artist": "RL Grime",
+    "year": 2017,
+    "genre": "Uk Garage; Electronic",
+    "cover_url": "/covers/RL_Grime_Reims.jpg"
+  },
+  {
+    "title": "The Hills (RL Grime remix)",
+    "artist": "The Weeknd",
+    "year": 2015,
+    "genre": "Electronic; Dubstep; Uk Garage",
+    "cover_url": "/covers/The_Weeknd_The_Hills_(RL_Grime_remix).jpg"
+  },
+  {
+    "title": "Submarine",
+    "artist": "The Mar\u00edas",
+    "year": 2024,
+    "genre": "Pop",
+    "cover_url": "/covers/The_Mar_as_Submarine.jpg"
+  },
+  {
+    "title": "I Love You, Honeybear",
+    "artist": "Father John Misty",
+    "year": 2015,
+    "genre": "Alternative",
+    "cover_url": "/covers/Father_John_Misty_I_Love_You__Honeybear.jpg"
+  },
+  {
+    "title": "Electric Tears",
+    "artist": "Buckethead",
+    "year": 2002,
+    "genre": "Chillout; Ambient; Electronic",
+    "cover_url": "/covers/Buckethead_Electric_Tears.jpg"
+  },
+  {
+    "title": "II",
+    "artist": "Sleepnet",
+    "year": 2024,
+    "genre": "Electro",
+    "cover_url": "/covers/Sleepnet_II.jpg"
+  },
+  {
+    "title": "Good Lies",
+    "artist": "Overmono",
+    "year": 2023,
+    "genre": null,
+    "cover_url": "/covers/Overmono_Good_Lies.jpg"
+  },
+  {
+    "title": "Ultravisitor",
+    "artist": "Squarepusher",
+    "year": 2004,
+    "genre": "Drill and Bass",
+    "cover_url": "/covers/Squarepusher_Ultravisitor.jpg"
+  },
+  {
+    "title": "The Awakening",
+    "artist": "The Ahmad Jamal Trio",
+    "year": 1970,
+    "genre": "Jazz",
+    "cover_url": "/covers/The_Ahmad_Jamal_Trio_The_Awakening.jpg"
+  },
+  {
+    "title": "Bottomless Pit",
+    "artist": "Death Grips",
+    "year": 2016,
+    "genre": "Alternatif et Ind\u00e9",
+    "cover_url": "/covers/Death_Grips_Bottomless_Pit.jpg"
+  },
+  {
+    "title": "Government Plates",
+    "artist": "Death Grips",
+    "year": 2014,
+    "genre": "Rap",
+    "cover_url": "/covers/Death_Grips_Government_Plates.jpg"
+  },
+  {
+    "title": "No Love Deep Web",
+    "artist": "Death Grips",
+    "year": 2012,
+    "genre": "Rap",
+    "cover_url": "/covers/Death_Grips_No_Love_Deep_Web.jpg"
+  },
+  {
+    "title": "The Money Store",
+    "artist": "Death Grips",
+    "year": 2012,
+    "genre": "Rap",
+    "cover_url": "/covers/Death_Grips_The_Money_Store.jpg"
+  },
+  {
+    "title": "The Powers That B",
+    "artist": "Death Grips",
+    "year": 2015,
+    "genre": "Rap",
+    "cover_url": "/covers/Death_Grips_The_Powers_That_B.jpg"
+  },
+  {
+    "title": "DS2 (Deluxe)",
+    "artist": "Future",
+    "year": 2015,
+    "genre": null,
+    "cover_url": "/covers/Future_DS2_(Deluxe).jpg"
+  },
+  {
+    "title": "FUTURE",
+    "artist": "Future",
+    "year": 2017,
+    "genre": null,
+    "cover_url": "/covers/Future_FUTURE.jpg"
+  },
+  {
+    "title": "HNDRXX",
+    "artist": "Future",
+    "year": 2017,
+    "genre": null,
+    "cover_url": "/covers/Future_HNDRXX.jpg"
+  },
+  {
+    "title": "The Sun's Tirade",
+    "artist": "Isaiah Rashad",
+    "year": 2016,
+    "genre": "Rap",
+    "cover_url": "/covers/Isaiah_Rashad_The_Sun_s_Tirade.jpg"
+  },
+  {
+    "title": "Watch The Throne",
+    "artist": "Kanye West",
+    "year": 2011,
+    "genre": "Rap",
+    "cover_url": "/covers/Kanye_West_Watch_The_Throne.jpg"
+  },
+  {
+    "title": "DAMN.",
+    "artist": "Kendrick Lamar",
+    "year": 2017,
+    "genre": "Rap",
+    "cover_url": "/covers/Kendrick_Lamar_DAMN..jpg"
+  },
+  {
+    "title": "good kid, m.A.A.d city",
+    "artist": "Kendrick Lamar",
+    "year": 2012,
+    "genre": "Rap",
+    "cover_url": "/covers/Kendrick_Lamar_good_kid__m.A.A.d_city.jpg"
+  },
+  {
+    "title": "Section.80",
+    "artist": "Kendrick Lamar",
+    "year": 2011,
+    "genre": "Rap",
+    "cover_url": "/covers/Kendrick_Lamar_Section.80.jpg"
+  },
+  {
+    "title": "To Pimp A Butterfly",
+    "artist": "Kendrick Lamar",
+    "year": 2015,
+    "genre": "Rap",
+    "cover_url": "/covers/Kendrick_Lamar_To_Pimp_A_Butterfly.jpg"
+  },
+  {
+    "title": "untitled unmastered.",
+    "artist": "Kendrick Lamar",
+    "year": 2016,
+    "genre": "Rap",
+    "cover_url": "/covers/Kendrick_Lamar_untitled_unmastered..jpg"
+  },
+  {
+    "title": "Aquemini",
+    "artist": "Outkast",
+    "year": 1998,
+    "genre": "Rap",
+    "cover_url": "/covers/Outkast_Aquemini.jpg"
+  },
+  {
+    "title": "ATLiens (25th Anniversary Deluxe Edition)",
+    "artist": "Outkast",
+    "year": 2021,
+    "genre": "Rap",
+    "cover_url": "/covers/Outkast_ATLiens_(25th_Anniversary_Deluxe_Edition).jpg"
+  },
+  {
+    "title": "Southernplayalisticadillacmuzik",
+    "artist": "Outkast",
+    "year": 1994,
+    "genre": "Rap",
+    "cover_url": "/covers/Outkast_Southernplayalisticadillacmuzik.jpg"
+  },
+  {
+    "title": "Speakerboxxx/The Love Below",
+    "artist": "Outkast",
+    "year": 2003,
+    "genre": "Rap",
+    "cover_url": "/covers/Outkast_Speakerboxxx_The_Love_Below.jpg"
+  },
+  {
+    "title": "Stankonia",
+    "artist": "Outkast",
+    "year": 2000,
+    "genre": "Rap",
+    "cover_url": "/covers/Outkast_Stankonia.jpg"
+  }
+]
