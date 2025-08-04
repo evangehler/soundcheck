@@ -16,3 +16,17 @@ class ReviewResponse(BaseModel):
 
     class Config:
         orm_mode = True
+
+class RecentReviewResponse(BaseModel):
+    id: int
+    user_id: int
+    user_name: str
+    score: float
+    review: str
+    created_at: datetime
+    album_id: int
+    album_title: str
+    album_cover_url: str
+
+    class Config:
+        orm_mode = True
