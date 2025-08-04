@@ -1,5 +1,6 @@
-import { SimpleGrid, Title, Container, Text, Card } from '@mantine/core';
+import { SimpleGrid, Title, Container, Text, Card, Rating, Button } from '@mantine/core';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import AlbumCard from './AlbumCard.jsx';
 
 export default function FrontPage() {
@@ -39,9 +40,26 @@ export default function FrontPage() {
         <SimpleGrid cols={1} spacing="md">
           {recentReviews.map((r) => (
             <Card key={r.id} shadow="md" padding="md" radius="md" className="glass-card" bg="#4c5897">
-              <Text c="white" fw={600}>{r.user_name} rated {r.score}/5</Text>
-              <Text c="gray">{r.review}</Text>
-              <Text size="xs" c="dimmed">{new Date(r.created_at).toLocaleString()}</Text>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link to={`/albums/${r.album_id}`}>
+                  <img 
+                    src={r.album_cover_url} 
+                    alt={`${r.album_title} cover`} 
+                    style={{ width: '80px', height: '80px', objectFit: 'cover', borderRadius: '8px', cursor: 'pointer' }} 
+                  />
+                </Link>
+                <div style={{ flex: 1 }}>
+                  <Text c="white" fw={600}>{r.album_title}</Text>
+                  <Rating value={r.score} readOnly size="sm" color="yellow" />
+                  <Text c="gray">{r.review}</Text>
+                  <Link to={`/users/${r.user_id}`} style={{ textDecoration: 'none' }}>
+                    <Text size="s" c="blue" fw={500} style={{ cursor: 'pointer' }}>
+                      -  {r.user_name}
+                    </Text>
+                  </Link>
+                  <Text size="xs" c="dimmed">{new Date(r.created_at).toLocaleString()}</Text>
+                </div>
+              </div>
             </Card>
           ))}
         </SimpleGrid>

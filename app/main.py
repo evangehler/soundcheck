@@ -22,8 +22,8 @@ from app.models.album import Album
 from app.models.user import User
 
 # Schemas
-from app.schemas.user import RegUser, LoginRequest, UserStuff, UserProfile
-from app.schemas.rating import RatingInput, ReviewResponse
+from app.schemas.user import RegUser, LoginRequest, UserStuff, UserProfile, UserProfileReview
+from app.schemas.rating import RatingInput, ReviewResponse, RecentReviewResponse
 from app.schemas.album import AlbumAdd, AlbumResponse
 
 # Utils
@@ -78,55 +78,6 @@ def create_admin():
     else:
         print("Admin already exists")
 
-# ---------- Database Models ----------
-class RegUser(BaseModel):
-    username: str
-    password: str
-    email: str
-
-class LoginRequest(BaseModel):
-    username: str
-    password: str
-
-class UserStuff(BaseModel):
-    id: int
-    username: str
-    email: str
-    class Config:
-        orm_mode = True
-
-class UserProfileReview(BaseModel):
-    album_id: int  
-    album_title: str
-    score: float
-    review: str
-
-    class Config:
-        orm_mode = True
-
-class UserProfile(BaseModel):
-    id: int
-    username: str
-    email: str
-    reviews: List[UserProfileReview]
-
-    class Config:
-        orm_mode = True
-
-class RatingInput(BaseModel):
-    score: float
-    review: Optional[str]
-
-class ReviewResponse(BaseModel):
-    id: int
-    user_id: int
-    user_name: str
-    score: float
-    review: str
-    created_at: datetime
-
-    class Config:
-        orm_mode = True
 
 # ---------- AUTH ROUTES ----------
 # Register a new user
@@ -309,7 +260,9 @@ def get_album_reviews(album_id: int, db: Session = Depends(get_db)):
             user_name=r.user.username,
             score=r.score,
             review=r.review,
-            created_at=r.created_at
+            created_at=r.created_at,
+            album_title=r.album.title,
+            album_cover_url=r.album.cover_url
         )
         for r in results
     ]
@@ -358,28 +311,32 @@ def get_album(album_id: int, db: Session = Depends(get_db)):
 
 # ---------- REVIEW ROUTES ----------
 # Get recent reviews
-@app.get("/api/reviews/recent", response_model=List[ReviewResponse])
+@app.get("/api/reviews/recent", response_model=List[RecentReviewResponse])
 def get_recent_reviews(db: Session = Depends(get_db)):
-    results = db.query(Rating)\
-        .join(User)\
-        .filter(Rating.review != None, Rating.review != "")\
-        .order_by(Rating.created_at.desc())\
-        .limit(6)\
+    recent = (
+        db.query(Rating)
+        .join(User)
+        .join(Album)
+        .filter(Rating.review != None, Rating.review != "")
+        .order_by(Rating.created_at.desc())
+        .limit(10)
         .all()
-    
-    
+    )
+
     return [
-        ReviewResponse(
+        RecentReviewResponse(
             id=r.id,
             user_id=r.user_id,
             user_name=r.user.username,
             score=r.score,
             review=r.review,
-            created_at=r.created_at
+            created_at=r.created_at,
+            album_id=r.album.id,
+            album_title=r.album.title,
+            album_cover_url=r.album.cover_url
         )
-        for r in results
+        for r in recent
     ]
-
 
 # ---------- USERS ROUTES ----------
 # Get all users (admin only)
