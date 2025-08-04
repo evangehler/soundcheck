@@ -12,10 +12,11 @@ class ListItemResponse(BaseModel):
 class UserListResponse(BaseModel):
     id: int
     name: str
+    user_id: int
     items: List[ListItemResponse]
-    class Config:
-        orm_mode = True
 
+    class Config:
+        from_attributes = True
 class CreateList(BaseModel):
     name: str
 

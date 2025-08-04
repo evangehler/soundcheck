@@ -348,10 +348,15 @@ def get_recent_reviews(db: Session = Depends(get_db)):
 @app.get("/api/lists/{list_id}/full", response_model=UserListResponse)
 def get_full_list_by_id(
     list_id: int,
-    current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    list_obj = db.query(AlbumList).filter_by(id=list_id, user_id=current_user.id).first()
+    from sqlalchemy.orm import joinedload
+    list_obj = (
+        db.query(AlbumList)
+        .options(joinedload(AlbumList.items).joinedload(ListItem.album))
+        .filter(AlbumList.id == list_id)
+        .first()
+    )
     if not list_obj:
         raise HTTPException(status_code=404, detail="List not found")
     return list_obj

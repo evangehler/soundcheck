@@ -6,6 +6,8 @@ import { Container, Title, Text, Card, Stack, Rating, Button, Group } from '@man
 export default function UserPage() {
   const { id } = useParams();
   const [user, set_user] = useState(null);
+  const currentUserId = parseInt(localStorage.getItem("user_id"));
+
 
   const handleDeleteList = async (listId, name) => {
   const confirm = window.confirm(`Delete list "${name}"?`);
@@ -66,17 +68,22 @@ export default function UserPage() {
           {user.lists.length > 0 ? user.lists.map((list) => (
             <Card key={list.id} className="glass-card" bg="#4c5897">
               <Group position="apart" align="center">
-              <Link to={`/user/lists/${list.id}`} style={{ textDecoration: 'none', color: 'white' }}>
-                {list.name}
-              </Link>
-                <Button
-                  size="xs"
-                  color="red"
-                  variant="outline"
-                  onClick={() => handleDeleteList(list.id, list.name)}
+                <Link
+                  to={`/user/lists/${list.id}`}
+                  style={{ color: 'white', textDecoration: 'none', fontWeight: 600 }}
                 >
-                  Delete
-                </Button>
+                  {list.name}
+                </Link>
+                {currentUserId === user.id && (
+                  <Button
+                    size="xs"
+                    color="red"
+                    variant="outline"
+                    onClick={() => handleDeleteList(list.id, list.name)}
+                  >
+                    Delete
+                  </Button>
+                )}
               </Group>
             </Card>
           )) : (
