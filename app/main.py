@@ -3,25 +3,23 @@ from fastapi.security import OAuth2PasswordBearer
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+
 from sqlalchemy.orm import Session, joinedload
 from jose import jwt, JWTError
 from pydantic import BaseModel
 from typing import List, Optional
-import os
+from datetime import datetime
 
 from app.db import database
 from app.db.get_db import get_db
-from app.models import album
+from app.models.album import Album
 from app.models.album_response import AlbumResponse
 from app.models.rating import Rating
 from app.models.user import User
+
 from app.utils.hash import hash_password, verify_password
 from app.utils.security import create_token, SECRET_KEY, ALGORITHM
 from app.utils.albumSchema import AlbumAdd
-
-from datetime import datetime
-from typing import Optional
-import os
 from app.utils.email import sendEmail
 
 # FastAPI setup
@@ -39,6 +37,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Serve React app
+@app.get("/")
+def serve_react_app():
+    return FileResponse("frontend/dist/index.html")
 
 # Serve assets for production
 app.mount("/assets", StaticFiles(directory="frontend/src/assets"), name="assets")
@@ -66,22 +69,44 @@ def create_admin():
     else:
         print("Admin already exists")
 
-# ---------- ROUTES ----------
+# ---------- Database Models ----------
+class RegUser(BaseModel):
+    username: str
+    password: str
+    email: str
 
-@app.get("/")
-def serve_react_app():
-    return FileResponse("frontend/dist/index.html")
+class LoginRequest(BaseModel):
+    username: str
+    password: str
 
-@app.get("/api/albums", response_model=List[AlbumResponse])
-def get_albums(db: Session = Depends(get_db)):
-    return db.query(album.Album).all()
+class UserStuff(BaseModel):
+    id: int
+    username: str
+    email: str
+    class Config:
+        orm_mode = True
 
-@app.get("/api/albums/{album_id}", response_model=AlbumResponse)
-def get_album(album_id: int, db: Session = Depends(get_db)):
-    album_obj = db.query(album.Album).filter(album.Album.id == album_id).first()
-    if not album_obj:
-        return {"error": "Album not found"}
-    return album_obj
+class UserProfileReview(BaseModel):
+    album_id: int  
+    album_title: str
+    score: float
+    review: str
+
+    class Config:
+        orm_mode = True
+
+class UserProfile(BaseModel):
+    id: int
+    username: str
+    email: str
+    reviews: List[UserProfileReview]
+
+    class Config:
+        orm_mode = True
+
+class RatingInput(BaseModel):
+    score: float
+    review: Optional[str]
 
 class ReviewResponse(BaseModel):
     id: int
@@ -94,38 +119,8 @@ class ReviewResponse(BaseModel):
     class Config:
         orm_mode = True
 
-@app.get("/api/albums/{album_id}/reviews", response_model=List[ReviewResponse])
-def get_album_reviews(album_id: int, db: Session = Depends(get_db)):
-    results = (
-        db.query(Rating)
-        .join(User)
-        .filter(
-            Rating.album_id == album_id,
-            Rating.review != None,
-            Rating.review != "",
-            User.id == Rating.user_id
-        )
-        .all()
-    )
-    return [
-        ReviewResponse(
-            id=r.id,
-            user_id=r.user_id,
-            user_name=r.user.username,
-            score=r.score,
-            review=r.review,
-            created_at=r.created_at
-        )
-        for r in results
-    ]
-
-# ---------- AUTH ----------
-
-class RegUser(BaseModel):
-    username: str
-    password: str
-    email: str
-
+# ---------- AUTH ROUTES ----------
+# Register a new user
 @router.post("/signup", response_model=RegUser)
 def registration(data: RegUser, db: Session = Depends(get_db)):
     if db.query(User).filter(User.username == data.username).first():
@@ -146,10 +141,7 @@ def registration(data: RegUser, db: Session = Depends(get_db)):
         "email": data.email
     }
 
-class LoginRequest(BaseModel):
-    username: str
-    password: str
-
+# Login a user / Return token
 @router.post("/login")
 def login(data: LoginRequest, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.username == data.username).first()
@@ -188,137 +180,132 @@ def get_admin_user(current_user: User = Depends(get_current_user)) -> User:
         raise HTTPException(status_code=403, detail="Admin access required")
     return current_user
 
+# Include the auth router
+app.include_router(router)
 
-# ---------- USERS ----------
+# ---------- ALBUM LISTS ----------
+# Get top-rated albums
+@app.get("/api/albums/top-rated")
+def get_top_rated_albums(db: Session = Depends(get_db)):
+    try:
+        # Get albums with ratings first, if none exist, get random albums
+        albums_with_ratings = db.query(Album)\
+                               .filter(Album.average_score != None)\
+                               .order_by(Album.average_score.desc())\
+                               .limit(6)\
+                               .all()
+        
+        if albums_with_ratings:
+            albums = albums_with_ratings
+            print(f"Found {len(albums)} albums with ratings")
+        else:
+            # Fallback: get any albums if none have ratings yet
+            albums = db.query(Album)\
+                       .limit(6)\
+                       .all()
+            print(f"No rated albums found, showing {len(albums)} random albums")
+        
+        result = []
+        for album in albums:
+            album_dict = {
+                "id": album.id,
+                "title": album.title,
+                "artist": album.artist,
+                "year": album.year,
+                "genre": album.genre,
+                "average_score": album.average_score,
+                "cover_url": album.cover_url,
+                "created_at": album.created_at.isoformat() if album.created_at else None,
+            }
+            result.append(album_dict)
+        
+        return result
+        
+    except Exception as e:
+        print(f"ERROR in top-rated: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return []
 
-@router.post("/signup", response_model=RegUser)
-def registration(data: RegUser,db: Session=Depends(get_db)):
-    if db.query(User).filter(User.username == data.username).first():
-        raise HTTPException(status_code=400, detail="Username already registered")
-    hashed_password = hash_password(data.password)
-    new_user = User(username=data.username,hashed_password=hashed_password,email=data.email,is_admin=False)
-    sendEmail(new_user.email,new_user.username)
-    db.add(new_user)
-    db.commit()
-    db.refresh(new_user)
-    return {"username":data.username ,"password":hashed_password, "email":data.email}
+# Get newest albums
+@app.get("/api/albums/newest")  
+def get_newest_albums(db: Session = Depends(get_db)):
+    try:
+        albums = db.query(Album)\
+                   .order_by(Album.created_at.desc())\
+                   .limit(6)\
+                   .all()
+        
+        print(f"Found {len(albums)} newest albums")
+        
+        result = []
+        for album in albums:
+            album_dict = {
+                "id": album.id,
+                "title": album.title,
+                "artist": album.artist,
+                "year": album.year,
+                "genre": album.genre,
+                "average_score": album.average_score,
+                "cover_url": album.cover_url,
+                "created_at": album.created_at.isoformat() if album.created_at else None,
+            }
+            result.append(album_dict)
+        
+        return result
+        
+    except Exception as e:
+        print(f"ERROR in newest: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return []
 
-class LoginRequest(BaseModel):
-    username: str
-    password: str
+# ---------- ALBUMS ROUTES ----------
+# Get all albums
+@app.get("/api/albums", response_model=List[AlbumResponse])
+def get_albums(db: Session = Depends(get_db)):
+    return db.query(Album).all()
 
-@router.post("/login")
-def login(data: LoginRequest, db: Session = Depends(get_db)):
-    user = db.query(User).filter(User.username == data.username).first()
-    if not user or not verify_password(data.password, user.hashed_password):
-        raise HTTPException(status_code=401, detail="Invalid username or password")
-    token = create_token({"sub":str(user.id)})
-    return {"access_token":token, "message": "Login successful", "username": user.username, "user_id": user.id}
-
-
-class UserStuff(BaseModel):
-    id: int
-    username: str
-    email: str
-    class Config:
-        orm_mode = True
-
-@app.get("/api/users", response_model=List[UserStuff])
-def get_all_users(
-    current_user: User = Depends(get_current_user),
-    db: Session = Depends(get_db)
-):
-    if not current_user.is_admin:
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Admin access required"
-        )
-    return db.query(User).all()
-
-@app.delete("/api/users/{user_id}")
-def delete_user(
-    user_id: int,
-    current_user: User = Depends(get_admin_user),
-    db: Session = Depends(get_db)
-):
-    user = db.query(User).filter(User.id == user_id).first()
-    if not user:
-        raise HTTPException(status_code=404, detail="User not found")
-    if user.is_admin:
-        raise HTTPException(status_code=403, detail="Admin can't delete Admin")
-
-    db.delete(user)
-    db.commit()
-    return {"message": f"User {user_id} deleted successfully"}
-
-# ---------- USER PROFILE PAGE ----------
-
-class UserProfileReview(BaseModel):
-    album_id: int  
-    album_title: str
-    score: float
-    review: str
-
-    class Config:
-        orm_mode = True
-
-class UserProfile(BaseModel):
-    id: int
-    username: str
-    email: str
-    reviews: List[UserProfileReview]
-
-    class Config:
-        orm_mode = True
-
-@app.get("/api/users/{user_id}", response_model=UserProfile)
-def get_user_profile(user_id: int, db: Session = Depends(get_db)):
-    user = db.query(User).options(joinedload(User.ratings).joinedload(Rating.album)).filter(User.id == user_id).first()
-    if not user:
-        raise HTTPException(status_code=404, detail="User not found")
-
-    reviews = [
-        UserProfileReview(
-            album_id=rating.album.id,           # ✅ include album_id
-            album_title=rating.album.title,
-            score=rating.score,
-            review=rating.review or ""
-        )
-        for rating in user.ratings if rating.review
-    ]
-
-    return UserProfile(
-        id=user.id,
-        username=user.username,
-        email=user.email,
-        reviews=reviews
-    )
-
-# ---------- ADMIN ALBUM CREATION ----------
-
+# Create a new album (admin only)
 @app.post("/api/albums")
 def create_album(
     album: AlbumAdd,
     current_user: User = Depends(get_admin_user),
     db: Session = Depends(get_db)
 ):
-    album = album.Album(**album.dict())
-    db.add(album)
+    new_album = Album(**album.dict())
+    db.add(new_album)
     db.commit()
-    db.refresh(album)
-    return album
+    db.refresh(new_album)
+    return new_album
 
-# Include router for login/signup
-app.include_router(router)
+# Get album reviews
+@app.get("/api/albums/{album_id}/reviews", response_model=List[ReviewResponse])
+def get_album_reviews(album_id: int, db: Session = Depends(get_db)):
+    results = (
+        db.query(Rating)
+        .join(User)
+        .filter(
+            Rating.album_id == album_id,
+            Rating.review != None,
+            Rating.review != "",
+            User.id == Rating.user_id
+        )
+        .all()
+    )
+    return [
+        ReviewResponse(
+            id=r.id,
+            user_id=r.user_id,
+            user_name=r.user.username,
+            score=r.score,
+            review=r.review,
+            created_at=r.created_at
+        )
+        for r in results
+    ]
 
-# ---------- SUBMIT REVIEW (with rating) ----------
-
-from pydantic import BaseModel
-
-class RatingInput(BaseModel):
-    score: float
-    review: Optional[str]
-
+# Submit a rating for an album
 @app.post("/api/albums/{album_id}/rate")
 def submit_rating(
     album_id: int,
@@ -346,8 +333,101 @@ def submit_rating(
     ratings = db.query(Rating).filter(Rating.album_id == album_id).all()
     if ratings:
         avg = sum(r.score for r in ratings) / len(ratings)
-        album_obj = db.query(album.Album).filter_by(id=album_id).first()
+        album_obj = db.query(Album).filter_by(id=album_id).first()
         album_obj.average_score = round(avg, 2)
         db.commit()
 
     return {"message": "Rating submitted"}
+
+# Get album by ID
+@app.get("/api/albums/{album_id}", response_model=AlbumResponse)
+def get_album(album_id: int, db: Session = Depends(get_db)):
+    album_obj = db.query(Album).filter(Album.id == album_id).first()
+    if not album_obj:
+        return {"error": "Album not found"}
+    return album_obj
+
+# ---------- REVIEW ROUTES ----------
+# Get recent reviews
+@app.get("/api/reviews/recent", response_model=List[ReviewResponse])
+def get_recent_reviews(db: Session = Depends(get_db)):
+    results = db.query(Rating)\
+        .join(User)\
+        .filter(Rating.review != None, Rating.review != "")\
+        .order_by(Rating.created_at.desc())\
+        .limit(6)\
+        .all()
+    
+    
+    return [
+        ReviewResponse(
+            id=r.id,
+            user_id=r.user_id,
+            user_name=r.user.username,
+            score=r.score,
+            review=r.review,
+            created_at=r.created_at
+        )
+        for r in results
+    ]
+
+
+# ---------- USERS ROUTES ----------
+# Get all users (admin only)
+@app.get("/api/users", response_model=List[UserStuff])
+def get_all_users(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    if not current_user.is_admin:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Admin access required"
+        )
+    return db.query(User).all()
+
+# Get user profile with reviews
+@app.get("/api/users/{user_id}", response_model=UserProfile)
+def get_user_profile(user_id: int, db: Session = Depends(get_db)):
+    user = db.query(User).options(joinedload(User.ratings).joinedload(Rating.album)).filter(User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    reviews = [
+        UserProfileReview(
+            album_id=rating.album.id,
+            album_title=rating.album.title,
+            score=rating.score,
+            review=rating.review or ""
+        )
+        for rating in user.ratings if rating.review
+    ]
+
+    return UserProfile(
+        id=user.id,
+        username=user.username,
+        email=user.email,
+        reviews=reviews
+    )
+
+# Delete a user (admin only)
+@app.delete("/api/users/{user_id}")
+def delete_user(
+    user_id: int,
+    current_user: User = Depends(get_admin_user),
+    db: Session = Depends(get_db)
+):
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    if user.is_admin:
+        raise HTTPException(status_code=403, detail="Admin can't delete Admin")
+
+    db.delete(user)
+    db.commit()
+    return {"message": f"User {user_id} deleted successfully"}
+
+# Debug
+print("Routes registered:")
+for route in app.routes:
+    print(route.path)
