@@ -344,6 +344,20 @@ def get_recent_reviews(db: Session = Depends(get_db)):
 
 # ---------- LIST ROUTES ----------
 
+# Get a full list by ID
+@app.get("/api/lists/{list_id}/full", response_model=UserListResponse)
+def get_full_list_by_id(
+    list_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    list_obj = db.query(AlbumList).filter_by(id=list_id, user_id=current_user.id).first()
+    if not list_obj:
+        raise HTTPException(status_code=404, detail="List not found")
+    return list_obj
+
+
+# Get a specific list by ID
 @app.get("/api/lists/{list_id}", response_model=UserListResponse)
 def get_list_by_id(list_id: int, current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
     list_obj = db.query(AlbumList).filter_by(id=list_id, user_id=current_user.id).first()
@@ -351,6 +365,7 @@ def get_list_by_id(list_id: int, current_user: User = Depends(get_current_user),
         raise HTTPException(status_code=404, detail="List not found")
     return list_obj
 
+# Create a new list
 @app.post("/api/lists", response_model=UserListResponse)
 def create_list(data: CreateList, current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
     new_list = AlbumList(name=data.name, user_id=current_user.id)
@@ -359,6 +374,7 @@ def create_list(data: CreateList, current_user: User = Depends(get_current_user)
     db.refresh(new_list)
     return new_list
 
+# Add an album to a list
 @app.post("/api/lists/{list_id}/add", status_code=204)
 def add_album_to_list(list_id: int, data: AddAlbumToList, current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
     list_obj = db.query(AlbumList).filter_by(id=list_id, user_id=current_user.id).first()
@@ -369,8 +385,10 @@ def add_album_to_list(list_id: int, data: AddAlbumToList, current_user: User = D
         db.add(ListItem(list_id=list_id, album_id=data.album_id))
         db.commit()
 
+# Get all items in a list
 @app.post("/api/lists/{list_id}/add", status_code=204)
 
+# Get all lists for the current user
 @app.get("/api/lists", response_model=List[UserListResponse])
 def get_user_lists(
     current_user: User = Depends(get_current_user),
@@ -378,6 +396,7 @@ def get_user_lists(
 ):
     return db.query(AlbumList).filter_by(user_id=current_user.id).all()
 
+# Remove an album from a list
 @app.delete("/api/lists/{list_id}/remove/{album_id}")
 def remove_album_from_list(
     list_id: int,
@@ -391,6 +410,21 @@ def remove_album_from_list(
     db.delete(item)
     db.commit()
     return {"message": "Removed from list"}
+
+# Delete a list
+@app.delete("/api/lists/{list_id}")
+def delete_list(
+    list_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    list_obj = db.query(AlbumList).filter_by(id=list_id, user_id=current_user.id).first()
+    if not list_obj:
+        raise HTTPException(status_code=404, detail="List not found")
+
+    db.delete(list_obj)
+    db.commit()
+    return {"message": f"List {list_id} deleted"}
 
 # ---------- USERS ROUTES ----------
 # Get all users (admin only)
@@ -423,11 +457,14 @@ def get_user_profile(user_id: int, db: Session = Depends(get_db)):
         for rating in user.ratings if rating.review
     ]
 
+    lists = db.query(AlbumList).filter_by(user_id=user.id).all()
+
     return UserProfile(
         id=user.id,
         username=user.username,
         email=user.email,
-        reviews=reviews
+        reviews=reviews,
+        lists=lists
     )
 
 # Delete a user (admin only)

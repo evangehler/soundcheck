@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import List
+from app.schemas.list import CompactList
 
 class RegUser(BaseModel):
     username: str
@@ -32,6 +33,7 @@ class UserProfile(BaseModel):
     username: str
     email: str
     reviews: List[UserProfileReview]
+    lists: List[CompactList]
 
     class Config:
         orm_mode = True
