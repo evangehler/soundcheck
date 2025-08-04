@@ -12,3 +12,4 @@ class User(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     ratings = relationship("Rating", back_populates="user")
     is_admin = Column(Boolean,default=False)
+    lists = relationship("List", back_populates="user", cascade="all, delete-orphan")

@@ -20,11 +20,14 @@ from app.db.get_db import get_db
 from app.models.rating import Rating
 from app.models.album import Album
 from app.models.user import User
+from app.models.list import List as AlbumList
+from app.models.list_item import ListItem
 
 # Schemas
 from app.schemas.user import RegUser, LoginRequest, UserStuff, UserProfile, UserProfileReview
 from app.schemas.rating import RatingInput, ReviewResponse, RecentReviewResponse
 from app.schemas.album import AlbumAdd, AlbumResponse
+from app.schemas.list import UserListResponse, CreateList, AddAlbumToList, ListItemResponse
 
 # Utils
 from app.utils.hash import hash_password, verify_password
@@ -337,6 +340,57 @@ def get_recent_reviews(db: Session = Depends(get_db)):
         )
         for r in recent
     ]
+
+
+# ---------- LIST ROUTES ----------
+
+@app.get("/api/lists/{list_id}", response_model=UserListResponse)
+def get_list_by_id(list_id: int, current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    list_obj = db.query(AlbumList).filter_by(id=list_id, user_id=current_user.id).first()
+    if not list_obj:
+        raise HTTPException(status_code=404, detail="List not found")
+    return list_obj
+
+@app.post("/api/lists", response_model=UserListResponse)
+def create_list(data: CreateList, current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    new_list = AlbumList(name=data.name, user_id=current_user.id)
+    db.add(new_list)
+    db.commit()
+    db.refresh(new_list)
+    return new_list
+
+@app.post("/api/lists/{list_id}/add", status_code=204)
+def add_album_to_list(list_id: int, data: AddAlbumToList, current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    list_obj = db.query(AlbumList).filter_by(id=list_id, user_id=current_user.id).first()
+    if not list_obj:
+        raise HTTPException(status_code=404, detail="List not found")
+    existing = db.query(ListItem).filter_by(list_id=list_id, album_id=data.album_id).first()
+    if not existing:
+        db.add(ListItem(list_id=list_id, album_id=data.album_id))
+        db.commit()
+
+@app.post("/api/lists/{list_id}/add", status_code=204)
+
+@app.get("/api/lists", response_model=List[UserListResponse])
+def get_user_lists(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    return db.query(AlbumList).filter_by(user_id=current_user.id).all()
+
+@app.delete("/api/lists/{list_id}/remove/{album_id}")
+def remove_album_from_list(
+    list_id: int,
+    album_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    item = db.query(ListItem).filter_by(list_id=list_id, album_id=album_id).first()
+    if not item:
+        raise HTTPException(status_code=404, detail="Album not in list")
+    db.delete(item)
+    db.commit()
+    return {"message": "Removed from list"}
 
 # ---------- USERS ROUTES ----------
 # Get all users (admin only)
