@@ -1,11 +1,35 @@
 // UserPage.jsx
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Container, Title, Text, Card, Stack, Rating } from '@mantine/core';
+import { Container, Title, Text, Card, Stack, Rating, Button, Group } from '@mantine/core';
 
 export default function UserPage() {
   const { id } = useParams();
   const [user, set_user] = useState(null);
+
+  const handleDeleteList = async (listId, name) => {
+  const confirm = window.confirm(`Delete list "${name}"?`);
+  if (!confirm) return;
+
+  const token = localStorage.getItem("token");
+  const res = await fetch(`http://localhost:8000/api/lists/${listId}`, {
+    method: "DELETE",
+    headers: { Authorization: `Bearer ${token}` }
+  });
+
+  if (res.ok) {
+    set_user(prev => ({
+      ...prev,
+      lists: prev.lists.filter(l => l.id !== listId)
+    }));
+    notifications.show({
+      title: 'List Deleted',
+      message: `"${name}" was removed.`,
+      color: 'red',
+      autoClose: 2000,
+    });
+  }
+};
 
   useEffect(() => {
     fetch(`http://localhost:8000/api/users/${id}`)
@@ -36,6 +60,31 @@ export default function UserPage() {
           <Text c="gray">No reviews yet.</Text>
         )}
       </Stack>
+
+        <Title order={4} mt="xl" c="white">Lists:</Title>
+        <Stack spacing="sm" className="modal-glass-card">
+          {user.lists.length > 0 ? user.lists.map((list) => (
+            <Card key={list.id} className="glass-card" bg="#4c5897">
+              <Group position="apart" align="center">
+              <Link to={`/user/lists/${list.id}`} style={{ textDecoration: 'none', color: 'white' }}>
+                {list.name}
+              </Link>
+                <Button
+                  size="xs"
+                  color="red"
+                  variant="outline"
+                  onClick={() => handleDeleteList(list.id, list.name)}
+                >
+                  Delete
+                </Button>
+              </Group>
+            </Card>
+          )) : (
+            <Text c="gray">No lists yet.</Text>
+          )}
+        </Stack>
+
+
     </Container>
   );
 }

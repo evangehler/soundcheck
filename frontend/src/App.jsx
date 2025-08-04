@@ -7,6 +7,7 @@ import UserPage from './UserPage.jsx';
 import SearchPage from './SearchPage.jsx';
 import AuthContainer from "./components/AuthContainer.jsx";
 import UserList from "./components/UserList.jsx";
+import UserListPage from './UserListPage.jsx';
 
 
 export default function App() {
@@ -32,7 +33,8 @@ export default function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/login" element={<AuthContainer setUsername={setUsername} />} />
         <Route path="/signup" element={<AuthContainer setUsername={setUsername} />} />
-          <Route path="/users" element={<UserList />} />
+        <Route path="/users" element={<UserList />} />
+        <Route path="/user/lists/:id" element={<UserListPage />} />
       </Routes>
     </>
   );
