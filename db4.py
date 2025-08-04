@@ -3,6 +3,8 @@ from app.db.database import Base, engine, SessionLocal
 from app.models.album import Album
 from app.models.rating import Rating
 from app.models.user import User
+from app.models.list import List
+from app.models.list_item import ListItem
 from sqlalchemy import func
 from app.utils.hash import hash_password
 
