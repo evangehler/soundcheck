@@ -1,25 +1,34 @@
+# app/main.py
+
+# FastAPI application for managing albums, ratings, and users
 from fastapi import FastAPI, Depends, HTTPException, APIRouter, Header, status
 from fastapi.security import OAuth2PasswordBearer
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 
+# Database and ORM
 from sqlalchemy.orm import Session, joinedload
 from jose import jwt, JWTError
 from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime
-
 from app.db import database
 from app.db.get_db import get_db
-from app.models.album import Album
-from app.models.album_response import AlbumResponse
+
+# Models
 from app.models.rating import Rating
+from app.models.album import Album
 from app.models.user import User
 
+# Schemas
+from app.schemas.user import RegUser, LoginRequest, UserStuff, UserProfile
+from app.schemas.rating import RatingInput, ReviewResponse
+from app.schemas.album import AlbumAdd, AlbumResponse
+
+# Utils
 from app.utils.hash import hash_password, verify_password
 from app.utils.security import create_token, SECRET_KEY, ALGORITHM
-from app.utils.albumSchema import AlbumAdd
 from app.utils.email import sendEmail
 
 # FastAPI setup
