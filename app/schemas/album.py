@@ -1,4 +1,4 @@
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, HttpUrl
 from typing import Optional
 from datetime import datetime
 
@@ -13,3 +13,9 @@ class AlbumResponse(BaseModel):
     created_at: Optional[datetime]
     class Config:
         from_attributes = True
+
+class AlbumAdd(BaseModel):
+    title: str
+    artist: str
+    year: Optional[int] = None
+    cover: Optional[HttpUrl] = None
