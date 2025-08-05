@@ -79,8 +79,8 @@ export default function UserListPage() {
           <Text c="gray">No albums in this list.</Text>
         ) : (
           list.items.map(item => (
-            <Card key={item.id} className="glass-card" bg="#4c5897">
-              <Group position="apart" align="center" spacing="md">
+            <Card key={item.id} className="glass-card" bg="#4c5897" style={{ width: '100%' }}>
+              <Group justify="space-between" align="center" spacing="md" style={{ flex: 1 }}>
                 <Group spacing="md" align="center">
                   <Link to={`/albums/${item.album_id}`}>
                     <img
@@ -90,12 +90,11 @@ export default function UserListPage() {
                         height: 80,
                         objectFit: 'cover',
                         borderRadius: '8px',
-                        boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+                        boxShadow: '0 2px 6px rgba( Patreon0,0,0,0.3)',
                         cursor: 'pointer',
                       }}
                     />
                   </Link>
-
                   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <Link
                       to={`/albums/${item.album_id}`}
