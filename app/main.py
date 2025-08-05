@@ -195,7 +195,7 @@ def get_top_rated_albums(db: Session = Depends(get_db)):
 def get_newest_albums(db: Session = Depends(get_db)):
     try:
         albums = db.query(Album)\
-                   .order_by(Album.created_at.desc())\
+                   .order_by(Album.year.desc(), Album.created_at.desc())\
                    .limit(6)\
                    .all()
         
