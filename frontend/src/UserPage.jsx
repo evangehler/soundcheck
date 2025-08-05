@@ -1,7 +1,7 @@
 // UserPage.jsx
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Container, Title, Text, Card, Stack, Rating, Button, Group } from '@mantine/core';
+import {Container, Title, Text, Card, Stack, Rating, Button, Group, SimpleGrid} from '@mantine/core';
 
 export default function UserPage() {
   const { id } = useParams();
@@ -41,7 +41,6 @@ export default function UserPage() {
   }, [id]);
 
   if (!user) return <Text align="center" p="lg" c="white">Loading user profile...</Text>;
-
   return (
     <Container size="sm" py="lg">
       <Link to="/" style={{ color: '#60a5fa', textDecoration: 'underline' }}>← Back to Albums</Link>
@@ -85,6 +84,36 @@ export default function UserPage() {
                   </Button>
                 )}
               </Group>
+
+                {list.items && (
+              <Group>
+                {list.items.map(item => (
+                <div key={item.id}>
+                {item.album?.cover_url && (
+                <Link to={`/albums/${item.album_id}`}>
+                  <img
+                    src={item.album.cover_url}
+                   style={{width: 80,
+                height: 80,
+                objectFit: 'cover',
+                borderRadius: '8px',
+                boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+                cursor: 'pointer'
+              }}
+            />
+          </Link>
+        )}
+        {item.album?.title && (
+          <Text c="white" size="sm" mt={4}>
+            {item.album.title} — {item.album.artist}
+          </Text>
+        )}
+      </div>
+    ))}
+  </Group>
+)}
+
+
             </Card>
           )) : (
             <Text c="gray">No lists yet.</Text>

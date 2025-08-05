@@ -70,6 +70,8 @@ export default function UserListPage() {
         </>
       )}
 
+      <div className = {'modal-glass-card'} style={{padding:'1rem'}}>
+
       <Title order={3} mt="lg" c="white">{list.name}</Title>
 
       <Stack mt="md">
@@ -78,37 +80,58 @@ export default function UserListPage() {
         ) : (
           list.items.map(item => (
             <Card key={item.id} className="glass-card" bg="#4c5897">
-              <Group position="apart" align="center">
-                <div>
-                  <Link
-                    to={`/albums/${item.album_id}`}
-                    style={{ fontWeight: 600, color: 'white', textDecoration: 'none' }}
-                  >
-                    {item.album.title} — {item.album.artist}
+              <Group position="apart" align="center" spacing="md">
+                <Group spacing="md" align="center">
+                  <Link to={`/albums/${item.album_id}`}>
+                    <img
+                      src={item.album.cover_url}
+                      style={{
+                        width: 80,
+                        height: 80,
+                        objectFit: 'cover',
+                        borderRadius: '8px',
+                        boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+                        cursor: 'pointer',
+                      }}
+                    />
                   </Link>
-                  <Rating
-                    value={item.album.average_score}
-                    readOnly
-                    size="sm"
-                    color="yellow"
-                    mt={4}
-                  />
-                </div>
-                {currentUserId === list.user_id && (
-                    <Button
-                        color="red"
-                        variant="outline"
-                        size="xs"
-                        onClick={() => handleRemove(item.album_id)}
+
+                  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <Link
+                      to={`/albums/${item.album_id}`}
+                      style={{
+                        fontWeight: 600,
+                        color: 'white',
+                        textDecoration: 'none',
+                        marginBottom: 4,
+                      }}
                     >
-                        Remove
-                    </Button>
-                    )}
+                      {item.album.title} — {item.album.artist}
+                    </Link>
+                    <Rating
+                      value={item.album.average_score}
+                      readOnly
+                      size="sm"
+                      color="yellow"
+                    />
+                  </div>
+                </Group>
+                {currentUserId === list.user_id && (
+                  <Button
+                    color="red"
+                    variant="outline"
+                    size="xs"
+                    onClick={() => handleRemove(item.album_id)}
+                  >
+                    Remove
+                  </Button>
+                )}
               </Group>
             </Card>
           ))
         )}
       </Stack>
+      </div>
     </Container>
   );
 }

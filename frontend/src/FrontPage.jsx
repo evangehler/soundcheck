@@ -33,7 +33,12 @@ export default function FrontPage() {
 
         <Title order={2} ta="left" mt="xl" mb="md" c="white">Newest Albums</Title>
         <SimpleGrid cols={{ base: 1, sm: 3, md: 4, xl: 6 }} spacing="md">
-          {newest.map(album => <AlbumCard key={album.id} album={album} />)}
+          {[...newest]
+            .sort((a, b) => b.year - a.year)
+            .slice(0, 6)
+            .map(album => (
+            <AlbumCard key={album.id} album={album} />
+          ))}
         </SimpleGrid>
 
         <Title order={2} ta="left" mt="xl" mb="md" c="white">Recent Reviews</Title>
