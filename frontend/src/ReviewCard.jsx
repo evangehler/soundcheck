@@ -7,12 +7,11 @@ export default function ReviewCard({ review }) {
   return (
     <Card
       shadow="sm"
-      radius="md"
       bg='rgba(38, 46, 74, 0.4)'
       padding="md"
-      style={{ maxWidth: 500, margin: 'none', alignSelf: "right" }}
+      style={{ maxWidth: 500, margin: 'none', alignSelf: "right", borderRadius: 15}}
     >
-      <Blockquote color="white" style={{ borderLeft: 'none'}}>
+      <Blockquote color="white" style={{borderRadius: 15, borderLeft: 'none'}}>
         <Text c="white">{review.review}</Text>
       </Blockquote>
 

@@ -45,7 +45,9 @@ export default function UserPage() {
     <Container size="sm" py="lg">
       <Link to="/" style={{ color: '#60a5fa', textDecoration: 'underline' }}>← Back to Albums</Link>
       <Title order={2} mt="md" c="white">User: {user.username}</Title>
-      <Text c="gray" mb="md">Email: {user.email}</Text>
+      {currentUserId === user.id && (
+        <Text c="gray" mb="md">Email: {user.email}</Text>
+      )}
 
       <Title order={4} mt="lg" c="white">Reviews:</Title>
       <Stack spacing="sm" className={"modal-glass-card"}>

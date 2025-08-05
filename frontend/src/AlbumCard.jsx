@@ -19,7 +19,7 @@ export default function AlbumCard({ album }) {
         borderStyle: 'groove',
         borderWidth: 1,
         borderColor: 'gray',
-        borderRadius: 4,
+        borderRadius: 15,
         overflow: 'hidden',
       }}
       onMouseEnter={() => set_hovered(true)}
@@ -42,7 +42,7 @@ export default function AlbumCard({ album }) {
       />
       <Card
         shadow="lg"
-        radius={4}
+        radius={15}
         padding="md"
         style={{
           backgroundColor: 'rgba(38, 46, 74, 0.5)',

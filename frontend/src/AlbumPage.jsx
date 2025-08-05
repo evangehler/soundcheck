@@ -166,7 +166,7 @@ const handleRemoveFromList = async (listId) => {
               gap: '1rem',
               backgroundColor: 'rgba(38, 46, 74, 0.4)',
               width: 'fit-content',
-              borderRadius: 5,
+              borderRadius: 15,
               display: 'inline-block',
             }}
             className="modal-glass-card"
@@ -244,7 +244,7 @@ const handleRemoveFromList = async (listId) => {
             </div>
           </Group>
 
-          <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center' }}>
+          <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center'}}>
             <div style={{ width: 500 }}>
               <Text align="center" c="white" size="xl" fw={600}>
                 Reviews
@@ -268,7 +268,7 @@ const handleRemoveFromList = async (listId) => {
                     />
                   )}
                   {sorted_reviews.map((review) => (
-                    <div key={review.id} style={{ position: 'relative' }}>
+                    <div key={review.id} style={{ position: 'relative',borderRadius: 15 }} >
                       {review.user_id === user_id && editing ? (
                         <RatingSubmission
                           album_id={id}
@@ -289,7 +289,7 @@ const handleRemoveFromList = async (listId) => {
                             <Button
                               variant="subtle"
                               size="sm"
-                              style={{ position: 'absolute', top: 16, right: 16 }}
+                              style={{ position: 'absolute', top: 16, right: 16, borderRadius: 15 }}
                               onClick={() => set_editing(true)}
                             >
                               Edit
