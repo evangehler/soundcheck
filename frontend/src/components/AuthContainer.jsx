@@ -53,6 +53,11 @@ export default function AuthContainer({ setUsername }) {
   // Send signup request and redirect to login
   async function handleRegister(data) {
     console.log("Register data:", data);
+    const minPasswordLength = 8;
+    if (data.password.length < minPasswordLength) {
+      alert(`Password must be at least ${minPasswordLength} characters long.`);
+    return;
+  }
     try {
       const response = await fetch("http://localhost:8000/signup", {
         method: "POST",

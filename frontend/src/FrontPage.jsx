@@ -43,7 +43,7 @@ export default function FrontPage() {
 
         <Title order={2} ta="left" mt="xl" mb="md" c="white">Recent Reviews</Title>
         <SimpleGrid cols={1} spacing="md">
-          {recentReviews.map((r) => (
+          {recentReviews.slice(0,5).map((r) => (
             <Card key={r.id} shadow="md" padding="md" radius="md" className="glass-card" bg="#4c5897">
               <div style={{ display: 'flex', gap: '1rem' }}>
                 <Link to={`/albums/${r.album_id}`}>

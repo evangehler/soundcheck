@@ -202,7 +202,7 @@ const handleRemoveFromList = async (listId) => {
                   />
                   {user_id && (
                     <div style={{ position: 'relative', overflow: 'visible', zIndex: 1 }}>
-                      <Menu withinPortal shadow="md" width={220} position="bottom-end" zIndex={1000} closeOnItemClick={false}>
+                      <Menu shadow="md" width={220} position="bottom-end" zIndex={1000} closeOnItemClick={false}>
                         <Menu.Target>
                           <Button variant="outline" color="cyan">
                             Add to List
@@ -315,6 +315,7 @@ const handleRemoveFromList = async (listId) => {
         onClose={() => setCreateModalOpen(false)}
         title="Create New List"
         centered
+        classNames={{content: 'modal-glass-card', header:'glass-modal-header'}}
       >
         <TextInput
           label="List Name"

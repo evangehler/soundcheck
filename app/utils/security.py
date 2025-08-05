@@ -11,7 +11,7 @@ from app.db import get_db
 
 SECRET_KEY = "secret-key"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 120
+ACCESS_TOKEN_EXPIRE_MINUTES = 1000
 security = HTTPBearer()
 def create_token(data:dict,expires_delta:timedelta | None = None):
     to_encode = data.copy()
