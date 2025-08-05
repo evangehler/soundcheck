@@ -2,6 +2,25 @@
 A full-stack album rating and review site built with **FastAPI** and **React (Vite)**.
 
 
+## Features
+* Album Browsing / Search
+* User Reviews
+* Account Security
+* Admin Tools / Dashboard
+
+
+### Album Pages
+![Alt text](/images/image_1.png "Album Pages")
+
+### Dynamic Front Page
+![Alt text](/images/image_2.png "Album Pages")
+
+### User Defined Lists
+![Alt text](/images/image_3.png "Album Pages")
+
+
+
+
 ## Installation
 
 **Pull repository**
