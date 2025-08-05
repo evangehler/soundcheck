@@ -18,7 +18,7 @@ python -m venv venv
 Windows Powershell:
 
 ```
-venv/scripts/activate.ps1 
+./venv/scripts/activate
 ```
 MacOS / Linux:
 
@@ -71,16 +71,20 @@ Confirm this worked with
 DATABASE_URL=postgresql://postgres:<your-password>@localhost/soundcheck
 ```
 
-For example, with the default user and port 5432 (use this):
-
+**The following is the recommended .env for basic dev**
 ```
 DATABASE_URL=postgresql://postgres:admin@localhost:5432/soundcheck
+EMAIL_ADDRESS =soundcheck.business@gmail.com
+EMAIL_PASSWORD =gauv ypcc sesf deer
+EMAIL_ENABLES = false
 ```
 
-**Run provided file create_tables.py to create and populate new database:**
+**To populate database run any of the dbX.py files**
+
+For example:
 
 ```
-python create_tables.py
+python db4.py
 ```
 
 **To log into new database directly from CLI:**
@@ -95,32 +99,19 @@ SELECT * FROM albums;
 
 This information is also available from pgAdmin GUI
 
-## Running App Locally
- To launch as built:
-
- 1. Start Frontend
- ```
- cd frontend
- npm install
- ```
-
- 2. Start FastAPI backend 
+## Running App Locally in Dev Mode
+ 
+ 1. Start FastAPI backend 
 ```
 cd ..
 python run.py
 ```
 
-3. Open at http://localhost:8000/ 
-(Ctrl + F5 if blank)
-
-## Development
-To load in development mode (with hot reload)
-
-1. Start frontend in dev mode
+2. Start frontend in dev mode
 ```
 cd frontend
 npm install
 npm run dev
 ```
 
-2. Open app at http://localhost:5173/ (Ctrl + F5 if blank)
+3. Open app at http://localhost:5173/ (Ctrl + F5 if blank)
