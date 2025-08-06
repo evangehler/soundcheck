@@ -258,7 +258,7 @@ export default function AlbumPage() {
                 Reviews
               </Text>
               <ScrollArea
-                h={500}
+                h={600}
                 type="always"
                 scrollbarSize={6}
                 styles={{
