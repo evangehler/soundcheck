@@ -146,9 +146,6 @@ const handleRemoveFromList = async (listId) => {
         }}
       />
       <Container py="lg" style={{ marginLeft: 50, maxWidth: '100%', paddingLeft: '1rem' }}>
-        <Link to="/" style={{ color: '#60a5fa', textDecoration: 'underline' }}>
-          ← Back to Albums
-        </Link>
         <div style={{
           display: 'flex',
           flexWrap: 'wrap',

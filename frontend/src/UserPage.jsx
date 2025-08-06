@@ -43,8 +43,7 @@ export default function UserPage() {
   if (!user) return <Text align="center" p="lg" c="white">Loading user profile...</Text>;
   return (
     <Container size="xl" py="lg" >
-      <Link to="/" style={{ color: '#60a5fa', textDecoration: 'underline' }}>← Back to Albums</Link>
-      <Title order={2} mt="md" c="white">User: {user.username}</Title>
+      <Title order={2} mt="md" c="white">{user.username}</Title>
       {currentUserId === user.id && (
         <Text c="gray" mb="md">Email: {user.email}</Text>
       )}
