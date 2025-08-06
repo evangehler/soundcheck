@@ -7,6 +7,7 @@ import {
 import ReviewCard from './ReviewCard.jsx';
 import RatingSubmission from './components/RatingSubmission.jsx';
 
+// Displays album information and corresponding reviews
 export default function AlbumPage() {
   const { id } = useParams();
   const [album, set_album] = useState(null);
@@ -15,93 +16,100 @@ export default function AlbumPage() {
   const [user_id, set_user_id] = useState(null);
   const [editing, set_editing] = useState(false);
 
-  const [lists, setLists] = useState([]);
-  const [loadingLists, setLoadingLists] = useState(true);
-  const [addedListId, setAddedListId] = useState(null);
+  const [lists, set_lists] = useState([]);
+  const [loading_lists, set_loading_lists] = useState(true);
+  const [added_list_id, set_added_list_id] = useState(null);
 
-  const [createModalOpen, setCreateModalOpen] = useState(false);
-  const [newListName, setNewListName] = useState('');
+  const [create_modal_open, set_create_modal_open] = useState(false);
+  const [new_list_name, set_new_list_name] = useState('');
 
-  const fetchAlbum = () => {
+  // fetch album details
+  const fetch_album = () => {
     fetch(`http://localhost:8000/api/albums/${id}`)
       .then(res => res.json())
       .then(set_album);
   };
 
-  const refreshReviews = () => {
+  // fetch reviews for album
+  const refresh_reviews = () => {
     fetch(`http://localhost:8000/api/albums/${id}/reviews`)
       .then(res => (res.ok ? res.json() : []))
       .then(set_reviews);
   };
 
-  const fetchLists = () => {
+  // fetch user's lists with auth token
+  const fetch_lists = () => {
     const token = localStorage.getItem("token");
     fetch("http://localhost:8000/api/lists", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
       .then(data => {
-        setLists(data); 
-        setLoadingLists(false);
+        set_lists(data);
+        set_loading_lists(false);
       });
   };
 
+  // init: load user info, album, reviews, lists
   useEffect(() => {
-    const storedUser = localStorage.getItem('username');
-    const storedUserId = localStorage.getItem('user_id');
+    const stored_user = localStorage.getItem('username');
+    const stored_user_id = localStorage.getItem('user_id');
 
-    if (storedUser) set_username(storedUser);
-    if (storedUserId) set_user_id(parseInt(storedUserId));
+    if (stored_user) set_username(stored_user);
+    if (stored_user_id) set_user_id(parseInt(stored_user_id));
 
-    fetchAlbum();
-    refreshReviews();
-    fetchLists();
+    fetch_album();
+    refresh_reviews();
+    fetch_lists();
   }, [id]);
 
-  const isInList = (list) => list.items?.some(item => item.album_id === parseInt(id));
+  // check if album is in list
+  const is_in_list = (list) => list.items?.some(item => item.album_id === parseInt(id));
 
-const handleAddToList = async (listId) => {
-  const token = localStorage.getItem("token");
-  const res = await fetch(`http://localhost:8000/api/lists/${listId}/add`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ album_id: parseInt(id) })
-  });
+  // add album to list
+  const handle_add_to_list = async (list_id) => {
+    const token = localStorage.getItem("token");
+    const res = await fetch(`http://localhost:8000/api/lists/${list_id}/add`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ album_id: parseInt(id) })
+    });
 
-  if (res.ok) {
-    setLists(prev =>
-      prev.map(list =>
-        list.id === listId
-          ? { ...list, items: [...(list.items || []), { album_id: parseInt(id) }] }
-          : list
-      )
-    );
-  }
-};
-
-const handleRemoveFromList = async (listId) => {
-  const token = localStorage.getItem("token");
-  const res = await fetch(`http://localhost:8000/api/lists/${listId}/remove/${id}`, {
-    method: "DELETE",
-    headers: {
-      Authorization: `Bearer ${token}`,
+    if (res.ok) {
+      set_lists(prev =>
+        prev.map(list =>
+          list.id === list_id
+            ? { ...list, items: [...(list.items || []), { album_id: parseInt(id) }] }
+            : list
+        )
+      );
     }
-  });
+  };
 
-  if (res.ok) {
-    setLists(prev =>
-      prev.map(list =>
-        list.id === listId
-          ? { ...list, items: list.items?.filter(item => item.album_id !== parseInt(id)) }
-          : list
-      )
-    );
-  }
-};
-  const handleCreateList = async () => {
+  // remove album from list
+  const handle_remove_from_list = async (list_id) => {
+    const token = localStorage.getItem("token");
+    const res = await fetch(`http://localhost:8000/api/lists/${list_id}/remove/${id}`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${token}` }
+    });
+
+    if (res.ok) {
+      set_lists(prev =>
+        prev.map(list =>
+          list.id === list_id
+            ? { ...list, items: list.items?.filter(item => item.album_id !== parseInt(id)) }
+            : list
+        )
+      );
+    }
+  };
+
+  // create a new list
+  const handle_create_list = async () => {
     const token = localStorage.getItem("token");
     const res = await fetch("http://localhost:8000/api/lists", {
       method: "POST",
@@ -109,18 +117,20 @@ const handleRemoveFromList = async (listId) => {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name: newListName }),
+      body: JSON.stringify({ name: new_list_name }),
     });
 
     if (res.ok) {
-      const newList = await res.json();
-      setLists((prev) => [...prev, newList]);
-      setNewListName('');
-      setCreateModalOpen(false);
+      const new_list = await res.json();
+      set_lists(prev => [...prev, new_list]);
+      set_new_list_name('');
+      set_create_modal_open(false);
     }
   };
 
-  const userReview = reviews.find((r) => r.user_id === user_id);
+  // find current user's review to prioritize in UI
+  const user_review = reviews.find(r => r.user_id === user_id);
+  // sort reviews to put user's review first
   const sorted_reviews = [...reviews].sort((a, b) => {
     if (a.user_id === user_id) return -1;
     if (b.user_id === user_id) return 1;
@@ -131,6 +141,7 @@ const handleRemoveFromList = async (listId) => {
 
   return (
     <div style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* blurred background */}
       <img
         src={album.cover_url}
         alt=""
@@ -175,7 +186,7 @@ const handleRemoveFromList = async (listId) => {
                   alt={`${album.title} cover`}
                   style={{
                     width: '100%',
-                    borderRadius: '6px',
+                    borderRadius: 6,
                     boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
                     objectFit: 'cover',
                   }}
@@ -197,6 +208,7 @@ const handleRemoveFromList = async (listId) => {
                     size="lg"
                     color="yellow"
                   />
+                  {/* Add to List dropdown for logged-in users */}
                   {user_id && (
                     <div style={{ position: 'relative', overflow: 'visible', zIndex: 1 }}>
                       <Menu shadow="md" width={220} position="bottom-end" zIndex={1000} closeOnItemClick={false}>
@@ -206,30 +218,28 @@ const handleRemoveFromList = async (listId) => {
                           </Button>
                         </Menu.Target>
                         <Menu.Dropdown>
-                          {loadingLists ? (
+                          {loading_lists ? (
                             <Menu.Item disabled>Loading...</Menu.Item>
                           ) : lists.length === 0 ? (
                             <Menu.Item disabled>No lists found</Menu.Item>
                           ) : (
                             lists.map(list => {
-                              const inList = list.items?.some(item => item.album_id === parseInt(id));
+                              const in_list = list.items?.some(item => item.album_id === parseInt(id));
                               return (
                                 <Menu.Item
                                   key={list.id}
                                   onClick={() =>
-                                    inList ? handleRemoveFromList(list.id) : handleAddToList(list.id)
+                                    in_list ? handle_remove_from_list(list.id) : handle_add_to_list(list.id)
                                   }
                                 >
                                   {list.name}
-                                  {inList && (
-                                    <span style={{ color: 'green', marginLeft: 8 }}>✓</span>
-                                  )}
+                                  {in_list && <span style={{ color: 'green', marginLeft: 8 }}>✓</span>}
                                 </Menu.Item>
                               );
                             })
                           )}
                           <Menu.Divider />
-                          <Menu.Item color="blue" onClick={() => setCreateModalOpen(true)}>
+                          <Menu.Item color="blue" onClick={() => set_create_modal_open(true)}>
                             ➕ Create New List
                           </Menu.Item>
                         </Menu.Dropdown>
@@ -241,22 +251,29 @@ const handleRemoveFromList = async (listId) => {
             </div>
           </Group>
 
-          <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center'}}>
+          {/* Reviews section */}
+          <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center' }}>
             <div style={{ width: 500 }}>
               <Text align="center" c="white" size="xl" fw={600}>
                 Reviews
               </Text>
-              <ScrollArea h={500} type="always" scrollbarSize={6} styles={{
-                scrollbar: { backgroundColor: 'transparent' },
-                thumb: { backgroundColor: 'white', borderRadius: 4 },
-              }}>
+              <ScrollArea
+                h={500}
+                type="always"
+                scrollbarSize={6}
+                styles={{
+                  scrollbar: { backgroundColor: 'transparent' },
+                  thumb: { backgroundColor: 'white', borderRadius: 4 },
+                }}
+              >
                 <Stack spacing="md" style={{ paddingRight: 12 }}>
-                  {!userReview && user_id && (
+                  {/* Show rating submission form if user hasn't reviewed yet */}
+                  {!user_review && user_id && (
                     <RatingSubmission
                       album_id={id}
                       onSubmit={() => {
-                        refreshReviews();
-                        fetchAlbum();
+                        refresh_reviews();
+                        fetch_album();
                       }}
                       onCancel={() => {}}
                       initialScore={0}
@@ -264,14 +281,16 @@ const handleRemoveFromList = async (listId) => {
                       isEditing={false}
                     />
                   )}
+
+                  {/* Render sorted reviews */}
                   {sorted_reviews.map((review) => (
-                    <div key={review.id} style={{ position: 'relative',borderRadius: 15 }} >
+                    <div key={review.id} style={{ position: 'relative', borderRadius: 15 }}>
                       {review.user_id === user_id && editing ? (
                         <RatingSubmission
                           album_id={id}
                           onSubmit={() => {
-                            refreshReviews();
-                            fetchAlbum();
+                            refresh_reviews();
+                            fetch_album();
                             set_editing(false);
                           }}
                           onCancel={() => set_editing(false)}
@@ -296,6 +315,8 @@ const handleRemoveFromList = async (listId) => {
                       )}
                     </div>
                   ))}
+
+                  {/* No reviews placeholder */}
                   {reviews.length === 0 && (
                     <Text c="gray" mt="xl">No reviews yet. Be the first to review!</Text>
                   )}
@@ -306,25 +327,21 @@ const handleRemoveFromList = async (listId) => {
         </div>
       </Container>
 
-      {/* Modal for creating a list */}
+      {/* Modal for creating new list */}
       <Modal
-        opened={createModalOpen}
-        onClose={() => setCreateModalOpen(false)}
+        opened={create_modal_open}
+        onClose={() => set_create_modal_open(false)}
         title="Create New List"
         centered
-        classNames={{content: 'modal-glass-card', header:'glass-modal-header'}}
+        classNames={{ content: 'modal-glass-card', header: 'glass-modal-header' }}
       >
         <TextInput
           label="List Name"
           placeholder="e.g. Favorite Albums"
-          value={newListName}
-          onChange={(e) => setNewListName(e.currentTarget.value)}
+          value={new_list_name}
+          onChange={e => set_new_list_name(e.currentTarget.value)}
         />
-        <Button
-          mt="md"
-          onClick={handleCreateList}
-          disabled={!newListName.trim()}
-        >
+        <Button mt="md" onClick={handle_create_list} disabled={!new_list_name.trim()}>
           Create
         </Button>
       </Modal>

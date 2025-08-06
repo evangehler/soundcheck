@@ -1,6 +1,6 @@
 import {useState } from "react";
 
-
+// Handles basic login parsing
 export default function Login({ onSubmit }) {
   const [username,setUsername] = useState("");
   const [password,setPassword] = useState("");
