@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// Handles basic registration parsing
 export default function Register({ onSubmit }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

@@ -2,12 +2,14 @@ import { Card, Text, Rating, Stack } from '@mantine/core';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// Displayed on the front page
 export default function AlbumCard({ album }) {
   const navigate = useNavigate();
-  const [hovered, set_hovered] = useState(false);
+  const [hovered, set_hovered] = useState(false); // hover state for scale effect
 
   return (
     <div
+      // container with hover scale and click navigation
       style={{
         width: '100%',
         maxWidth: 300,
@@ -26,6 +28,7 @@ export default function AlbumCard({ album }) {
       onMouseLeave={() => set_hovered(false)}
       onClick={() => navigate(`/albums/${album.id}`)}
     >
+      {/* blurred background image */}
       <img
         src={album.cover_url}
         alt=""
@@ -53,6 +56,7 @@ export default function AlbumCard({ album }) {
         }}
       >
         <Stack spacing="sm">
+          {/* main album cover */}
           <img
             src={album.cover_url}
             alt={album.title}
@@ -63,12 +67,15 @@ export default function AlbumCard({ album }) {
               boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
             }}
           />
+          {/* album title */}
           <Text c="white" fw={700} size="lg" align="center">
             {album.title}
           </Text>
+          {/* artist and year */}
           <Text c="gray.4" size="sm" align="center">
             {album.artist} ({album.year})
           </Text>
+          {/* average score and rating */}
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Text c="white" fw={600} size="md">
               {album.average_score?.toFixed(1) || 'N/A'}
