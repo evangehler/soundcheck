@@ -1,3 +1,6 @@
+# app/schemas/list.py
+# Schemas for List-related data structures
+
 from pydantic import BaseModel
 from typing import List
 from app.schemas.album import AlbumResponse

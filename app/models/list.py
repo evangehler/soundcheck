@@ -1,3 +1,6 @@
+# app/models/list.py
+# List model definition
+
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from app.db.database import Base

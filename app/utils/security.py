@@ -1,3 +1,5 @@
+# app/utils/security.py
+# Utility functions for creating and verifying JWT tokens
 
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
@@ -13,6 +15,7 @@ SECRET_KEY = "secret-key"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 1000
 security = HTTPBearer()
+
 def create_token(data:dict,expires_delta:timedelta | None = None):
     to_encode = data.copy()
     expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))

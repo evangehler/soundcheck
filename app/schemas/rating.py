@@ -1,3 +1,6 @@
+# app/schemas/rating.py
+# Schemas for Rating and Review-related data structures
+
 from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime

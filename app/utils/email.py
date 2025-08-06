@@ -1,3 +1,6 @@
+# app/utils/email.py
+# Utility functions for sending emails
+
 import smtplib
 from email.message import EmailMessage
 from dotenv import load_dotenv
@@ -14,6 +17,7 @@ email_enabled = os.getenv("EMAIL_ENABLED",'False') == 'True'
 print(f"EMAIL_ADDRESS: {email_address}")
 print(f"EMAIL_PASSWORD: {email_password}")
 
+# Function to send a welcome email to a new user
 def sendEmail(reciever: str, user: str):
     msg = EmailMessage()
     msg["Subject"] = "Thanks for signing up at soundcheck!"
