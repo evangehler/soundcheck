@@ -361,7 +361,6 @@ def get_full_list_by_id(
         raise HTTPException(status_code=404, detail="List not found")
     return list_obj
 
-
 # Get a specific list by ID
 @app.get("/api/lists/{list_id}", response_model=UserListResponse)
 def get_list_by_id(list_id: int, current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):

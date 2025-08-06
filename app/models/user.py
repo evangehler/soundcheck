@@ -1,3 +1,6 @@
+# app/models/user.py
+# SQLAlchemy model for the User entity
+
 from sqlalchemy import Column, Integer, String, DateTime, func, Boolean
 from sqlalchemy.orm import relationship
 from app.db.database import Base

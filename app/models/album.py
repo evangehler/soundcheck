@@ -1,3 +1,6 @@
+# app/models/album.py
+# Album model definition
+
 from sqlalchemy import Column, Integer, String, DateTime, Float, func
 from sqlalchemy.orm import relationship
 from app.db.database import Base

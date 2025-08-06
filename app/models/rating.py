@@ -1,3 +1,6 @@
+# app/models/rating.py
+# SQLAlchemy model for the Rating entity
+
 from sqlalchemy import Column, Integer, Float, String, ForeignKey, DateTime, func
 from sqlalchemy.orm import relationship
 from app.db.database import Base

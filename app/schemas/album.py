@@ -1,3 +1,6 @@
+# app/schemas/album.py
+# Schemas for Album-related data structures
+
 from pydantic import BaseModel, HttpUrl
 from typing import Optional
 from datetime import datetime

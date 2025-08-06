@@ -1,3 +1,6 @@
+# app/schemas/user.py
+# Schemas for User-related data structures
+
 from pydantic import BaseModel
 from typing import List
 from app.schemas.list import CompactList
